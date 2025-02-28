@@ -51,6 +51,25 @@
       background-color: #e0e0e0;
       color: #121212;
     }
+
+    /* Slide-up and fade-in animation */
+    @keyframes slideUpFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated-text {
+      opacity: 0;
+      animation: slideUpFadeIn 1.5s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
     /* Responsive adjustments */
     @media (max-width: 600px) {
       h1 {
@@ -64,10 +83,9 @@
 </head>
 <body>
   <div class="container">
-    <h1>Your Name</h1>
-    <p>
-      Hi, I'm [Your Name]. I'm a passionate developer and creator with interests in web development, open source, and innovative projects.
-      Welcome to my GitHub Pages site—your one-stop spot to explore my work and learn more about me.
+    <h1 class="animated-text">Hi, I'm Grant Talbert</h1>
+    <p class="animated-text">
+      I'm a Physics and Math double major with interests in Quantum Field Theory, High-Energy Physics, Algebraic Topology, and Homological Algebra. I also develop interesting projects, generally centered around LaTeX workflow optimization.
     </p>
     <div class="nav-links">
       <a href="about.html">About</a>

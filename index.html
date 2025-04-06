@@ -16,7 +16,7 @@
   <!-- Theme Toggler Button -->
   <button id="theme-toggler">Toggle Theme</button>
   
-  <div class="container">5
+  <div class="container">
     <header>
       <!-- Terminal-style typewriter effect for title and tagline -->
       <h1 id="typed-title" class="terminal-line"></h1>
@@ -181,21 +181,18 @@
       if (progress >= 100) {
         progress = 100;
         clearInterval(loadingInterval);
+        // Short delay before updating final message
         setTimeout(() => {
-          // Trigger fade-up on loader text
-          loaderText.classList.add('fade-up');
+          loaderText.innerText = "The answer is 42";
+          // Start the final fade-out animation on loader text
+          loaderText.classList.add('final-fade-out');
+          // Start typewriter and scroll reveal animations concurrently
+          startTypewriter();
+          startScrollReveal();
+          // After fade-out animation is complete, hide the loader overlay
           setTimeout(() => {
-            // Update loader text to final message (your custom quote)
-            loaderText.innerText = "The answer is 42.";
-            loaderText.classList.remove('fade-up');
-            loaderText.classList.add('final-fade');
-            setTimeout(() => {
-              loader.classList.add('hidden');
-              // Start typewriter and scroll reveal animations once loader is hidden
-              startTypewriter();
-              startScrollReveal();
-            }, 1000); // Display final message for 1 second
-          }, 800); // Wait for fade-up animation to finish (0.8s)
+            loader.classList.add('hidden');
+          }, 1000); // Duration matches finalFadeOut animation (1s)
         }, 300);
       } else {
         loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;

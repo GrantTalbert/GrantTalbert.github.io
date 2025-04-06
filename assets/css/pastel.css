@@ -229,27 +229,32 @@ footer {
   transform: translateY(0);
 }
 
+/* Loader Overlay */
 #loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95); /* almost opaque white overlay */
+  background-color: #fff7fa;  /* Fully opaque pastel background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* make sure it sits above everything else */
+  z-index: 10000; /* Sits above everything else */
 }
 
 #loader.hidden {
   display: none;
 }
 
-/* Additional Loader & Final Message Animations */
-#loader-text.fade-up {
-  animation: loaderFadeUp 0.8s forwards;
+#loader-text {
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: #44385c;  /* Deep playful purple */
+  font-size: 1.5em;
+  text-align: center;
 }
+
+/* Fade Up Animation for Computing Text (if needed) */
 @keyframes loaderFadeUp {
   0% {
     opacity: 1;
@@ -260,18 +265,23 @@ footer {
     transform: translateY(-20px);
   }
 }
-#loader-text.final-fade {
-  animation: loaderFinalFadeIn 0.8s forwards;
+
+#loader-text.fade-up {
+  animation: loaderFadeUp 0.8s forwards;
 }
-@keyframes loaderFinalFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
+
+/* Final Fade Out Animation for Final Answer Text */
+@keyframes finalFadeOut {
+  from {
     opacity: 1;
-    transform: translateY(0);
   }
+  to {
+    opacity: 0;
+  }
+}
+
+.final-fade-out {
+  animation: finalFadeOut 1s forwards;
 }
 
 /* Theme Toggler Button (if needed) */

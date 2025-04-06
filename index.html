@@ -13,8 +13,12 @@
     <div id="loader-text">Calculating the answer to life, the universe, and everything - 0% complete</div>
   </div>
   
+  <!-- Theme Toggler Button -->
+  <button id="theme-toggler">Toggle Theme</button>
+  
   <div class="container">
     <header>
+      <!-- Terminal-style typewriter effect for title and tagline -->
       <h1 id="typed-title" class="terminal-line"></h1>
       <p id="typed-tagline" class="terminal-line"></p>
       <nav class="nav-links">
@@ -44,9 +48,12 @@
     <footer>
       <p>&copy; 2025 Grant Talbert. Made with love~</p>
     </footer>
+    
+    <!-- Random Math Quote Widget -->
+    <div id="math-quote"></div>
   </div>
   
-  <!-- Star particle effect remains unchanged -->
+  <!-- Star Particle Effect Script -->
   <script>
     document.addEventListener('mousemove', function(e) {
       const star = document.createElement('div');
@@ -61,13 +68,12 @@
     });
   </script>
   
-  <!-- Typewriter effect for title and tagline -->
+  <!-- Typewriter Effect for Title and Tagline with Terminal Prompt -->
   <script>
     function typeText(element, text, delay = 50, callback) {
       let i = 0;
       function type() {
         if (i < text.length) {
-          // Preserve spaces; non-greedy replacement of any existing cursor span
           element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*?<\/span>/g, '') + text.charAt(i) + '<span class="cursor">&nbsp;</span>';
           i++;
           setTimeout(type, delay);
@@ -92,7 +98,7 @@
     });
   </script>
   
-  <!-- Scroll reveal for elements with class "reveal" remains unchanged -->
+  <!-- Scroll Reveal for Elements with Class "reveal" -->
   <script>
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver(entries => {
@@ -106,7 +112,7 @@
     revealElements.forEach(el => revealObserver.observe(el));
   </script>
   
-  <!-- Floating math symbols effect (with updated spawn rate and symbols) -->
+  <!-- Floating Math Symbols Effect -->
   <script>
     const mathSymbols = ['⊗', '∏', 'σ', '∫', '∑', 'Ψ', '∞', '≅', 'λ', 'θ'];
     setInterval(() => {
@@ -117,40 +123,81 @@
       symbol.style.top = window.innerHeight + 'px';
       document.body.appendChild(symbol);
       setTimeout(() => symbol.remove(), 4000);
-    }, 500); // Spawn every 500ms
+    }, 500);
+  </script>
+  
+  <!-- Interactive Click Explosion Effect -->
+  <script>
+    document.addEventListener('click', function(e) {
+      for (let i = 0; i < 8; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('explosion');
+        particle.innerText = Math.random() < 0.5 ? '♥' : '★';
+        particle.style.left = e.clientX + 'px';
+        particle.style.top = e.clientY + 'px';
+        const dx = (Math.random() * 100 - 50) + 'px';
+        const dy = (Math.random() * -100 - 20) + 'px';
+        particle.style.setProperty('--dx', dx);
+        particle.style.setProperty('--dy', dy);
+        document.body.appendChild(particle);
+        setTimeout(() => particle.remove(), 600);
+      }
+    });
+  </script>
+  
+  <!-- Theme Toggler Script -->
+  <script>
+    document.getElementById('theme-toggler').addEventListener('click', function(){
+      document.body.classList.toggle('alt-theme');
+      // alt-theme styles will be defined in a separate CSS file later.
+    });
+  </script>
+  
+  <!-- Random Math Quote Widget Script -->
+  <script>
+    const mathQuotes = [
+      "Mathematics is the poetry of logical ideas. – Albert Einstein",
+      "The answer to life, the universe, and everything is 42. – Douglas Adams",
+      "In mathematics, the art of proposing a question must be held of higher value than solving it. – Georg Cantor",
+      "Pure mathematics is, in its way, the poetry of logical ideas. – Albert Einstein",
+      "If I were beginning my studies again, I would follow the advice of Plato and start with mathematics. – Galileo Galilei"
+    ];
+    document.addEventListener("DOMContentLoaded", () => {
+      const quoteEl = document.getElementById("math-quote");
+      quoteEl.innerText = mathQuotes[Math.floor(Math.random() * mathQuotes.length)];
+    });
   </script>
   
   <!-- Custom Loader Script -->
   <script>
-    // Simulate loading progress
     let progress = 0;
     const loaderText = document.getElementById('loader-text');
     const loader = document.getElementById('loader');
     const loadingInterval = setInterval(() => {
-      progress += Math.floor(Math.random() * 3) + 1; // Random small increments
+      progress += Math.floor(Math.random() * 3) + 1;
       if (progress >= 100) {
         progress = 100;
         loaderText.innerText = "The answer is 42";
         clearInterval(loadingInterval);
         setTimeout(() => {
           loader.classList.add('hidden');
-        }, 1000); // Let the final message show for a moment
+        }, 1000);
       } else {
         loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;
       }
     }, 50);
   </script>
   
-  <!-- Scroll-responsive container background -->
+  <!-- Scroll-Responsive Container Background -->
   <script>
     window.addEventListener('scroll', () => {
       const container = document.querySelector('.container');
       const scrollY = window.scrollY;
       const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const ratio = scrollY / (maxScroll || 1); // Avoid divide-by-zero
+      const ratio = scrollY / (maxScroll || 1);
       // Interpolate between pastel pink (#ffb3e6) and pastel blue (#a6e7ff)
-      const startHue = 340; // approximate hue for pastel pink
-      const endHue = 200;   // approximate hue for pastel blue
+      const startHue = 340; // pastel pink hue
+      const endHue = 200;   // pastel blue hue
       const currentHue = Math.round(startHue + (endHue - startHue) * ratio);
       container.style.background = `linear-gradient(135deg, hsl(${currentHue}, 70%, 90%), hsl(${currentHue}, 70%, 95%))`;
     });

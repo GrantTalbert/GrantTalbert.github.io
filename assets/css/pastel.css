@@ -275,3 +275,50 @@ footer {
   color: #ff6fcf;
   margin-top: 10px;
 }
+
+/* Theme Toggler Button */
+#theme-toggler {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #ff6fcf;
+  color: #fff7fa;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 10001;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+#theme-toggler:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff6fcf;
+}
+
+/* Random Math Quote Widget */
+#math-quote {
+  margin-top: 2rem;
+  font-size: 1.2em;
+  font-style: italic;
+  color: #ff6fcf;
+}
+
+/* Explosion elements (half hearts and half stars) */
+.explosion {
+  position: fixed;
+  pointer-events: none;
+  font-size: 1.5em;
+  z-index: 9999;
+  opacity: 1;
+  animation: explode 600ms ease-out forwards;
+}
+@keyframes explode {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.5);
+  }
+}

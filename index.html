@@ -8,13 +8,21 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div id="parallax-stars"></div>
+
   <!-- Loader Overlay: This element should cover the whole viewport -->
   <div id="loader">
     <div id="loader-text">Calculating the answer to life, the universe, and everything - 0% complete</div>
   </div>
   
   <!-- Theme Toggler Button -->
-  <button id="theme-toggler">Toggle Theme</button>
+  <!--<button id="theme-toggler">Toggle Theme</button>-->
+  <div id="theme-chooser">
+    <button data-theme="default">Bubblegum KK</button>
+    <button data-theme="quantum">Quantum Glitter</button>
+    <button data-theme="yoneda">Yoneda Pink</button>
+  </div>
+  
   
   <div class="container">
     <header>
@@ -207,14 +215,18 @@
       document.body.style.cursor = `url("data:image/svg+xml,${encodedSVG}") 12 12, auto`;
     }
 
-    document.addEventListener('DOMContentLoaded', function(){
-      // Set initial cursor
-      updateCursorColor();
-
-      document.getElementById('theme-toggler').addEventListener('click', function(){
-        document.body.classList.toggle('alt-theme');
-        // Update cursor color after toggling theme
-        updateCursorColor();
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeChooser = document.getElementById('theme-chooser');
+      themeChooser.querySelectorAll('button').forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove any theme classes you might have applied earlier.
+          document.body.classList.remove('theme-quantum', 'theme-yoneda');
+          const theme = this.getAttribute('data-theme');
+          if (theme !== 'default') {
+            document.body.classList.add(`theme-${theme}`);
+            updateCursorColor();
+          }
+        });
       });
     });
    </script>

@@ -12,7 +12,7 @@
 }
 
 /* Define alternative (dark) theme variables */
-.alt-theme {
+.theme-quantum {
   --bg-color: #2c2f33;
   --text-color: #f5f6fa;
   --accent-color: #7289da;
@@ -20,6 +20,16 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.theme-yoneda {
+  --bg-color: #ffeef8;
+  --text-color: #6b0057;
+  --accent-color: #ff66b2;
+  --secondary-bg-color: #ffcdea;
+  --nav-link-border-color: var(--accent-color);
+  --nav-link-hover-shadow: var(--accent-color);
+  --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
 }
 
 /* Reset styles */
@@ -332,6 +342,33 @@ footer {
   box-shadow: 0 0 10px var(--accent-color);
 }
 
+#theme-chooser {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: var(--bg-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10002;
+}
+
+#theme-chooser button {
+  background: var(--accent-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#theme-chooser button:hover {
+  transform: scale(1.1);
+}
+
 /* Random Math Quote Widget Styling */
 #math-quote {
   margin-top: 2rem;
@@ -348,5 +385,27 @@ footer {
   .tagline,
   p {
     font-size: 1em;
+  }
+}
+
+#parallax-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1920x1080.png?text=Stars') repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: -1; /* Behind your content */
+  animation: moveStars 60s linear infinite;
+}
+
+@keyframes moveStars {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1000px -1000px;
   }
 }

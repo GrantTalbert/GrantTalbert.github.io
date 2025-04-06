@@ -8,14 +8,15 @@ const lines = [
   ];
   
   const terminalLog = document.getElementById("terminal-log");
-  const currentContainer = document.getElementById("current-line-container");
+  const currentContainer = document.getElementById("terminal-line-container");
   let currentLine = 0;
   
   function typeLine(line, callback) {
     // Create a new line element in the current container
     const lineElem = document.createElement("div");
     lineElem.className = "line";
-    currentContainer.innerHTML = "";  // Clear current container
+    // Clear the current container and append the new line element
+    currentContainer.innerHTML = "";
     currentContainer.appendChild(lineElem);
     
     let i = 0;
@@ -27,7 +28,7 @@ const lines = [
         // Default typing delay
         let delay = 50;
         
-        // For lines 2-5 (indexes 1-4): wait 1 second on the LAST character
+        // For lines 2-5 (indexes 1-4): wait extra on the LAST character
         if (i === line.length && currentLine >= 1 && currentLine <= 4) {
           delay = 1000;
         }
@@ -42,13 +43,14 @@ const lines = [
         
         setTimeout(typeChar, delay);
       } else {
-        // Line finished typing. Wait 0.8 seconds, then animate it sliding up.
+        // Line finished typing. Wait 0.8s, then slide it up.
         setTimeout(() => {
           lineElem.style.animation = "slideUp 0.8s ease forwards";
-          // After the slide-up animation, move this line to the log.
           setTimeout(() => {
+            // Append the finished line to the log
             terminalLog.appendChild(lineElem);
-            currentContainer.innerHTML = ""; // Clear for next line
+            // Clear the current container for the next line
+            currentContainer.innerHTML = "";
             callback();
           }, 800);
         }, 800);
@@ -61,12 +63,12 @@ const lines = [
     if (currentLine < lines.length) {
       typeLine(lines[currentLine], () => {
         currentLine++;
-        // Optionally, scroll the log if it overflows
+        // Scroll the log if needed
         terminalLog.scrollTop = terminalLog.scrollHeight;
         setTimeout(runTerminal, 500);
       });
     } else {
-      // Once all lines are typed, wait a second, then fade out the loader.
+      // After all lines, fade out the loader
       setTimeout(() => {
         const loader = document.getElementById("terminal-loader");
         loader.style.transition = "opacity 0.8s ease";
@@ -78,5 +80,5 @@ const lines = [
     }
   }
   
-  runTerminal
+  runTerminal();
   

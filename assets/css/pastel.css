@@ -401,7 +401,7 @@ footer {
   width: 100%;
   height: 100%;
   background: var(--stars-tint) url('/assets/images/stars.png') repeat;
-  background-blend-mode: multiply;  /* Blend the tint with your star image */
+  background-blend-mode: overlay;  /* Blend the tint with your star image */
   background-size: cover;  /* Adjust as needed */
   pointer-events: none;
   z-index: -1; /* Behind your content */

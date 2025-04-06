@@ -17,7 +17,7 @@
     --text-color: #e0e0e0;            /* Light grey text for contrast */
     --accent-color: #7289da;          /* Muted blue accent */
     --secondary-bg-color: #2a2d36;     /* Deep secondary background */
-    --sticky-bg: #f0e6d6; /* a softer note color for dark background */
+    --sticky-bg: #34a4ff; /* a softer note color for dark background */
     --wood-bg: url('/assets/images/wood-dark.jpeg');
     --nav-link-border-color: var(--accent-color);
     --nav-link-hover-shadow: var(--accent-color);

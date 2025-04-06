@@ -10,8 +10,8 @@
 <body>
   <div class="container">
     <header>
-      <h1>Hi, I'm Grant Talbert!</h1>
-      <p id="tagline" class="tagline">
+      <h1 id="typed-title" class="terminal-line">Hi, I'm Grant Talbert!</h1>
+      <p id="typed-tagline" class="terminal-line">
         math, physics, and a friendly introduction to abstract nonsense
       </p>
       <nav class="nav-links">
@@ -59,22 +59,35 @@
     </script>
 
     <!-- Typewriter effect for tagline -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const tagline = document.getElementById('tagline');
-      const text = tagline.innerText;
-      tagline.innerText = "";
-      let i = 0;
-      function type() {
-        if (i < text.length) {
-          tagline.innerText += text.charAt(i);
-          i++;
-          setTimeout(type, 50);
+    <script>
+      function typeText(element, text, delay = 50, callback) {
+        let i = 0;
+        function type() {
+          if (i < text.length) {
+            const ch = text.charAt(i);
+            element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*<\/span>/, '') + ch + '<span class="cursor">&nbsp;</span>';
+            i++;
+            setTimeout(type, delay);
+          } else {
+            element.innerHTML = text + '<span class="cursor">&nbsp;</span>';
+            if (callback) callback();
+          }
         }
+        element.innerHTML = '<span class="cursor">&nbsp;</span>';
+        type();
       }
-      type();
-    });
-  </script>
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        const titleEl = document.getElementById("typed-title");
+        const taglineEl = document.getElementById("typed-tagline");
+      
+        typeText(titleEl, "Hi, I'm Kira Noether!", 50, () => {
+          setTimeout(() => {
+            typeText(taglineEl, "Where math, physics, and pastel chaos collide.", 35);
+          }, 300);
+        });
+      });
+    </script>
 
   <!-- Scroll reveal for elements with class "reveal" -->
   <script>
@@ -92,7 +105,8 @@
   
   <!-- Floating math symbols effect -->
   <script>
-    const mathSymbols = ['⊗', '∴', '∵', '∞', '∫', '∑', '∏'];
+    const mathSymbols = ['⊗', '∫', '∏', '∑', 'ℵ', '≅', '≡', '∇', '⊕', '→'];
+    
     setInterval(() => {
       const symbol = document.createElement('div');
       symbol.classList.add('floating-symbol');
@@ -100,11 +114,10 @@
       symbol.style.left = Math.random() * window.innerWidth + 'px';
       symbol.style.top = window.innerHeight + 'px';
       document.body.appendChild(symbol);
-      setTimeout(() => {
-        symbol.remove();
-      }, 4000);
-    }, 1000);
-  </script>
+      setTimeout(() => symbol.remove(), 4000);
+    }, 500); // 2x faster now
+    </script>
+    
 
 </body>
 </html>

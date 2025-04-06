@@ -1,0 +1,67 @@
+/* Reset and base styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdf6fa;
+  color: #44385c;
+  font-family: "Comic Neue", cursive, sans-serif;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+h1, h2 {
+  color: #ff6fcf;
+  font-weight: 700;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: #6b4ca0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #ffb3e6;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 1rem 2rem;
+  background: #fff3fc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+}
+
+ul {
+  margin-left: 1.5rem;
+  list-style: heart;
+}
+
+code {
+  background: #f0dff4;
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  font-family: monospace;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #c097d0;
+  font-size: 0.9rem;
+}

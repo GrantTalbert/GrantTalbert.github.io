@@ -28,13 +28,16 @@ function updateCursorColor() {
     styleElement.innerHTML = `a:hover, button:hover { cursor: ${hoverCursorValue}; }`;
   }
 
+
   document.addEventListener("DOMContentLoaded", function() {
     // Check for a saved theme in localStorage and apply it
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme && savedTheme !== "default") {
       document.body.classList.add(`theme-${savedTheme}`);
     }
-  
+    // Update the cursor to match the persisted theme
+    updateCursorColor();
+    
     const themeChooser = document.getElementById("theme-chooser");
     if (themeChooser) {
       themeChooser.querySelectorAll("button").forEach(button => {
@@ -47,8 +50,9 @@ function updateCursorColor() {
           }
           // Save the selected theme
           localStorage.setItem("theme", theme);
-          updateCursorColor(); // if you have dynamic cursor updates
+          updateCursorColor();
         });
       });
     }
-  });  
+  });
+  

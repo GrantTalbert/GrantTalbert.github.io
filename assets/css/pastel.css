@@ -1,36 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
-/* Define default (light) theme variables */
 :root {
   --bg-color: #fff7fa;             /* Soft pastel background */
   --text-color: #44385c;            /* Deep playful purple text */
-  --accent-color: #ff6fcf;          /* Pink accent */
-  --secondary-bg-color: #fff3fc;     /* Section background */
+  --accent-color: #ff6fcf;          /* Vibrant pink accent */
+  --secondary-bg-color: #fff3fc;     /* Light pastel section background */
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
 }
 
-/* Define alternative (dark) theme variables */
 .theme-quantum {
-  --bg-color: #2c2f33;
-  --text-color: #f5f6fa;
-  --accent-color: #7289da;
-  --secondary-bg-color: #3b3f44;
+  --bg-color: #1f2128;             /* Dark, almost cosmic background */
+  --text-color: #e0e0e0;            /* Light grey text for contrast */
+  --accent-color: #7289da;          /* Muted blue accent */
+  --secondary-bg-color: #2a2d36;     /* Deep secondary background */
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
-  --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .theme-yoneda {
-  --bg-color: #ffeef8;
-  --text-color: #6b0057;
-  --accent-color: #ff66b2;
-  --secondary-bg-color: #ffcdea;
+  --bg-color: #ffeef8;             /* Warm, soft pastel background */
+  --text-color: #6b0057;            /* Rich, deep magenta text */
+  --accent-color: #ff66b2;          /* Vibrant pink accent */
+  --secondary-bg-color: #ffcdea;     /* Complementary section background */
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
-  --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+  --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
 }
+
 
 /* Reset styles */
 * {
@@ -50,6 +49,7 @@ body {
   position: relative;
   /* Custom star cursor */
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23ff6fcf" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z"/></svg>') 12 12, auto;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Hollow star cursor on hover for clickable elements */

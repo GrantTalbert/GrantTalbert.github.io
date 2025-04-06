@@ -75,6 +75,18 @@
 /* Place the overlay image and content in the same grid cell */
 .whiteboard .overlay {
   grid-area: 1 / 1 / -1 / -1;
+  background-color: var(--whiteboard-text); /* the tint color */
+  /* Use the custom property for the mask image */
+  -webkit-mask-image: var(--overlay-img);
+  mask-image: var(--overlay-img);
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  pointer-events: none;
+  z-index: 3;
 }
 .whiteboard .overlay img {
   display: block;

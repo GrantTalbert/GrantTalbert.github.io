@@ -186,6 +186,7 @@ footer {
   border-bottom: 2px solid #ff6fcf;
   margin-left: 2px;
   animation: blink 1s steps(1) infinite;
+  animation-delay: 0s !important;
 }
 
 @keyframes blink {
@@ -248,4 +249,29 @@ footer {
   p {
     font-size: 1em;
   }
+}
+
+/* Loader overlay styles */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff7fa; /* Matches body background */
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+#loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+#loader-text {
+  font-size: 1.5em;
+  color: #ff6fcf;
+  margin-top: 10px;
 }

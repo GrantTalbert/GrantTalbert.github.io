@@ -8,9 +8,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Loader Overlay -->
+  <div id="loader">
+    <div id="loader-text">Calculating the answer to life, the universe, and everything - 0% complete</div>
+  </div>
+  
   <div class="container">
     <header>
-      <!-- Terminal-style typewriter lines with prompt and blinking underline cursor -->
       <h1 id="typed-title" class="terminal-line"></h1>
       <p id="typed-tagline" class="terminal-line"></p>
       <nav class="nav-links">
@@ -42,7 +46,7 @@
     </footer>
   </div>
   
-  <!-- Star particle effect -->
+  <!-- Star particle effect remains unchanged -->
   <script>
     document.addEventListener('mousemove', function(e) {
       const star = document.createElement('div');
@@ -57,13 +61,13 @@
     });
   </script>
   
-  <!-- Typewriter effect for title and tagline with terminal prompt -->
+  <!-- Typewriter effect for title and tagline -->
   <script>
     function typeText(element, text, delay = 50, callback) {
       let i = 0;
       function type() {
         if (i < text.length) {
-          // Use a non-greedy regex to remove any previous cursor span
+          // Preserve spaces; non-greedy replacement of any existing cursor span
           element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*?<\/span>/g, '') + text.charAt(i) + '<span class="cursor">&nbsp;</span>';
           i++;
           setTimeout(type, delay);
@@ -88,7 +92,7 @@
     });
   </script>
   
-  <!-- Scroll reveal for elements with class "reveal" -->
+  <!-- Scroll reveal for elements with class "reveal" remains unchanged -->
   <script>
     const revealElements = document.querySelectorAll('.reveal');
     const revealObserver = new IntersectionObserver(entries => {
@@ -102,7 +106,7 @@
     revealElements.forEach(el => revealObserver.observe(el));
   </script>
   
-  <!-- Floating math symbols effect -->
+  <!-- Floating math symbols effect (with updated spawn rate and symbols) -->
   <script>
     const mathSymbols = ['⊗', '∏', 'σ', '∫', '∑', 'Ψ', '∞', '≅', 'λ', 'θ'];
     setInterval(() => {
@@ -113,7 +117,44 @@
       symbol.style.top = window.innerHeight + 'px';
       document.body.appendChild(symbol);
       setTimeout(() => symbol.remove(), 4000);
-    }, 500); // Twice as fast as before
+    }, 500); // Spawn every 500ms
   </script>
+  
+  <!-- Custom Loader Script -->
+  <script>
+    // Simulate loading progress
+    let progress = 0;
+    const loaderText = document.getElementById('loader-text');
+    const loader = document.getElementById('loader');
+    const loadingInterval = setInterval(() => {
+      progress += Math.floor(Math.random() * 3) + 1; // Random small increments
+      if (progress >= 100) {
+        progress = 100;
+        loaderText.innerText = "The answer is 42";
+        clearInterval(loadingInterval);
+        setTimeout(() => {
+          loader.classList.add('hidden');
+        }, 1000); // Let the final message show for a moment
+      } else {
+        loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;
+      }
+    }, 50);
+  </script>
+  
+  <!-- Scroll-responsive container background -->
+  <script>
+    window.addEventListener('scroll', () => {
+      const container = document.querySelector('.container');
+      const scrollY = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const ratio = scrollY / (maxScroll || 1); // Avoid divide-by-zero
+      // Interpolate between pastel pink (#ffb3e6) and pastel blue (#a6e7ff)
+      const startHue = 340; // approximate hue for pastel pink
+      const endHue = 200;   // approximate hue for pastel blue
+      const currentHue = Math.round(startHue + (endHue - startHue) * ratio);
+      container.style.background = `linear-gradient(135deg, hsl(${currentHue}, 70%, 90%), hsl(${currentHue}, 70%, 95%))`;
+    });
+  </script>
+  
 </body>
 </html>

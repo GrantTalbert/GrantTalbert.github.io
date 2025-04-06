@@ -25,6 +25,7 @@
     text-align: center;
     overflow-y: auto;
     min-height: 50px;
+    margin-bottom: -2pt;
   }
   
   /* Container for the line being typed */

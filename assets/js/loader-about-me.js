@@ -45,12 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Append the finished line to the terminal log.
             terminalLog.appendChild(lineElem);
             currentContainer.innerHTML = ""; // Clear current container.
-            // Calculate the height of this finished line.
-            const lineHeight = lineElem.offsetHeight;
-            offset += lineHeight;
-            // Animate the entire terminal log container upward by the cumulative offset.
             terminalLog.style.transition = "transform 0.8s ease";
-            //terminalLog.style.transform = `translateY(-${offset}px)`;
             callback();
           }, 800);
         }

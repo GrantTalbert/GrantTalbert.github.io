@@ -11,6 +11,11 @@
     overflow: hidden;
     padding: 2rem;
     z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
   
   /* Terminal Content – scrollable area */
@@ -22,6 +27,7 @@
   /* Each line in the terminal */
   .line {
     margin: 0.2em 0;
+    text-align: center;
   }
   
   /* Blinking Cursor */
@@ -45,5 +51,10 @@
   
   .hidden {
     display: none;
+  }
+
+  #main-content {
+    margin: 0 auto;
+    text-align: center;
   }
   

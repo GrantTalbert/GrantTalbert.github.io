@@ -394,7 +394,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://via.placeholder.com/1920x1080.png?text=Stars') repeat;
+  background: url('/assets/images/stars.png') repeat;
   background-size: contain;
   pointer-events: none;
   z-index: -1; /* Behind your content */

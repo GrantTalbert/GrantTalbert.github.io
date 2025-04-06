@@ -179,7 +179,9 @@ footer {
   }
 }
 
-/* Blinking underline cursor for typewriter effect */
+/* ----------------------------------------------- */
+/* Blinking Underline Cursor for Typewriter Effect */
+/* ----------------------------------------------- */
 .cursor {
   display: inline-block;
   width: 1ch;
@@ -188,7 +190,6 @@ footer {
   animation: blink 1s steps(1) infinite;
   animation-delay: 0s !important;
 }
-
 @keyframes blink {
   0%, 50% {
     opacity: 1;
@@ -251,7 +252,10 @@ footer {
   }
 }
 
-/* Loader overlay styles */
+/* ---------------------------- */
+/* Loader Overlay and Fade-Up   */
+/* ---------------------------- */
+
 #loader {
   position: fixed;
   top: 0;
@@ -270,10 +274,18 @@ footer {
   opacity: 0;
   pointer-events: none;
 }
-#loader-text {
-  font-size: 1.5em;
-  color: #ff6fcf;
-  margin-top: 10px;
+#loader-text.fade-up {
+  animation: loaderFadeUp 0.8s forwards;
+}
+@keyframes loaderFadeUp {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
 }
 
 /* Theme Toggler Button */
@@ -303,13 +315,16 @@ footer {
   color: #ff6fcf;
 }
 
-/* Explosion elements (half hearts and half stars) */
+/* ---------------------------- */
+/* Explosion Particles Styling  */
+/* ---------------------------- */
 .explosion {
   position: fixed;
   pointer-events: none;
   font-size: 1.5em;
   z-index: 9999;
   opacity: 1;
+  color: #ff6fcf; /* Use pastel pink for hearts and stars */
   animation: explode 600ms ease-out forwards;
 }
 @keyframes explode {

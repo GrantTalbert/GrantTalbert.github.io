@@ -5,17 +5,17 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--bg-color); /* Uses theme variable */
+    background-color: var(--bg-color);
     color: var(--accent-color);
     font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     overflow: hidden;
     padding: 2rem;
     z-index: 10000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
   }
   
   /* Terminal Content – scrollable area */

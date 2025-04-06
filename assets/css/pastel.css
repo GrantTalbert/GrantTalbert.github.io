@@ -26,8 +26,8 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Replace the URL below with your preferred background image (diagrams, equations, etc.) */
-  /*background-image: url('https://via.placeholder.com/1920x1080.png?text=Quantum+Diagrams');*/
+  /* Replace the URL below with your preferred background image */
+  background-image: url('https://via.placeholder.com/1920x1080.png?text=Quantum+Diagrams');
   background-size: cover;
   background-repeat: no-repeat;
   opacity: 0.05;
@@ -48,6 +48,7 @@ header {
   margin-bottom: 2rem;
 }
 
+/* Heading uses energetic bounce */
 h1 {
   font-size: 3em;
   margin-bottom: 0.3em;
@@ -55,12 +56,8 @@ h1 {
   animation: playfulBounce 1s ease-out forwards;
 }
 
-.tagline {
-  font-size: 1.2em;
-  margin-bottom: 1.5em;
-  animation: playfulFadeIn 1.5s ease-out forwards;
-}
-
+/* Tagline and paragraphs with playful fade in */
+.tagline,
 p {
   font-size: 1.2em;
   max-width: 600px;
@@ -185,13 +182,12 @@ footer {
   }
 }
 
-/* Extra animated text for flair */
+/* Extra animated text for paragraphs (if needed) */
 .animated-text {
   opacity: 0;
   transform: translateY(20px);
   animation: playfulFadeIn 1.5s ease-out forwards;
 }
-
 .animated-text:nth-of-type(1) { animation-delay: 0.3s; }
 .animated-text:nth-of-type(2) { animation-delay: 0.5s; }
 

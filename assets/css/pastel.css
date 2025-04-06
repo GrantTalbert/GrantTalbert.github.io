@@ -1,101 +1,84 @@
-/* Kira's Playful Pastel Vibe CSS */
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
-/* Reset styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base styling */
 body {
-  background-color: #fff7fa;  /* Soft pastel background */
-  color: #44385c;             /* Deep, playful purple text */
+  background-color: #fff7fa;
+  color: #44385c;
   font-family: 'Comic Neue', cursive, sans-serif;
   line-height: 1.6;
   padding: 20px;
 }
 
-/* Main container */
 .container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  max-width: 960px;
+  margin: 0 auto;
   text-align: center;
+  padding: 20px;
 }
 
-/* Headings with a playful bounce */
+header {
+  margin-bottom: 2rem;
+}
+
 h1 {
   font-size: 3em;
-  margin-bottom: 0.2em;
-  color: #ff6fcf; /* Vibrant pastel pink */
+  margin-bottom: 0.3em;
+  color: #ff6fcf;
   animation: playfulBounce 1s ease-out forwards;
 }
 
-/* Paragraphs with playful fade and slide */
-p {
+.tagline {
   font-size: 1.2em;
-  max-width: 600px;
   margin-bottom: 1.5em;
   animation: playfulFadeIn 1.5s ease-out forwards;
 }
 
-/* Navigation links */
-.nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 20px;
+nav {
+  margin-bottom: 2rem;
 }
 
-.nav-links a {
+nav a {
+  margin: 0 15px;
   text-decoration: none;
   color: #44385c;
-  padding: 10px 20px;
-  border: 2px solid #ff6fcf;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: playfulSlideIn 1s ease-out forwards;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.3s;
+  animation: playfulSlideIn 1.5s ease-out forwards;
 }
 
-.nav-links a:nth-child(1) { animation-delay: 0.5s; }
-.nav-links a:nth-child(2) { animation-delay: 0.7s; }
-.nav-links a:nth-child(3) { animation-delay: 0.9s; }
-.nav-links a:nth-child(4) { animation-delay: 1.1s; }
-
-.nav-links a:hover {
-  background-color: #ff6fcf;
-  color: #fff7fa;
+nav a:hover {
+  border-bottom: 2px solid #ff6fcf;
 }
 
-/* Back button styling */
-.back-button {
-  position: fixed;
-  text-decoration: none;
-  color: #44385c;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: playfulSlideIn 1s ease-out forwards;
-  animation-delay: 0.5s;
+section {
+  margin-bottom: 3rem;
+  padding: 20px;
+  background-color: #fff3fc;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+  animation: playfulFadeIn 1.5s ease-out forwards;
 }
 
-.back-button:hover {
-  background-color: #ff6fcf;
-  color: #fff7fa;
+section h2 {
+  font-size: 2em;
+  color: #ff6fcf;
+  margin-bottom: 0.5em;
 }
 
-/* Keyframe animations */
+footer {
+  text-align: center;
+  font-size: 0.9em;
+  color: #c097d0;
+  margin-top: 2rem;
+}
+
+/* Animations */
 @keyframes playfulBounce {
   0% {
     transform: scale(0.5);
@@ -135,7 +118,7 @@ p {
   }
 }
 
-/* Extra animated text for flair */
+/* Animated text flair */
 .animated-text {
   opacity: 0;
   transform: translateY(20px);
@@ -145,11 +128,12 @@ p {
 .animated-text:nth-of-type(1) { animation-delay: 0.3s; }
 .animated-text:nth-of-type(2) { animation-delay: 0.5s; }
 
-/* Responsive styling */
+/* Responsive */
 @media (max-width: 600px) {
   h1 {
     font-size: 2.5em;
   }
+  .tagline,
   p {
     font-size: 1em;
   }

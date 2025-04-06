@@ -161,11 +161,12 @@
       "The answer to life, the universe, and everything is 42. – Douglas Adams",
       "In mathematics, the art of proposing a question must be held of higher value than solving it. – Georg Cantor",
       "Pure mathematics is, in its way, the poetry of logical ideas. – Albert Einstein",
-      "If I were beginning my studies again, I would follow the advice of Plato and start with mathematics. – Galileo Galilei",
-      "HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOO!!!!!!!! - meeeeeee"
+      "If I were beginning my studies again, I would follow the advice of Plato and start with mathematics. – Galileo Galilei"
     ];
     document.addEventListener("DOMContentLoaded", () => {
       const quoteEl = document.getElementById("math-quote");
+      // Add the custom quote to the array
+      mathQuotes.push("HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOO!!!!!!!! - meeeeeee");
       quoteEl.innerText = mathQuotes[Math.floor(Math.random() * mathQuotes.length)];
     });
   </script>
@@ -181,44 +182,25 @@
         progress = 100;
         clearInterval(loadingInterval);
         setTimeout(() => {
-          // Trigger fade-up animation on loader text
+          // Trigger fade-up on loader text
           loaderText.classList.add('fade-up');
-          // After fade-up (0.8s) then change text to final message
           setTimeout(() => {
-            loaderText.innerText = "The answer is 42";
-            // Display final message for 1s, then fade out loader overlay
+            // After fade-up, update text to final message and animate fade-in
+            loaderText.innerText = "HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOO!!!!!!!! - meeeeeee";
+            loaderText.classList.remove('fade-up');
+            loaderText.classList.add('final-fade');
             setTimeout(() => {
               loader.classList.add('hidden');
               // Start typewriter and scroll reveal animations once loader is hidden
               startTypewriter();
               startScrollReveal();
-            }, 1000);
-          }, 800);
+            }, 1000); // Display final message for 1 second
+          }, 800); // Wait for fade-up animation to finish (0.8s)
         }, 300);
       } else {
         loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;
       }
     }, 50);
-  </script>
-  
-  <!-- Scroll-Responsive Container Background -->
-  <script>
-    window.addEventListener('scroll', () => {
-      const container = document.querySelector('.container');
-      const scrollY = window.scrollY;
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      let ratio;
-      if (scrollY <= maxScroll/2) {
-        ratio = scrollY / (maxScroll/2); // 0 -> 1
-      } else {
-        ratio = (maxScroll - scrollY) / (maxScroll/2); // 1 -> 0
-      }
-      // Interpolate between white (255,255,255) and pink (#ff6fcf = rgb(255,111,207))
-      const r = 255;
-      const g = Math.round(255 * (1 - ratio) + 111 * ratio);
-      const b = Math.round(255 * (1 - ratio) + 207 * ratio);
-      container.style.background = `rgb(${r}, ${g}, ${b})`;
-    });
   </script>
   
 </body>

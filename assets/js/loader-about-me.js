@@ -15,25 +15,24 @@ const lines = [
     // Create a new line element for the current line
     const lineElem = document.createElement("div");
     lineElem.className = "line";
-    // Clear any existing content in the current container
-    currentContainer.innerHTML = "";
+    currentContainer.innerHTML = "";  // Clear current container
     currentContainer.appendChild(lineElem);
+    
     let i = 0;
     function typeChar() {
       if (i < line.length) {
         lineElem.innerHTML += line.charAt(i);
         i++;
         
-        // For lines 2,3,4,5 (indexes 1-4): wait extra before the last character
-        let delay = 50;
-        if (i === line.length && currentLine >= 1 && currentLine <= 4) {
-          delay = 1000;
+        // Determine delay adjustments:
+        let delay = 10;
+        if (i === line.length - 1 && currentLine >= 1 && currentLine <= 4) {
+          delay = 1000; // Extra delay on the last character for lines 2-5
         }
-        // For line 6: pause before typing "COMMUTING"
         if (currentLine === 5) {
-          const commutingIndex = line.indexOf("COMMUTING");
+          const commutingIndex = line.indexOf("COMMUTING") - 2;
           if (i === commutingIndex) {
-            delay = 1500;
+            delay = 1500; // Extra pause before typing "COMMUTING"
           }
         }
         
@@ -44,16 +43,19 @@ const lines = [
         cursor.className = "cursor";
         lineElem.appendChild(cursor);
         setTimeout(() => {
+          // Remove cursor
           lineElem.removeChild(cursor);
-          // Animate the current line sliding up
+          // Animate current line sliding up (without fading)
           lineElem.style.animation = "slideUp 0.8s ease forwards";
-          // After animation, move this line to the log and clear current container
+          // After the slide-up animation, move this line to the terminal log
           setTimeout(() => {
-            currentContainer.innerHTML = ""; // Clear current typing area
-            terminalLog.appendChild(lineElem); // Add finished line to log
+            // Append the finished line to the log so it stays visible
+            terminalLog.appendChild(lineElem);
+            // Clear current container for the next line
+            currentContainer.innerHTML = "";
             callback();
           }, 800);
-        }, 800); // Wait 0.8 seconds with cursor blinking before slide
+        }, 800); // Keep cursor for 0.8s
       }
     }
     typeChar();
@@ -63,12 +65,12 @@ const lines = [
     if (currentLine < lines.length) {
       typeLine(lines[currentLine], () => {
         currentLine++;
-        // Scroll terminal log if needed
+        // Optionally, scroll the log if needed:
         terminalLog.scrollTop = terminalLog.scrollHeight;
-        setTimeout(runTerminal, 500); // Wait a bit before next line
+        setTimeout(runTerminal, 500); // Wait before starting next line
       });
     } else {
-      // All lines typed – fade out the loader after a brief pause
+      // All lines typed – fade out the loader then hide it
       setTimeout(() => {
         const loader = document.getElementById("terminal-loader");
         loader.style.transition = "opacity 0.8s ease";
@@ -80,5 +82,4 @@ const lines = [
     }
   }
   
-  runTerminal();
-  
+  runTerminal();  

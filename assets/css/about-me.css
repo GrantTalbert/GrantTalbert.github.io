@@ -142,14 +142,7 @@ width: 100%;
 height: auto;
 pointer-events: none;
 z-index: 3;
-}
-
-.overlay img {
-display: block;
-width: 100%;
-height: auto;
-object-fit: cover;
-background-color: var(--whiteboard-text);
+background-color: var(--whiteboard-text);  /* The color you want the drawing to be */
 -webkit-mask-repeat: no-repeat;
 mask-repeat: no-repeat;
 -webkit-mask-position: center;
@@ -158,4 +151,11 @@ mask-position: center;
 mask-size: contain;
 pointer-events: none;
 z-index: 3;
+}
+
+.overlay img {
+display: block;
+width: 100%;
+height: auto;
+object-fit: cover;
 }

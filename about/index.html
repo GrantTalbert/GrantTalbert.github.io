@@ -96,18 +96,5 @@
   <script src="../assets/js/loader-about-me.js"></script>
   <script src="../assets/js/explosion.js"></script>
   <script src="../assets/js/theme-switcher.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-  const overlay = document.querySelector('.overlay');
-  const img = overlay.querySelector('img');
-  if (img && overlay) {
-    overlay.style.webkitMaskImage = `url(${img.src})`;
-    overlay.style.maskImage = `url(${img.src})`;
-    // Optionally hide the inline image so only the white-tinted version shows:
-    img.style.display = 'none';
-  }
-});
-  </script>
 </body>
 </html>

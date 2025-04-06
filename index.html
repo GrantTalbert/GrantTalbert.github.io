@@ -207,8 +207,10 @@
   
   <!-- Dynamic Theme Switching-->
    <script>
-    document.getElementById('theme-toggler').addEventListener('click', function(){
-      document.body.classList.toggle('alt-theme');
+    document.addEventListener('DOMContentLoaded', function(){
+      document.getElementById('theme-toggler').addEventListener('click', function(){
+        document.body.classList.toggle('alt-theme');
+      });
     });
    </script>
 </body>

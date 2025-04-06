@@ -63,8 +63,8 @@
   position: relative;
   max-width: 280px;  /* Adjust as needed */
   margin: 0 auto;
-  background: #fff;  /* White background for whiteboards */
-  border: 1px solid #ccc;
+  background: var(--whiteboard-color);  /* White background for whiteboards */
+  border: 5px solid #858585;
   border-radius: 5px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   transform: rotate(-5deg); /* Slight tilt */
@@ -89,7 +89,7 @@
   text-align: left;
   font-family: 'Comic Neue', cursive, sans-serif;
   font-size: 0.9em;
-  color: var(--text-color);
+  color: var(--whiteboard-text);
 }
 
 /* Paper Piece Styling – Using CSS Grid for natural scaling */

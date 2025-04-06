@@ -6,10 +6,10 @@ const lines = [
     "Actually getting out of bed this time... ✅",
     "Diagram: ✨ COMMUTING ✨"
 ];
-  
+
 const terminalContent = document.getElementById("terminal-content");
 let currentLine = 0;
-  
+
 function typeLine(line, callback) {
     const lineElem = document.createElement("div");
     lineElem.className = "line";
@@ -33,7 +33,7 @@ function typeLine(line, callback) {
     }
     typeChar();
 }
-  
+
 function runTerminal() {
     if (currentLine < lines.length) {
       typeLine(lines[currentLine], () => {
@@ -46,8 +46,15 @@ function runTerminal() {
         setTimeout(runTerminal, 500); // wait a bit before starting the next line
       });
     } else {
-      // All lines typed – you can trigger the next step here
-      // For example, fade out the loader or continue to the main page.
+      // All lines typed – fade out the loader then reveal the main content
+      setTimeout(() => {
+         const loader = document.getElementById("terminal-loader");
+         loader.style.transition = "opacity 0.8s ease";
+         loader.style.opacity = "0";
+         setTimeout(() => {
+            loader.style.display = "none";
+         }, 800);
+      }, 1000);
     }
 }
   

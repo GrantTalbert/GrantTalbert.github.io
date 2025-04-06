@@ -1,5 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
 
+/* Define default (light) theme variables */
+:root {
+  --bg-color: #fff7fa;             /* Soft pastel background */
+  --text-color: #44385c;            /* Deep playful purple text */
+  --accent-color: #ff6fcf;          /* Pink accent */
+  --secondary-bg-color: #fff3fc;     /* Section background */
+  --nav-link-border-color: var(--accent-color);
+  --nav-link-hover-shadow: var(--accent-color);
+}
+
+/* Define alternative (dark) theme variables */
+.alt-theme {
+  --bg-color: #2c2f33;
+  --text-color: #f5f6fa;
+  --accent-color: #7289da;
+  --secondary-bg-color: #2c2f33;
+  --nav-link-border-color: var(--accent-color);
+  --nav-link-hover-shadow: var(--accent-color);
+}
+
 /* Reset styles */
 * {
   margin: 0;
@@ -9,8 +29,8 @@
 
 /* Base styling */
 body {
-  background-color: #fff7fa;  /* Soft pastel background */
-  color: #44385c;             /* Deep playful purple text */
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Comic Neue', cursive, sans-serif;
   line-height: 1.6;
   padding: 20px;
@@ -33,7 +53,6 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Replace with your preferred background image (diagrams, equations, etc.) */
   background-image: url('https://via.placeholder.com/1920x1080.png?text=Quantum+Diagrams');
   background-size: cover;
   background-attachment: fixed;
@@ -62,7 +81,7 @@ header {
 /* Terminal-style prompt for typewriter lines */
 .terminal-line::before {
   content: "> ";
-  color: #ff6fcf;
+  color: var(--accent-color);
   font-weight: bold;
 }
 
@@ -70,7 +89,7 @@ header {
 h1 {
   font-size: 3em;
   margin-bottom: 0.3em;
-  color: #ff6fcf;
+  color: var(--accent-color);
   animation: playfulBounce 1s ease-out forwards;
 }
 
@@ -99,9 +118,9 @@ nav {
 .nav-links a {
   margin: 0 15px;
   text-decoration: none;
-  color: #44385c;
+  color: var(--text-color);
   font-weight: bold;
-  border: 2px solid #ff6fcf;
+  border: 2px solid var(--nav-link-border-color);
   border-radius: 5px;
   padding: 10px 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
@@ -112,15 +131,15 @@ nav {
 
 .nav-links a:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 15px #ff6fcf;
-  text-shadow: 0 0 5px #ff6fcf;
+  box-shadow: 0 0 15px var(--nav-link-hover-shadow);
+  text-shadow: 0 0 5px var(--nav-link-hover-shadow);
 }
 
 /* Sections */
 section {
   margin-bottom: 3rem;
   padding: 20px;
-  background-color: #fff3fc;
+  background-color: var(--secondary-bg-color);
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
   animation: playfulFadeIn 1.5s ease-out forwards;
@@ -128,7 +147,7 @@ section {
 
 section h2 {
   font-size: 2em;
-  color: #ff6fcf;
+  color: var(--accent-color);
   margin-bottom: 0.5em;
 }
 
@@ -183,7 +202,7 @@ footer {
 .cursor {
   display: inline-block;
   width: 1ch;
-  border-bottom: 2px solid #ff6fcf;
+  border-bottom: 2px solid var(--accent-color);
   margin-left: 2px;
   animation: blink 1s steps(1) infinite;
   animation-delay: 0s !important;
@@ -200,7 +219,7 @@ footer {
 /* Floating Math Symbols */
 .floating-symbol {
   position: fixed;
-  color: #ff6fcf;
+  color: var(--accent-color);
   font-size: 1.5em;
   pointer-events: none;
   z-index: 9998;
@@ -236,11 +255,11 @@ footer {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #fff7fa;  /* Fully opaque pastel background */
+  background-color: var(--bg-color);  /* Fully opaque pastel background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Sits above everything else */
+  z-index: 10000;
 }
 
 #loader.hidden {
@@ -249,7 +268,7 @@ footer {
 
 #loader-text {
   font-family: 'Comic Neue', cursive, sans-serif;
-  color: #ff6fcf;  /* Pink font color */
+  color: var(--accent-color);
   font-size: 1.5em;
   text-align: center;
 }
@@ -274,9 +293,9 @@ footer {
 .explosion {
   position: fixed;
   font-size: 1.5em;
-  color: #ff6fcf; /* Pink explosion text */
+  color: var(--accent-color);
   pointer-events: none;
-  z-index: 9999; /* Ensure particles appear above other content */
+  z-index: 9999;
   transform: translate(-50%, -50%);
   animation: explosion-animation 0.6s forwards;
 }
@@ -292,13 +311,13 @@ footer {
   }
 }
 
-/* Theme Toggler Button (if needed) */
+/* Theme Toggler Button */
 #theme-toggler {
   position: fixed;
   top: 20px;
   right: 20px;
-  background-color: #ff6fcf;
-  color: #fff7fa;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
   border: none;
   padding: 10px 15px;
   border-radius: 5px;
@@ -308,7 +327,7 @@ footer {
 }
 #theme-toggler:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 10px #ff6fcf;
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* Random Math Quote Widget Styling */
@@ -316,7 +335,7 @@ footer {
   margin-top: 2rem;
   font-size: 1.2em;
   font-style: italic;
-  color: #ff6fcf;
+  color: var(--accent-color);
 }
 
 /* Responsive styling */

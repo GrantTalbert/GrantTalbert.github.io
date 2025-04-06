@@ -1,42 +1,53 @@
-/* Wall Background */
+/* WALL CONTAINER */
 .wall {
-    background: url('/assets/images/wood-background.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background: url('/assets/images/wood-background.jpg') repeat;
+    background-size: auto;
+    min-height: 100vh;
     padding: 2rem;
+    position: relative;
   }
   
-  /* Header for the Wall */
+  /* HEADER ON THE WALL */
   .wall-header {
     text-align: center;
     color: var(--accent-color);
     margin-bottom: 2rem;
   }
   
-  /* Notes Grid */
+  /* STICKY NOTES GRID */
   .notes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
   }
   
-  /* Each Sticky Note */
+  /* INDIVIDUAL STICKY NOTES */
   .note {
     position: relative;
-    background: url('/assets/images/background-math/paper-texture.png') no-repeat center center;
-    background-size: cover;
-    padding: 1rem 1rem 1rem 3rem; /* extra left padding for red margin if needed */
-    border: 2px dashed var(--accent-color);
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    background: #fffbcc;  /* Soft sticky note color */
+    padding: 1rem 1rem 1rem 2rem;  /* Extra left padding if needed */
+    border: 1px dashed var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
+    max-width: 300px;
+    margin: 0 auto;
   }
   
-  /* Random rotations for variety */
-  .note:nth-child(2n) { transform: rotate(2deg); }
-  .note:nth-child(3n) { transform: rotate(-3deg); }
-  .note:hover { transform: rotate(0deg) scale(1.02); }
+  /* Random slight rotations for a natural look */
+  .note:nth-child(odd) {
+    transform: rotate(-3deg);
+  }
+  .note:nth-child(even) {
+    transform: rotate(3deg);
+  }
+  .note:hover {
+    transform: scale(1.05);
+  }
   
-  /* Tape effect on sticky notes */
+  /* Simulated Tape on the Bottom of the Sticky Note */
   .note::after {
     content: "";
     position: absolute;
@@ -44,28 +55,37 @@
     left: 10%;
     width: 80%;
     height: 5px;
-    background: url('/assets/images/background-math/tape.png') repeat-x center;
-    background-size: contain;
+    background: rgba(128, 128, 128, 0.6); /* Gray tape with partial transparency */
   }
   
-  /* Whiteboard Element */
+  /* WHITEBOARDS CONTAINER */
+  .whiteboards {
+    max-width: 800px;
+    margin: 2rem auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end; /* Align whiteboards to the right */
+    gap: 1.5rem;
+  }
+  
+  /* INDIVIDUAL WHITEBOARD */
   .whiteboard {
     position: relative;
-    background: url('/assets/images/background-math/whiteboard-texture.png') no-repeat center center;
-    background-size: cover;
-    padding: 1rem;
-    border: 2px solid #ccc;
+    background: #fff; /* Plain white background for now */
+    padding: 0.8rem;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 280px;
+    transform: rotate(-5deg); /* Slight tilt */
   }
   
-  /* Whiteboard text styling */
+  /* Whiteboard Text Styling */
   .whiteboard-text {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     text-align: left;
     font-family: 'Comic Neue', cursive, sans-serif;
-    font-size: 1em;
+    font-size: 0.9em;
     color: var(--text-color);
   }
   
-  /* Optional: Add CSS animations to reveal elements on scroll (via IntersectionObserver or CSS keyframes) */  

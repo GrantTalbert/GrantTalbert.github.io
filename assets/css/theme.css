@@ -1,0 +1,35 @@
+:root {
+    --bg-color: #fff7fa;             /* Soft pastel background */
+    --text-color: #44385c;            /* Deep playful purple text */
+    --accent-color: #ff6fcf;          /* Vibrant pink accent */
+    --secondary-bg-color: #fff3fc;     /* Light pastel section background */
+    --nav-link-border-color: var(--accent-color);
+    --nav-link-hover-shadow: var(--accent-color);
+    --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+    --stars-opacity: 0.8;
+    --stars-tint: rgb(247, 199, 243); /* a light white tint */
+}
+  
+.theme-quantum {
+    --bg-color: #1f2128;             /* Dark, almost cosmic background */
+    --text-color: #e0e0e0;            /* Light grey text for contrast */
+    --accent-color: #7289da;          /* Muted blue accent */
+    --secondary-bg-color: #2a2d36;     /* Deep secondary background */
+    --nav-link-border-color: var(--accent-color);
+    --nav-link-hover-shadow: var(--accent-color);
+    --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --stars-opacity: 0.2;
+    --stars-tint: rgb(255, 255, 255);
+}
+  
+.theme-yoneda {
+    --bg-color: #ffeef8;             /* Warm, soft pastel background */
+    --text-color: #6b0057;            /* Rich, deep magenta text */
+    --accent-color: #ff66b2;          /* Vibrant pink accent */
+    --secondary-bg-color: #ffcdea;     /* Complementary section background */
+    --nav-link-border-color: var(--accent-color);
+    --nav-link-hover-shadow: var(--accent-color);
+    --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
+    --stars-opacity: 1;
+    --stars-tint: rgb(253, 145, 253);
+}

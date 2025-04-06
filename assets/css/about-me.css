@@ -82,6 +82,18 @@
   height: auto;      /* Allow natural height */
   object-fit: cover; /* or 'contain' if preferred */
 }
+/* Pseudo-element to tint the overlay image */
+.whiteboard .overlay::after {
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--whiteboard-text); /* Tint color from your theme */
+  mix-blend-mode: color; /* Applies the hue and saturation of the tint */
+  pointer-events: none;
+  z-index: 3;
+}
 .whiteboard .whiteboard-content {
   grid-area: 1 / 1 / -1 / -1;
   position: relative;

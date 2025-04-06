@@ -1,33 +1,33 @@
-/* WALL CONTAINER */
+/* Wall Container */
 .wall {
+    position: relative; /* Make whiteboards absolute relative to this container */
     background: url('/assets/images/wood-background.jpg') repeat;
     background-size: auto;
     min-height: 100vh;
     padding: 2rem;
-    position: relative;
   }
   
-  /* HEADER ON THE WALL */
+  /* Header */
   .wall-header {
     text-align: center;
     color: var(--accent-color);
     margin-bottom: 2rem;
   }
   
-  /* STICKY NOTES GRID */
+  /* Sticky Notes Grid */
   .notes-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    gap: 1rem;
     max-width: 800px;
     margin: 0 auto;
   }
   
-  /* INDIVIDUAL STICKY NOTES */
+  /* Sticky Note */
   .note {
     position: relative;
-    background: #fffbcc;  /* Soft sticky note color */
-    padding: 1rem 1rem 1rem 2rem;  /* Extra left padding if needed */
+    background: #fffbcc;  /* Sticky note color */
+    padding: 1rem 1rem 1rem 2rem;
     border: 1px dashed var(--accent-color);
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
@@ -36,7 +36,6 @@
     margin: 0 auto;
   }
   
-  /* Random slight rotations for a natural look */
   .note:nth-child(odd) {
     transform: rotate(-3deg);
   }
@@ -47,7 +46,7 @@
     transform: scale(1.05);
   }
   
-  /* Simulated Tape on the Bottom of the Sticky Note */
+  /* Tape effect for sticky notes */
   .note::after {
     content: "";
     position: absolute;
@@ -55,32 +54,22 @@
     left: 10%;
     width: 80%;
     height: 5px;
-    background: rgba(128, 128, 128, 0.6); /* Gray tape with partial transparency */
+    background: rgba(128, 128, 128, 0.6);
   }
   
-  /* WHITEBOARDS CONTAINER */
-  .whiteboards {
-    max-width: 800px;
-    margin: 2rem auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end; /* Align whiteboards to the right */
-    gap: 1.5rem;
-  }
-  
-  /* INDIVIDUAL WHITEBOARD */
+  /* Whiteboard Styling */
   .whiteboard {
-    position: relative;
-    background: #fff; /* Plain white background for now */
+    background: #fff;  /* White background for whiteboards */
     padding: 0.8rem;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     max-width: 280px;
+    /* The position will be set manually with inline styles */
     transform: rotate(-5deg); /* Slight tilt */
   }
   
-  /* Whiteboard Text Styling */
+  /* Whiteboard Text */
   .whiteboard-text {
     margin-top: 0.5rem;
     text-align: left;

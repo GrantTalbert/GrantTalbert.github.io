@@ -37,3 +37,13 @@
     50% { opacity: 0; }
   }
   
+  /* New fade-out and hidden classes */
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  

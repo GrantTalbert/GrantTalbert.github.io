@@ -394,19 +394,31 @@ footer {
   }
 }
 
+/* parallax stars */
 #parallax-stars {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--stars-tint) url('/assets/images/stars.png') repeat;
-  background-blend-mode: overlay;  /* Blend the tint with your star image */
-  background-size: cover;  /* Adjust as needed */
+  background: url('/assets/images/stars.png') repeat;
+  background-size: cover; /* or adjust as needed */
   pointer-events: none;
-  z-index: -1; /* Behind your content */
-  opacity: var(--stars-opacity);
+  z-index: -1;
   animation: moveStars 60s linear infinite;
+}
+
+#parallax-stars::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--stars-tint);
+  mix-blend-mode: multiply;
+  opacity: var(--stars-opacity);
+  pointer-events: none;
 }
 
 @keyframes moveStars {

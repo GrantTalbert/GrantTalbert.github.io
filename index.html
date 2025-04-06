@@ -57,5 +57,54 @@
         }, 1000);
       });
     </script>
+
+    <!-- Typewriter effect for tagline -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const tagline = document.getElementById('tagline');
+      const text = tagline.innerText;
+      tagline.innerText = "";
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          tagline.innerText += text.charAt(i);
+          i++;
+          setTimeout(type, 50);
+        }
+      }
+      type();
+    });
+  </script>
+
+  <!-- Scroll reveal for elements with class "reveal" -->
+  <script>
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    });
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+  
+  <!-- Floating math symbols effect -->
+  <script>
+    const mathSymbols = ['⊗', '∴', '∵', '∞', '∫', '∑', '∏'];
+    setInterval(() => {
+      const symbol = document.createElement('div');
+      symbol.classList.add('floating-symbol');
+      symbol.innerText = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
+      symbol.style.left = Math.random() * window.innerWidth + 'px';
+      symbol.style.top = window.innerHeight + 'px';
+      document.body.appendChild(symbol);
+      setTimeout(() => {
+        symbol.remove();
+      }, 4000);
+    }, 1000);
+  </script>
+  
 </body>
 </html>

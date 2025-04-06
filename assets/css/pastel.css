@@ -16,9 +16,11 @@ body {
   padding: 20px;
   overflow-x: hidden;
   position: relative;
+  /* Custom star cursor */
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23ff6fcf" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z"/></svg>') 12 12, auto;
 }
 
-/* Background watermark with a quantum/diagram vibe */
+/* Background watermark with a quantum/diagram vibe (parallax effect) */
 body::before {
   content: "";
   position: fixed;
@@ -26,9 +28,10 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Replace the URL below with your preferred background image */
+  /* Replace the URL below with your preferred image of diagrams, equations, etc. */
   background-image: url('https://via.placeholder.com/1920x1080.png?text=Quantum+Diagrams');
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
   opacity: 0.05;
   z-index: -2;
@@ -163,26 +166,37 @@ footer {
   }
 }
 
-/* Star particle styling */
-.star {
+/* Floating math symbols */
+.floating-symbol {
   position: fixed;
   color: #ff6fcf;
+  font-size: 1.5em;
   pointer-events: none;
-  font-size: 1em;
-  z-index: 9999;
+  z-index: 9998;
   opacity: 1;
-  animation: starFade 1s forwards;
+  animation: floatUp 4s linear forwards;
 }
 
-@keyframes starFade {
+@keyframes floatUp {
   0% {
     opacity: 1;
-    transform: scale(1) translateY(0px);
+    transform: translateY(0) scale(1);
   }
   100% {
     opacity: 0;
-    transform: scale(0.5) translateY(-20px);
+    transform: translateY(-100vh) scale(0.5);
   }
+}
+
+/* Scroll reveal: start hidden, then revealed when in view */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Extra animated text for paragraphs (if needed) */

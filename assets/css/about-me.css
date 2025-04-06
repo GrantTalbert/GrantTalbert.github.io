@@ -160,15 +160,3 @@ width: 100%;
 height: auto;
 object-fit: cover;
 }
-
-.overlay1 {
-  background-color: var(--whiteboard-text);
-  -webkit-mask-image: url('/assets/images/background-math/Fldeqns.png');
-  -webkit-mask-size: cover;
-  -webkit-mask-repeat: repeat;
-  -webkit-mask-position: 0 0;
-  mask-image: url('/assets/images/background-math/Fldeqns.png');
-  mask-size: cover;
-  mask-repeat: repeat;
-  mask-position: 0 0;
-}

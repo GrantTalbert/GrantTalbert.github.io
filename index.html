@@ -3,24 +3,174 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Grant Talbert</title>
-  <link rel="stylesheet" href="assets/css/pastel.css">
+  <title>Kira Noether | boba.dev</title>
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* Reset styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Base styling */
+    body {
+      background-color: #fff7fa;  /* Soft pastel background */
+      color: #44385c;             /* Deep playful purple text */
+      font-family: 'Comic Neue', cursive, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.3em;
+      color: #ff6fcf; /* Vibrant pastel pink */
+      animation: playfulBounce 1s ease-out forwards;
+    }
+
+    .tagline {
+      font-size: 1.2em;
+      margin-bottom: 1.5em;
+      animation: playfulFadeIn 1.5s ease-out forwards;
+    }
+
+    nav {
+      margin-bottom: 2rem;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #44385c;
+      font-weight: bold;
+      border-bottom: 2px solid transparent;
+      transition: border-bottom 0.3s;
+      animation: playfulSlideIn 1.5s ease-out forwards;
+    }
+
+    nav a:hover {
+      border-bottom: 2px solid #ff6fcf;
+    }
+
+    section {
+      margin-bottom: 3rem;
+      padding: 20px;
+      background-color: #fff3fc;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+      animation: playfulFadeIn 1.5s ease-out forwards;
+    }
+
+    section h2 {
+      font-size: 2em;
+      color: #ff6fcf;
+      margin-bottom: 0.5em;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #c097d0;
+      margin-top: 2rem;
+    }
+
+    /* Keyframe animations */
+    @keyframes playfulBounce {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.3);
+        opacity: 1;
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes playfulFadeIn {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes playfulSlideIn {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Responsive styling */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.5em;
+      }
+      .tagline, p {
+        font-size: 1em;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>Hi, I'm Grant Talbert!</h1>
-    <p class="animated-text">
-      I'm like super passionate about math and physics and stuff. I'm super into QFT, High-Energy Physics, (Higher) Category Theory, and whatever parts of math qualify as "abstract nonsense".
-    </p>
-    <p class="animated-text">
-      Welcome to my cozy corner of the internet! Here's where I share my projects, research (when I start), my notes from all my readings, and my passion for learning!
-    </p>
-    <div class="nav-links">
-      <a href="about/">About</a>
-      <a href="projects/">Projects</a>
-      <a href="contact/">Contact</a>
-    </div>
+    <header>
+      <h1 class="animated-text">Hi, I'm Kira Noether!</h1>
+      <p class="tagline animated-text">
+        Where math, physics, and pastel chaos collide.
+      </p>
+      <nav>
+        <a href="about/">About</a>
+        <a href="projects/">Projects</a>
+        <a href="contact/">Contact</a>
+      </nav>
+    </header>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a passionate math and physics student diving deep into Quantum Field Theory, High-Energy Physics, and Higher Category Theory. I love unraveling abstract mysteries while keeping things playful and cozy.
+      </p>
+    </section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>
+        Check out my GitHub for LaTeX templates, whimsical mods blending tensor algebra with Minecraft magic, and experimental projects that explore the boundaries of chaos and creativity.
+      </p>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        Got a question about math, physics, or my latest pastel adventure? Feel free to drop me a line!
+      </p>
+    </section>
+    <footer>
+      <p>&copy; 2025 Kira Noether. Made with pastel love and chaotic brilliance.</p>
+    </footer>
   </div>
 </body>
 </html>

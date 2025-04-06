@@ -199,9 +199,21 @@
   
   <!-- Dynamic Theme Switching-->
    <script>
+    function updateCursorColor() {
+      const accentColor = getComputedStyle(document.body).getPropertyValue('--accent-color').trim();
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='${accentColor}' viewBox='0 0 24 24'><path d='M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z'/></svg>`;
+      const encodedSVG = encodeURIComponent(svg);
+      document.body.style.cursor = `url("data:image/svg+xml,${encodedSVG}") 12 12, auto`;
+    }
+
     document.addEventListener('DOMContentLoaded', function(){
+      // Set initial cursor
+      updateCursorColor();
+
       document.getElementById('theme-toggler').addEventListener('click', function(){
         document.body.classList.toggle('alt-theme');
+        // Update cursor color after toggling theme
+        updateCursorColor();
       });
     });
    </script>

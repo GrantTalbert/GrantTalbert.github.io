@@ -3,6 +3,8 @@
     --text-color: #44385c;            /* Deep playful purple text */
     --accent-color: #ff6fcf;          /* Vibrant pink accent */
     --secondary-bg-color: #fff3fc;     /* Light pastel section background */
+    --sticky-bg: #fffbcc;             /* Sticky note background */
+    --wood-bg: url('/assets/images/wood-default.jpeg');
     --nav-link-border-color: var(--accent-color);
     --nav-link-hover-shadow: var(--accent-color);
     --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
@@ -15,6 +17,8 @@
     --text-color: #e0e0e0;            /* Light grey text for contrast */
     --accent-color: #7289da;          /* Muted blue accent */
     --secondary-bg-color: #2a2d36;     /* Deep secondary background */
+    --sticky-bg: #f0e6d6; /* a softer note color for dark background */
+    --wood-bg: url('/assets/images/wood-dark.jpeg');
     --nav-link-border-color: var(--accent-color);
     --nav-link-hover-shadow: var(--accent-color);
     --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
@@ -27,6 +31,8 @@
     --text-color: #6b0057;            /* Rich, deep magenta text */
     --accent-color: #ff66b2;          /* Vibrant pink accent */
     --secondary-bg-color: #ffcdea;     /* Complementary section background */
+    --sticky-bg: #fffbcc; /* keep same as default or adjust as needed */
+    --wood-bg: url('/assets/images/wood-yoneda.jpeg');
     --nav-link-border-color: var(--accent-color);
     --nav-link-hover-shadow: var(--accent-color);
     --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);

@@ -181,18 +181,19 @@
       if (progress >= 100) {
         progress = 100;
         clearInterval(loadingInterval);
-        // Short delay before updating final message
+        // Short delay before updating to final message
         setTimeout(() => {
           loaderText.innerText = "The answer is 42";
-          // Start the final fade-out animation on loader text
-          loaderText.classList.add('final-fade-out');
-          // Start typewriter and scroll reveal animations concurrently
-          startTypewriter();
-          startScrollReveal();
-          // After fade-out animation is complete, hide the loader overlay
+          // Wait a bit so the final message is visible before starting fade-up
           setTimeout(() => {
-            loader.classList.add('hidden');
-          }, 1000); // Duration matches finalFadeOut animation (1s)
+             loaderText.classList.add('fade-up');
+             startTypewriter();
+             startScrollReveal();
+             // Hide the loader after the fade-up animation completes
+             setTimeout(() => {
+                loader.classList.add('hidden');
+             }, 800); // Matches the fade-up animation duration
+          }, 500); // Delay to let the final message stay on screen
         }, 300);
       } else {
         loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;

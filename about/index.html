@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booting Into HYPERION Mode</title>
+
+  <link rel="stylesheet" href="../assets/css/theme.css" />
+  <link rel="stylesheet" href="../assets/css/pastel.css" />
+  <link rel="stylesheet" href="../assets/css/effects/loader-about-me.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a href="/" class="back-button">&larr;</a>
-  <div class="container">
-    <h1 class="animated-text">About Me</h1>
-    <p class="animated-text">
-      Hi, I'm Grant! I'm an undergrad at BU, and I double major in physics and math. I intend to go to grad school in physics, and I'm mostly interested in mathematical QFT and high-energy physics. I also love math, and am currently very interested in higher category theory. My interests in math change every 2-3 months though, but in general I'm interested in some of the more abstract areas of math.
-    </p>
-    <p class="animated-text">
-      I spend a lot of my free time learning math and physics. I genuinely love learning about things I'm interested in, and will happily sit down and work through a textbook for fun. I also have very ambitious reading plans for the next two years.
-    </p>
-    <p class="animated-text">
-      I'm also very fluent in LaTeX, and have created my own package to manage my title pages, and have many different templates for my notes and assignments. I also have a suite of scripts that streamline my LaTeX workflow - both for note-taking and homework assignments. I've also coded my own Minecraft mod, which is fittingly named "good mod", and I use arch (btw).
-    </p>
+  <div id="terminal-loader">
+    <div id="terminal-content"></div>
   </div>
+
+  <div id="main-content">
+    <header>
+      <h1>Welcome to Hyperion's Universe</h1>
+      <nav>
+        <a href="about/">About</a>
+        <a href="projects/">Projects</a>
+        <a href="contact/">Contact</a>
+      </nav>
+    </header>
+    <section>
+      <h2>About Me</h2>
+      <p>
+        I'm Hyperion in full chaotic mode! Dive into a world of abstract math, endless boba, and cosmic vibes.
+      </p>
+    </section>
+    <footer>
+      <p>&copy; 2025 Grant Talbert. Made with love and commutative diagrams.</p>
+    </footer>
+  </div>
+
+  <script src="../assets/js/loader-about-me.js"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Loader Overlay -->
+  <!-- Loader Overlay: This element should cover the whole viewport -->
   <div id="loader">
     <div id="loader-text">Calculating the answer to life, the universe, and everything - 0% complete</div>
   </div>
@@ -74,7 +74,8 @@
       let i = 0;
       function type() {
         if (i < text.length) {
-          element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*?<\/span>/g, '') + text.charAt(i) + '<span class="cursor">&nbsp;</span>';
+          element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*?<\/span>/g, '') 
+                                + text.charAt(i) + '<span class="cursor">&nbsp;</span>';
           i++;
           setTimeout(type, delay);
         } else {
@@ -165,8 +166,7 @@
     ];
     document.addEventListener("DOMContentLoaded", () => {
       const quoteEl = document.getElementById("math-quote");
-      // Add the custom quote to the array
-      mathQuotes.push("HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOO!!!!!!!! - meeeeeee");
+      // Do NOT push the loader final message into the math quotes
       quoteEl.innerText = mathQuotes[Math.floor(Math.random() * mathQuotes.length)];
     });
   </script>
@@ -185,7 +185,7 @@
           // Trigger fade-up on loader text
           loaderText.classList.add('fade-up');
           setTimeout(() => {
-            // After fade-up, update text to final message and animate fade-in
+            // Update loader text to final message (your custom quote)
             loaderText.innerText = "HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOO!!!!!!!! - meeeeeee";
             loaderText.classList.remove('fade-up');
             loaderText.classList.add('final-fade');

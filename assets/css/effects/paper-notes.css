@@ -1,26 +1,4 @@
-.paper-wall {
-    max-width: 900px;
-    margin: 3rem auto;
-    padding: 2rem;
-    background: var(--secondary-bg-color);
-    border-radius: 15px;
-    box-shadow: var(--section-shadow);
-    position: relative;
-}
-  
-.paper-wall h2 {
-    text-align: center;
-    color: var(--accent-color);
-    margin-bottom: 1.5rem;
-}
 
-  /* Add different rotations for variety */
-.note:nth-child(2n) {
-    transform: rotate(2deg);
-}
-.note:nth-child(3n) {
-    transform: rotate(-3deg);
-}
 /* Paper Board Container */
 .notes-grid  {
     max-width: 1200px;
@@ -50,11 +28,19 @@
     transition: transform 0.3s;
 }
   
-  .note:hover {
+.note:hover {
     transform: scale(1.02);
 }
+
+/* Add different rotations for variety */
+.note:nth-child(2n) {
+    transform: rotate(2deg);
+}
+.note:nth-child(3n) {
+    transform: rotate(-3deg);
+}
   
-  /* Red margin line inside each note */
+/* Red margin line inside each note */
 .note::before {
     content: "";
     position: absolute;
@@ -65,7 +51,7 @@
     background: red;
 }
   
-  /* Thumbtack at the top (you can retexture later) */
+/* Thumbtack at the top (you can retexture later) */
 .note::after {
     content: "";
     position: absolute;

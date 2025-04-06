@@ -47,13 +47,12 @@ const lines = [
         lineElem.appendChild(cursor);
         setTimeout(() => {
           // Remove the cursor and animate the line floating up
-          lineElem.removeChild(cursor);
-          lineElem.style.transition = "transform 0.8s ease, opacity 0.8s ease";
-          lineElem.style.transform = "translateY(-30px)";
-          lineElem.style.opacity = "0";
+          const loaderLine = lineElem;
+          loaderLine.style.transition = "transform 0.8 ease";
+          loaderLine.style.transform = "translateY(-30px)";
           setTimeout(() => {
             // Remove the line after the animation, then call the callback to start next line
-            terminalContent.removeChild(lineElem);
+            terminalContent.removeChild(loaderLine);
             callback();
           }, 800);
         }, 800);

@@ -1,3 +1,4 @@
+/* Terminal Loader Container */
 #terminal-loader {
     position: fixed;
     top: 0;
@@ -17,40 +18,25 @@
     text-align: center;
   }
   
-  /* Log container for finished lines */
+  /* Container for finished lines */
   #terminal-log {
     width: 100%;
     max-width: 80%;
     text-align: center;
-    /* Optional: if you want a scrollable log area when many lines accumulate */
     overflow-y: auto;
-    /* Set a minimum height to ensure it's visible */
     min-height: 50px;
   }
   
-  /* Container for the current line being typed */
+  /* Container for the line currently being typed */
   #current-line-container {
     width: 100%;
     max-width: 80%;
     text-align: center;
   }
   
-  /* Each line in the terminal */
+  /* Each line styling */
   .line {
     margin: 0.2em 0;
-  }
-  
-  /* Blinking Cursor */
-  .cursor {
-    display: inline-block;
-    background-color: var(--accent-color);
-    width: 10px;
-    margin-left: 2px;
-    animation: blink 1s steps(2, start) infinite;
-  }
-  
-  @keyframes blink {
-    50% { opacity: 0; }
   }
   
   /* Slide up animation */
@@ -74,4 +60,3 @@
     margin: 0 auto;
     text-align: center;
   }
-  

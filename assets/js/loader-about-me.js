@@ -12,11 +12,10 @@ const lines = [
   let currentLine = 0;
   
   function typeLine(line, callback) {
-    // Create a new line element for the current line
+    // Create a new line element in the current container
     const lineElem = document.createElement("div");
     lineElem.className = "line";
-    // Clear the current container and append the new line element
-    currentContainer.innerHTML = "";
+    currentContainer.innerHTML = "";  // Clear current container
     currentContainer.appendChild(lineElem);
     
     let i = 0;
@@ -25,14 +24,15 @@ const lines = [
         lineElem.innerHTML += line.charAt(i);
         i++;
         
-        // Set default delay
+        // Default typing delay
         let delay = 50;
         
-        // For lines 2,3,4,5 (indexes 1-4): wait extra before typing the last character
+        // For lines 2-5 (indexes 1-4): wait 1 second on the LAST character
         if (i === line.length && currentLine >= 1 && currentLine <= 4) {
           delay = 1000;
         }
-        // For line 6 (index 5): pause before starting "COMMUTING"
+        
+        // For line 6 (index 5): pause before typing "COMMUTING"
         if (currentLine === 5) {
           const commutingIndex = line.indexOf("COMMUTING");
           if (i === commutingIndex) {
@@ -42,18 +42,13 @@ const lines = [
         
         setTimeout(typeChar, delay);
       } else {
-        // Line finished typing: append a blinking cursor for 0.8 seconds
-        const cursor = document.createElement("span");
-        cursor.className = "cursor";
-        lineElem.appendChild(cursor);
+        // Line finished typing. Wait 0.8 seconds, then animate it sliding up.
         setTimeout(() => {
-          lineElem.removeChild(cursor);
-          // Slide the current line up to signal completion (without fading out)
           lineElem.style.animation = "slideUp 0.8s ease forwards";
+          // After the slide-up animation, move this line to the log.
           setTimeout(() => {
-            // After sliding, move the finished line to the terminal log and clear the current container
             terminalLog.appendChild(lineElem);
-            currentContainer.innerHTML = "";
+            currentContainer.innerHTML = ""; // Clear for next line
             callback();
           }, 800);
         }, 800);
@@ -66,12 +61,12 @@ const lines = [
     if (currentLine < lines.length) {
       typeLine(lines[currentLine], () => {
         currentLine++;
-        // Optionally, scroll the log if needed
+        // Optionally, scroll the log if it overflows
         terminalLog.scrollTop = terminalLog.scrollHeight;
         setTimeout(runTerminal, 500);
       });
     } else {
-      // After all lines are typed, wait 1 second, then fade out the loader
+      // Once all lines are typed, wait a second, then fade out the loader.
       setTimeout(() => {
         const loader = document.getElementById("terminal-loader");
         loader.style.transition = "opacity 0.8s ease";
@@ -83,5 +78,5 @@ const lines = [
     }
   }
   
-  runTerminal();
+  runTerminal
   

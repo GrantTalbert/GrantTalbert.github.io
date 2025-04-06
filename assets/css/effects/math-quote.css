@@ -1,0 +1,7 @@
+/* Random Math Quote Widget Styling */
+#math-quote {
+    margin-top: 2rem;
+    font-size: 1.2em;
+    font-style: italic;
+    color: var(--accent-color);
+}

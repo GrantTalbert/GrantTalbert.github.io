@@ -1,0 +1,40 @@
+/* Loader Overlay */
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-color);  /* Fully opaque pastel background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+  }
+  
+  #loader.hidden {
+    display: none;
+  }
+  
+  #loader-text {
+    font-family: 'Comic Neue', cursive, sans-serif;
+    color: var(--accent-color);
+    font-size: 1.5em;
+    text-align: center;
+  }
+  
+  /* Fade Up Animation for Loader Text */
+  @keyframes loaderFadeUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+  }
+  
+  #loader-text.fade-up {
+    animation: loaderFadeUp 0.8s forwards;
+}

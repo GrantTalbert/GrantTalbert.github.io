@@ -1,0 +1,25 @@
+.comet {
+    position: fixed;
+    top: -50px;
+    left: -50px;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle, white 0%, var(--accent-color) 80%);
+    border-radius: 50%;
+    box-shadow: 0 0 15px 5px var(--accent-color);
+    opacity: 0.8;
+    pointer-events: none;
+    z-index: 9998;
+    animation: cometAnimation 3s linear forwards;
+  }
+  
+  @keyframes cometAnimation {
+    0% {
+      transform: translate(0, 0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(1500px, 1500px) scale(0.5);
+      opacity: 0;
+    }
+  }

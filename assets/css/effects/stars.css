@@ -1,0 +1,31 @@
+#parallax-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--stars-tint);
+    -webkit-mask-image: url('/assets/images/stars.png');
+    -webkit-mask-size: cover;
+    -webkit-mask-repeat: repeat;
+    -webkit-mask-position: 0 0;
+    mask-image: url('/assets/images/stars.png');
+    mask-size: cover;
+    mask-repeat: repeat;
+    mask-position: 0 0;
+    opacity: var(--stars-opacity);
+    pointer-events: none;
+    z-index: -1;
+    animation: moveStars 60s linear infinite;
+  }
+  
+  @keyframes moveStars {
+    from {
+      -webkit-mask-position: 0 0;
+      mask-position: 0 0;
+    }
+    to {
+      -webkit-mask-position: -1000px -1000px;
+      mask-position: -1000px -1000px;
+    }
+  }

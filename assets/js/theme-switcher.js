@@ -28,20 +28,26 @@ function updateCursorColor() {
     styleElement.innerHTML = `a:hover, button:hover { cursor: ${hoverCursorValue}; }`;
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
-    // Set initial cursor and hover style
-    updateCursorColor();
-  
-    const themeChooser = document.getElementById('theme-chooser');
-    themeChooser.querySelectorAll('button').forEach(button => {
-      button.addEventListener('click', function() {
-        // Remove previously applied theme classes.
-        document.body.classList.remove('theme-quantum', 'theme-yoneda');
-        const theme = this.getAttribute('data-theme');
-        if (theme !== 'default') {
-          document.body.classList.add(`theme-${theme}`);
-        }
-        updateCursorColor();
-      });
+document.addEventListener("DOMContentLoaded", function() {
+  // Check localStorage for a saved theme and apply it
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme && savedTheme !== "default") {
+    document.body.classList.add(`theme-${savedTheme}`);
+  }
+
+  const themeChooser = document.getElementById("theme-chooser");
+  themeChooser.querySelectorAll("button").forEach(button => {
+    button.addEventListener("click", function() {
+      // Remove all theme classes
+      document.body.classList.remove("theme-quantum", "theme-yoneda");
+      const theme = this.getAttribute("data-theme");
+      if (theme !== "default") {
+        document.body.classList.add(`theme-${theme}`);
+      }
+      // Save the selection in localStorage
+      localStorage.setItem("theme", theme);
+      updateCursorColor(); // if needed, to update dynamic cursor
     });
+  });
 });
+  

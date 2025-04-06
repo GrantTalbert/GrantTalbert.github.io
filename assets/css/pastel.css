@@ -8,6 +8,7 @@
   --secondary-bg-color: #fff3fc;     /* Section background */
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
+  --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
 }
 
 /* Define alternative (dark) theme variables */
@@ -15,9 +16,10 @@
   --bg-color: #2c2f33;
   --text-color: #f5f6fa;
   --accent-color: #7289da;
-  --secondary-bg-color: #2c2f33;
+  --secondary-bg-color: #3b3f44;
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
+  --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 /* Reset styles */
@@ -141,7 +143,7 @@ section {
   padding: 20px;
   background-color: var(--secondary-bg-color);
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+  box-shadow: var(--section-shadow);
   animation: playfulFadeIn 1.5s ease-out forwards;
 }
 

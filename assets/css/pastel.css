@@ -8,8 +8,8 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
-  --stars-opacity: 1;
-  --stars-tint: rgb(248, 146, 240); /* a light white tint */
+  --stars-opacity: 0.8;
+  --stars-tint: rgb(250, 164, 243); /* a light white tint */
 }
 
 .theme-quantum {
@@ -20,7 +20,7 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  --stars-opacity: 0.2;
+  --stars-opacity: 0.4;
   --stars-tint: rgb(60, 167, 255);
 }
 
@@ -33,7 +33,7 @@
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
   --stars-opacity: 1;
-  --stars-tint: rgba(255, 255, 255, 1);
+  --stars-tint: rgb(219, 219, 219);
 }
 
 
@@ -400,8 +400,9 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/assets/images/stars.png') repeat;
-  background-size: contain;
+  background: var(--stars-tint) url('/assets/images/stars.png') repeat;
+  background-blend-mode: multiply;  /* Blend the tint with your star image */
+  background-size: cover;  /* Adjust as needed */
   pointer-events: none;
   z-index: -1; /* Behind your content */
   opacity: var(--stars-opacity);

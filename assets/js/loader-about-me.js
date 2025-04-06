@@ -11,46 +11,47 @@ document.addEventListener("DOMContentLoaded", function() {
     const terminalLog = document.getElementById("terminal-log");
     const currentContainer = document.getElementById("terminal-line-container");
     let currentLine = 0;
+    let offset = 0; // tracks cumulative height of finished lines
   
     function typeLine(line, callback) {
-      // Create a new line element in the current container
+      // Create a new line element for the current line
       const lineElem = document.createElement("div");
       lineElem.className = "line";
-      currentContainer.innerHTML = "";  // Clear the current container
+      currentContainer.innerHTML = "";
       currentContainer.appendChild(lineElem);
-      
+  
       let i = 0;
       function typeChar() {
         if (i < line.length) {
           lineElem.innerHTML += line.charAt(i);
           i++;
-          
-          // Default typing delay
-          let delay = 50;
-          
-          // For lines 2-5 (indexes 1-4): wait extra on the LAST character
-          if (i === line.length && currentLine >= 1 && currentLine <= 4) {
+  
+          let delay = 10;
+          // For lines 2-5 (indexes 1-4): extra delay on the last character
+          if (i === line.length - 1 && currentLine >= 1 && currentLine <= 4) {
             delay = 1000;
           }
-          // For line 6 (index 5): pause before typing "COMMUTING"
+          // For line 6 (index 5): extra pause before "COMMUTING"
           if (currentLine === 5) {
-            const commutingIndex = line.indexOf("COMMUTING");
+            const commutingIndex = line.indexOf("COMMUTING") - 2;
             if (i === commutingIndex) {
               delay = 1500;
             }
           }
-          
           setTimeout(typeChar, delay);
         } else {
-          // Line finished typing. Wait 0.8 seconds, then animate it sliding up.
+          // After finishing typing, wait 0.8 seconds then slide up the log container.
           setTimeout(() => {
-            lineElem.style.animation = "slideUp 0.8s ease forwards";
-            // After the slide-up animation, move this line to the log.
-            setTimeout(() => {
-              terminalLog.appendChild(lineElem);
-              currentContainer.innerHTML = ""; // Clear for next line
-              callback();
-            }, 800);
+            // Append the finished line to the terminal log.
+            terminalLog.appendChild(lineElem);
+            currentContainer.innerHTML = ""; // Clear current container.
+            // Calculate the height of this finished line.
+            const lineHeight = lineElem.offsetHeight;
+            offset += lineHeight;
+            // Animate the entire terminal log container upward by the cumulative offset.
+            terminalLog.style.transition = "transform 0.8s ease";
+            terminalLog.style.transform = `translateY(-${offset}px)`;
+            callback();
           }, 800);
         }
       }
@@ -61,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function() {
       if (currentLine < lines.length) {
         typeLine(lines[currentLine], () => {
           currentLine++;
-          // Optionally, scroll the log if needed.
+          // Scroll the log container if needed.
           terminalLog.scrollTop = terminalLog.scrollHeight;
           setTimeout(runTerminal, 500);
         });
       } else {
-        // All lines typed—fade out the loader and then hide it.
+        // After all lines are typed, fade out the loader.
         setTimeout(() => {
           const loader = document.getElementById("terminal-loader");
           loader.style.transition = "opacity 0.8s ease";

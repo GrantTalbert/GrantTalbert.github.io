@@ -10,10 +10,9 @@
 <body>
   <div class="container">
     <header>
-      <h1 id="typed-title" class="terminal-line">Hi, I'm Grant Talbert!</h1>
-      <p id="typed-tagline" class="terminal-line">
-        math, physics, and a friendly introduction to abstract nonsense
-      </p>
+      <!-- Terminal-style typewriter lines with prompt and blinking underline cursor -->
+      <h1 id="typed-title" class="terminal-line"></h1>
+      <p id="typed-tagline" class="terminal-line"></p>
       <nav class="nav-links">
         <a href="about/">About</a>
         <a href="projects/">Projects</a>
@@ -42,53 +41,53 @@
       <p>&copy; 2025 Grant Talbert. Made with love~</p>
     </footer>
   </div>
-
-    <!-- Star particle effect script -->
-    <script>
-      document.addEventListener('mousemove', function(e) {
-        const star = document.createElement('div');
-        star.classList.add('star');
-        star.innerText = '★';
-        star.style.left = e.clientX + 'px';
-        star.style.top = e.clientY + 'px';
-        document.body.appendChild(star);
-        setTimeout(() => {
-          star.remove();
-        }, 1000);
-      });
-    </script>
-
-    <!-- Typewriter effect for tagline -->
-    <script>
-      function typeText(element, text, delay = 50, callback) {
-        let i = 0;
-        function type() {
-          if (i < text.length) {
-            const ch = text.charAt(i);
-            element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*<\/span>/, '') + ch + '<span class="cursor">&nbsp;</span>';
-            i++;
-            setTimeout(type, delay);
-          } else {
-            element.innerHTML = text + '<span class="cursor">&nbsp;</span>';
-            if (callback) callback();
-          }
+  
+  <!-- Star particle effect -->
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      const star = document.createElement('div');
+      star.classList.add('star');
+      star.innerText = '★';
+      star.style.left = e.clientX + 'px';
+      star.style.top = e.clientY + 'px';
+      document.body.appendChild(star);
+      setTimeout(() => {
+        star.remove();
+      }, 1000);
+    });
+  </script>
+  
+  <!-- Typewriter effect for title and tagline with terminal prompt -->
+  <script>
+    function typeText(element, text, delay = 50, callback) {
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          // Use a non-greedy regex to remove any previous cursor span
+          element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*?<\/span>/g, '') + text.charAt(i) + '<span class="cursor">&nbsp;</span>';
+          i++;
+          setTimeout(type, delay);
+        } else {
+          element.innerHTML = text + '<span class="cursor">&nbsp;</span>';
+          if (callback) callback();
         }
-        element.innerHTML = '<span class="cursor">&nbsp;</span>';
-        type();
       }
+      element.innerHTML = '<span class="cursor">&nbsp;</span>';
+      type();
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      const titleEl = document.getElementById("typed-title");
+      const taglineEl = document.getElementById("typed-tagline");
       
-      document.addEventListener("DOMContentLoaded", () => {
-        const titleEl = document.getElementById("typed-title");
-        const taglineEl = document.getElementById("typed-tagline");
-      
-        typeText(titleEl, "Hi, I'm Kira Noether!", 50, () => {
-          setTimeout(() => {
-            typeText(taglineEl, "Where math, physics, and pastel chaos collide.", 35);
-          }, 300);
-        });
+      typeText(titleEl, "Hi, I'm Grant Talbert!", 50, () => {
+        setTimeout(() => {
+          typeText(taglineEl, "math, physics, and a friendly introduction to abstract nonsense", 35);
+        }, 300);
       });
-    </script>
-
+    });
+  </script>
+  
   <!-- Scroll reveal for elements with class "reveal" -->
   <script>
     const revealElements = document.querySelectorAll('.reveal');
@@ -105,8 +104,7 @@
   
   <!-- Floating math symbols effect -->
   <script>
-    const mathSymbols = ['⊗', '∫', '∏', '∑', 'ℵ', '≅', '≡', '∇', '⊕', '→'];
-    
+    const mathSymbols = ['⊗', '∏', 'σ', '∫', '∑', 'Ψ', '∞', '≅', 'λ', 'θ'];
     setInterval(() => {
       const symbol = document.createElement('div');
       symbol.classList.add('floating-symbol');
@@ -115,9 +113,7 @@
       symbol.style.top = window.innerHeight + 'px';
       document.body.appendChild(symbol);
       setTimeout(() => symbol.remove(), 4000);
-    }, 500); // 2x faster now
-    </script>
-    
-
+    }, 500); // Twice as fast as before
+  </script>
 </body>
 </html>

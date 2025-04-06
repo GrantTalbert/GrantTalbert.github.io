@@ -20,7 +20,7 @@ body {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="%23ff6fcf" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z"/></svg>') 12 12, auto;
 }
 
-/* Hollow star cursor on hoverable elements */
+/* Hollow star cursor on hover for clickable elements */
 a:hover, button:hover {
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="%23ff6fcf" stroke-width="2" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z"/></svg>') 12 12, auto;
 }
@@ -33,7 +33,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  /* Replace the URL below with your preferred image of diagrams, equations, etc. */
+  /* Replace with your desired background image (diagrams, equations, etc.) */
   background-image: url('https://via.placeholder.com/1920x1080.png?text=Quantum+Diagrams');
   background-size: cover;
   background-attachment: fixed;
@@ -54,32 +54,16 @@ body::before {
   z-index: 1;
 }
 
+/* Header styling */
+header {
+  margin-bottom: 2rem;
+}
+
+/* Terminal-style lines: each gets a "> " prompt before */
 .terminal-line::before {
   content: "> ";
   color: #ff6fcf;
   font-weight: bold;
-}
-
-.cursor {
-  display: inline-block;
-  width: 1ch;
-  background-color: #ff6fcf;
-  animation: blink 1s steps(1) infinite;
-}
-
-@keyframes blink {
-  0%, 50% {
-    opacity: 1;
-  }
-  50.01%, 100% {
-    opacity: 0;
-  }
-}
-
-
-/* Header styling */
-header {
-  margin-bottom: 2rem;
 }
 
 /* Heading with energetic bounce */
@@ -120,15 +104,16 @@ nav {
   border: 2px solid #ff6fcf;
   border-radius: 5px;
   padding: 10px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, text-shadow 0.3s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: playfulSlideIn 1.5s ease-out forwards;
 }
 
 .nav-links a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #ff6fcf;
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #ff6fcf;
+  text-shadow: 0 0 5px #ff6fcf;
 }
 
 /* Sections */
@@ -191,6 +176,24 @@ footer {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Blinking underline cursor for typewriter effect */
+.cursor {
+  display: inline-block;
+  width: 1ch;
+  border-bottom: 2px solid #ff6fcf;
+  margin-left: 2px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
   }
 }
 

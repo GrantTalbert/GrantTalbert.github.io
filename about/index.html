@@ -14,49 +14,50 @@
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- TERMINAL LOADER -->
   <div id="terminal-loader">
     <div id="terminal-log"></div>
     <div id="terminal-line-container"></div>
   </div>
 
+  <!-- Theme Chooser -->
   <div id="theme-chooser">
     <button data-theme="default">Bubblegum KK</button>
     <button data-theme="quantum">Quantum Glitter</button>
     <button data-theme="yoneda">Yoneda Pink</button>
   </div>
 
-  <div id="main-content" class="container">
-    <header>
-      <h1>Welcome to Hyperion's Universe</h1>
-      <nav class="nav-links">
-        <a href="../">Home</a>
-        <a href="../projects/">Projects</a>
-        <a href="../contact/">Contact</a>
-      </nav>
+  <!-- Main Content: The Creative Wall -->
+  <section class="wall">
+    <header class="wall-header">
+      <h1>My Creative Wall</h1>
     </header>
-    <section class="reveal">
-      <h2>About Me</h2>
-      <p>
-        I'm Hyperion in full chaotic mode! Dive into a world of abstract math, endless boba, and cosmic vibes.
-      </p>
-    </section>
-
-    <section class="notes-grid">
-      <h2>Test section</h2>
-        <div class="note">
-          <h3>woooo</h3>
-          <p>I love chatgpt heart heart heart</p>
+    <div class="notes-grid">
+      <div class="note">
+        <h3>My Journey</h3>
+        <p>Started with a spark, grew into a blazing passion for abstract math.</p>
+      </div>
+      <div class="note">
+        <h3>Fun Fact</h3>
+        <p>I once solved a problem while balancing boba in one hand and a pen in the other!</p>
+      </div>
+      <div class="note">
+        <h3>Philosophy</h3>
+        <p>If the diagram commutes, then so do my vibes.</p>
+      </div>
+      <!-- Mini Whiteboard -->
+      <div class="whiteboard">
+        <img src="/assets/images/background-math/whiteboard.png" alt="Whiteboard Scribbles">
+        <div class="whiteboard-text">
+          <p>\( E = mc^2 \)</p>
+          <p>\( \nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0} \)</p>
+          <p>\( R_{\mu\nu} - \frac{1}{2} R\, g_{\mu\nu} = 8\pi G\, T_{\mu\nu} \)</p>
         </div>
-        <div class="note">
-          <h3>also woo</h3>
-          <p>I love Kira too heart heart heart</p>
-        </div>
-    </section>
-
-    <footer>
-      <p>&copy; 2025 Grant Talbert. Made with love and commutative diagrams.</p>
-    </footer>
-  </div>
+      </div>
+      <!-- Add more note elements as needed -->
+    </div>
+  </section>
 
   <script src="../assets/js/loader-about-me.js"></script>
   <script src="../assets/js/explosion.js"></script>

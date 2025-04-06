@@ -28,26 +28,27 @@ function updateCursorColor() {
     styleElement.innerHTML = `a:hover, button:hover { cursor: ${hoverCursorValue}; }`;
   }
 
-document.addEventListener("DOMContentLoaded", function() {
-  // Check localStorage for a saved theme and apply it
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme && savedTheme !== "default") {
-    document.body.classList.add(`theme-${savedTheme}`);
-  }
-
-  const themeChooser = document.getElementById("theme-chooser");
-  themeChooser.querySelectorAll("button").forEach(button => {
-    button.addEventListener("click", function() {
-      // Remove all theme classes
-      document.body.classList.remove("theme-quantum", "theme-yoneda");
-      const theme = this.getAttribute("data-theme");
-      if (theme !== "default") {
-        document.body.classList.add(`theme-${theme}`);
-      }
-      // Save the selection in localStorage
-      localStorage.setItem("theme", theme);
-      updateCursorColor(); // if needed, to update dynamic cursor
-    });
-  });
-});
+  document.addEventListener("DOMContentLoaded", function() {
+    // Check for a saved theme in localStorage and apply it
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme && savedTheme !== "default") {
+      document.body.classList.add(`theme-${savedTheme}`);
+    }
   
+    const themeChooser = document.getElementById("theme-chooser");
+    if (themeChooser) {
+      themeChooser.querySelectorAll("button").forEach(button => {
+        button.addEventListener("click", function() {
+          // Remove previous theme classes
+          document.body.classList.remove("theme-quantum", "theme-yoneda");
+          const theme = this.getAttribute("data-theme");
+          if (theme !== "default") {
+            document.body.classList.add(`theme-${theme}`);
+          }
+          // Save the selected theme
+          localStorage.setItem("theme", theme);
+          updateCursorColor(); // if you have dynamic cursor updates
+        });
+      });
+    }
+  });  

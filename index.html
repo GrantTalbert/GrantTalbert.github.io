@@ -68,216 +68,30 @@
   </div>
   
   <!-- Star Particle Effect Script -->
-  <script>
-    document.addEventListener('mousemove', function(e) {
-      const star = document.createElement('div');
-      star.classList.add('star');
-      star.innerText = '★';
-      star.style.left = e.clientX + 'px';
-      star.style.top = e.clientY + 'px';
-      document.body.appendChild(star);
-      setTimeout(() => {
-        star.remove();
-      }, 1000);
-    });
-  </script>
+   <!-- <script src="assets/js/cursor.js"></script> -->
   
   <!-- Typewriter Effect for Title and Tagline with Terminal Prompt -->
-  <script>
-    function typeText(element, text, delay = 50, callback) {
-      let i = 0;
-      function type() {
-        if (i < text.length) {
-          element.innerHTML = element.innerHTML.replace(/<span class="cursor">.*?<\/span>/g, '') 
-                                + text.charAt(i) + '<span class="cursor">&nbsp;</span>';
-          i++;
-          setTimeout(type, delay);
-        } else {
-          element.innerHTML = text + '<span class="cursor">&nbsp;</span>';
-          if (callback) callback();
-        }
-      }
-      element.innerHTML = '<span class="cursor">&nbsp;</span>';
-      type();
-    }
-    
-    function startTypewriter() {
-      const titleEl = document.getElementById("typed-title");
-      const taglineEl = document.getElementById("typed-tagline");
-      typeText(titleEl, "Hi, I'm Grant Talbert!", 50, () => {
-        setTimeout(() => {
-          typeText(taglineEl, "math, physics, and a friendly introduction to abstract nonsense", 35);
-        }, 300);
-      });
-    }
-  </script>
+  <script src="assets/js/typewriter.js"></script>
   
   <!-- Scroll Reveal for Elements with Class "reveal" -->
-  <script>
-    function startScrollReveal() {
-      const revealElements = document.querySelectorAll('.reveal');
-      const revealObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      });
-      revealElements.forEach(el => revealObserver.observe(el));
-    }
-  </script>
+  <script src="assets/js/scroll-reveal.js"></script>
   
   <!-- Floating Math Symbols Effect -->
-  <script>
-    const mathSymbols = ['⊗', '∏', 'σ', '∫', '∑', 'Ψ', '∞', '≅', 'λ', 'θ'];
-    setInterval(() => {
-      const symbol = document.createElement('div');
-      symbol.classList.add('floating-symbol');
-      symbol.innerText = mathSymbols[Math.floor(Math.random() * mathSymbols.length)];
-      symbol.style.left = Math.random() * window.innerWidth + 'px';
-      symbol.style.top = window.innerHeight + 'px';
-      document.body.appendChild(symbol);
-      setTimeout(() => symbol.remove(), 4000);
-    }, 500);
-  </script>
+  <script src="assets/js/floating-math.js"></script>
   
   <!-- Interactive Click Explosion Effect -->
-  <script>
-    document.addEventListener('click', function(e) {
-      for (let i = 0; i < 8; i++) {
-        const particle = document.createElement('div');
-        particle.classList.add('explosion');
-        particle.innerText = Math.random() < 0.5 ? '♥' : '★';
-        particle.style.left = e.clientX + 'px';
-        particle.style.top = e.clientY + 'px';
-        const dx = (Math.random() * 100 - 50) + 'px';
-        const dy = (Math.random() * -100 - 20) + 'px';
-        particle.style.setProperty('--dx', dx);
-        particle.style.setProperty('--dy', dy);
-        document.body.appendChild(particle);
-        setTimeout(() => particle.remove(), 600);
-      }
-    });
-  </script>
+  <script src="assets/js/explosion.js"></script>
   
   <!-- Random Math Quote Widget Script -->
-  <script>
-    const mathQuotes = [
-      "Mathematics is the poetry of logical ideas. – Albert Einstein",
-      "The answer to life, the universe, and everything is 42. – Douglas Adams",
-      "In mathematics, the art of proposing a question must be held of higher value than solving it. – Georg Cantor",
-      "Pure mathematics is, in its way, the poetry of logical ideas. – Albert Einstein",
-      "If I were beginning my studies again, I would follow the advice of Plato and start with mathematics. – Galileo Galilei",
-      "HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOOOOOOOOOOO - meeeeee"
-    ];
-    document.addEventListener("DOMContentLoaded", () => {
-      const quoteEl = document.getElementById("math-quote");
-      // Do NOT push the loader final message into the math quotes
-      quoteEl.innerText = mathQuotes[Math.floor(Math.random() * mathQuotes.length)];
-    });
-  </script>
+  <script src="assets/js/math-quote.js"></script>
   
   <!-- Custom Loader Script with Sequenced Animations -->
-  <script>
-    let progress = 0;
-    const loaderText = document.getElementById('loader-text');
-    const loader = document.getElementById('loader');
-    const loadingInterval = setInterval(() => {
-      progress += Math.floor(Math.random() * 3) + 1;
-      if (progress >= 100) {
-        progress = 100;
-        clearInterval(loadingInterval);
-        // Short delay before updating to final message
-        setTimeout(() => {
-          loaderText.innerText = "The answer is 42";
-          // Keep final message visible for 1 second
-          setTimeout(() => {
-             loaderText.classList.add('fade-up');
-             // Start typewriter and scroll reveal 500ms after fade-up begins
-             setTimeout(() => {
-               startTypewriter();
-               startScrollReveal();
-             }, 500);
-             // Hide the loader after the fade-up animation completes (0.8s)
-             setTimeout(() => {
-               loader.classList.add('hidden');
-             }, 800);
-          }, 1000);
-        }, 300);
-      } else {
-        loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;
-      }
-    }, 50);
-
-  </script>
+  <script src="assets/js/loader.js"></script>
   
   <!-- Dynamic Theme Switching -->
-   <script>
-    function updateCursorColor() {
-      const accentColor = getComputedStyle(document.body)
-                            .getPropertyValue('--accent-color').trim();
-      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='${accentColor}' viewBox='0 0 24 24'>
-        <path d='M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z'/>
-      </svg>`;
-      const encodedSVG = encodeURIComponent(svg);
-      const cursorValue = `url("data:image/svg+xml,${encodedSVG}") 12 12, auto`;
-      document.body.style.cursor = cursorValue;
-      updateHoverCursor();
-    }
-
-    function updateHoverCursor() {
-      const accentColor = getComputedStyle(document.body)
-                            .getPropertyValue('--accent-color').trim();
-      // Use a hollow cursor for hover (fill none, stroke set to accentColor)
-      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='${accentColor}' stroke-width='2' viewBox='0 0 24 24'>
-        <path d='M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z'/>
-      </svg>`;
-      const encodedSVG = encodeURIComponent(svg);
-      const hoverCursorValue = `url("data:image/svg+xml,${encodedSVG}") 12 12, auto`;
-      let styleElement = document.getElementById('hover-cursor-style');
-      if (!styleElement) {
-        styleElement = document.createElement('style');
-        styleElement.id = 'hover-cursor-style';
-        document.head.appendChild(styleElement);
-      }
-      styleElement.innerHTML = `a:hover, button:hover { cursor: ${hoverCursorValue}; }`;
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      // Set initial cursor and hover style
-      updateCursorColor();
-    
-      const themeChooser = document.getElementById('theme-chooser');
-      themeChooser.querySelectorAll('button').forEach(button => {
-        button.addEventListener('click', function() {
-          // Remove previously applied theme classes.
-          document.body.classList.remove('theme-quantum', 'theme-yoneda');
-          const theme = this.getAttribute('data-theme');
-          if (theme !== 'default') {
-            document.body.classList.add(`theme-${theme}`);
-          }
-          updateCursorColor();
-        });
-      });
-    });
-   </script>
+   <script src="assets/js/theme-switcher.js"></script>
 
    <!-- COMETS!!!! -->
-    <script>
-      // Randomly spawn comets every 5-15 seconds
-      function spawnComet() {
-        const comet = document.createElement('div');
-        comet.classList.add('comet');
-        // Start the comet at a random horizontal position (offscreen left) and a random vertical offset
-        comet.style.top = `${Math.random() * window.innerHeight - 50}px`;
-        comet.style.left = `-50px`;
-        document.body.appendChild(comet);
-        // Remove comet after animation completes
-        setTimeout(() => comet.remove(), 3000);
-      }
-
-      setInterval(spawnComet, 5000 + Math.random() * 10000);
-    </script>
+    <script src="assets/js/comets.js"></script>
 </body>
 </html>

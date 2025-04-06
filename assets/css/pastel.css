@@ -8,6 +8,8 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
+  --stars-opacity: 0.6;
+  --stars-tint: rgb(255, 163, 247); /* a light white tint */
 }
 
 .theme-quantum {
@@ -18,6 +20,8 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --stars-opacity: 0.4;
+  --stars-tint: rgb(162, 162, 255);
 }
 
 .theme-yoneda {
@@ -28,6 +32,8 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
+  --stars-opacity: 1;
+  --stars-tint: rgba(255, 255, 255, 1);
 }
 
 
@@ -398,6 +404,7 @@ footer {
   background-size: contain;
   pointer-events: none;
   z-index: -1; /* Behind your content */
+  opacity: var(--stars-opacity);
   animation: moveStars 60s linear infinite;
 }
 

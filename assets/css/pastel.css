@@ -401,24 +401,18 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/assets/images/stars.png') repeat;
-  background-size: cover; /* or adjust as needed */
+  /* Use the tint color as the background */
+  background-color: var(--stars-tint);
+  /* Use the stars PNG as a mask so only the star shapes show */
+  -webkit-mask-image: url('/assets/images/stars.png');
+  mask-image: url('/assets/images/stars.png');
+  mask-size: cover;
+  mask-repeat: repeat;
+  /* Control the overall opacity of the stars */
+  opacity: var(--stars-opacity);
   pointer-events: none;
   z-index: -1;
   animation: moveStars 60s linear infinite;
-}
-
-#parallax-stars::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--stars-tint);
-  mix-blend-mode: multiply;
-  opacity: var(--stars-opacity);
-  pointer-events: none;
 }
 
 @keyframes moveStars {

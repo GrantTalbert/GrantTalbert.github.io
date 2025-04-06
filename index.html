@@ -6,6 +6,83 @@
   <title>Grant Talbert | i love boba xdddddd</title>
   <link rel="stylesheet" href="assets/css/pastel.css" />
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------------------- */
+    /* Additional CSS Updates */
+    /* ---------------------- */
+
+    /* Loader overlay fade-up */
+    #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff7fa;
+      z-index: 10000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease;
+    }
+    #loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    #loader-text.fade-up {
+      animation: loaderFadeUp 0.8s forwards;
+    }
+    @keyframes loaderFadeUp {
+      0% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      100% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Update explosion particles to have pastel color */
+    .explosion {
+      position: fixed;
+      pointer-events: none;
+      font-size: 1.5em;
+      z-index: 9999;
+      opacity: 1;
+      color: #ff6fcf;
+      animation: explode 600ms ease-out forwards;
+    }
+    @keyframes explode {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--dx), var(--dy)) scale(0.5);
+      }
+    }
+
+    /* Blinking underline cursor for typewriter */
+    .cursor {
+      display: inline-block;
+      width: 1ch;
+      border-bottom: 2px solid #ff6fcf;
+      margin-left: 2px;
+      animation: blink 1s steps(1) infinite;
+      animation-delay: 0s !important;
+    }
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      51%, 100% {
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Loader Overlay -->
@@ -86,30 +163,31 @@
       type();
     }
     
-    document.addEventListener("DOMContentLoaded", () => {
+    function startTypewriter() {
       const titleEl = document.getElementById("typed-title");
       const taglineEl = document.getElementById("typed-tagline");
-      
       typeText(titleEl, "Hi, I'm Grant Talbert!", 50, () => {
         setTimeout(() => {
           typeText(taglineEl, "math, physics, and a friendly introduction to abstract nonsense", 35);
         }, 300);
       });
-    });
+    }
   </script>
   
   <!-- Scroll Reveal for Elements with Class "reveal" -->
   <script>
-    const revealElements = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          revealObserver.unobserve(entry.target);
-        }
+    function startScrollReveal() {
+      const revealElements = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
       });
-    });
-    revealElements.forEach(el => revealObserver.observe(el));
+      revealElements.forEach(el => revealObserver.observe(el));
+    }
   </script>
   
   <!-- Floating Math Symbols Effect -->
@@ -160,7 +238,8 @@
       "The answer to life, the universe, and everything is 42. – Douglas Adams",
       "In mathematics, the art of proposing a question must be held of higher value than solving it. – Georg Cantor",
       "Pure mathematics is, in its way, the poetry of logical ideas. – Albert Einstein",
-      "If I were beginning my studies again, I would follow the advice of Plato and start with mathematics. – Galileo Galilei"
+      "If I were beginning my studies again, I would follow the advice of Plato and start with mathematics. – Galileo Galilei",
+      "HOLY SHIT THE DIAGRAM COMMUTES LETS GOOOOO!!!!!!!! - meeeeeee"
     ];
     document.addEventListener("DOMContentLoaded", () => {
       const quoteEl = document.getElementById("math-quote");
@@ -168,7 +247,7 @@
     });
   </script>
   
-  <!-- Custom Loader Script -->
+  <!-- Custom Loader Script with Sequenced Animations -->
   <script>
     let progress = 0;
     const loaderText = document.getElementById('loader-text');
@@ -177,11 +256,22 @@
       progress += Math.floor(Math.random() * 3) + 1;
       if (progress >= 100) {
         progress = 100;
-        loaderText.innerText = "The answer is 42";
         clearInterval(loadingInterval);
         setTimeout(() => {
-          loader.classList.add('hidden');
-        }, 1000);
+          // Trigger fade-up animation on loader text
+          loaderText.classList.add('fade-up');
+          // After fade-up (0.8s) then change text to final message
+          setTimeout(() => {
+            loaderText.innerText = "The answer is 42";
+            // Display final message for 1s, then fade out loader overlay
+            setTimeout(() => {
+              loader.classList.add('hidden');
+              // Start typewriter and scroll reveal animations once loader is hidden
+              startTypewriter();
+              startScrollReveal();
+            }, 1000);
+          }, 800);
+        }, 300);
       } else {
         loaderText.innerText = `Calculating the answer to life, the universe, and everything - ${progress}% complete`;
       }
@@ -194,12 +284,17 @@
       const container = document.querySelector('.container');
       const scrollY = window.scrollY;
       const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const ratio = scrollY / (maxScroll || 1);
-      // Interpolate between pastel pink (#ffb3e6) and pastel blue (#a6e7ff)
-      const startHue = 340; // pastel pink hue
-      const endHue = 200;   // pastel blue hue
-      const currentHue = Math.round(startHue + (endHue - startHue) * ratio);
-      container.style.background = `linear-gradient(135deg, hsl(${currentHue}, 70%, 90%), hsl(${currentHue}, 70%, 95%))`;
+      let ratio;
+      if (scrollY <= maxScroll/2) {
+        ratio = scrollY / (maxScroll/2); // 0 -> 1
+      } else {
+        ratio = (maxScroll - scrollY) / (maxScroll/2); // 1 -> 0
+      }
+      // Interpolate between white (255,255,255) and pink (#ff6fcf = rgb(255,111,207))
+      const r = 255;
+      const g = Math.round(255 * (1 - ratio) + 111 * ratio);
+      const b = Math.round(255 * (1 - ratio) + 207 * ratio);
+      container.style.background = `rgb(${r}, ${g}, ${b})`;
     });
   </script>
   

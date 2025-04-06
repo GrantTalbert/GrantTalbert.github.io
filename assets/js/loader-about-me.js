@@ -23,10 +23,10 @@ const lines = [
         i++;
         
         // Default delay
-        let delay = 50;
+        let delay = 10;
         
         // For lines 2, 3, 4, and 5 (indexes 1-4): pause 1000ms on the LAST character only
-        if (i === line.length && currentLine >= 1 && currentLine <= 4) {
+        if (i === line.length - 1 && currentLine >= 1 && currentLine <= 4) {
           delay = 1000;
         }
         
@@ -34,7 +34,7 @@ const lines = [
         if (currentLine === 5) {
           // Determine where "COMMUTING" starts
           const commutingIndex = line.indexOf("COMMUTING");
-          if (i === commutingIndex) {
+          if (i === commutingIndex - 2) {
             delay = 1500; // extra pause before "COMMUTING" is typed
           }
         }

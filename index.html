@@ -23,7 +23,7 @@
     <section id="about">
       <h2>About Me</h2>
       <p>
-        I'm a passionate math and physics student who's in love with QFT, High-Energy Physics, (Higher) Category Theory, and anything that qualifies as "abstract nonsense". I love whteboards, when the diagram commutes, and keeping things playful and cozy.
+        I'm a passionate math and physics student who's in love with QFT, High-Energy Physics, (Higher) Category Theory, and anything that qualifies as "abstract nonsense". I love whiteboards, when the diagram commutes, and keeping things playful and cozy.
       </p>
     </section>
     <section id="projects">
@@ -35,12 +35,27 @@
     <section id="contact">
       <h2>Contact</h2>
       <p>
-        wanna talk? hmu bro 
+        wanna talk? hmu bro
       </p>
     </section>
     <footer>
       <p>&copy; 2025 Grant Talbert. Made with love~</p>
     </footer>
   </div>
+  
+    <!-- Star particle effect script -->
+    <script>
+      document.addEventListener('mousemove', function(e) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.innerText = '★';
+        star.style.left = e.clientX + 'px';
+        star.style.top = e.clientY + 'px';
+        document.body.appendChild(star);
+        setTimeout(() => {
+          star.remove();
+        }, 1000);
+      });
+    </script>
 </body>
 </html>

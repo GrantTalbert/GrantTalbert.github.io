@@ -9,7 +9,7 @@
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
   --stars-opacity: 0.8;
-  --stars-tint: rgb(250, 164, 243); /* a light white tint */
+  --stars-tint: rgb(247, 199, 243); /* a light white tint */
 }
 
 .theme-quantum {
@@ -20,8 +20,8 @@
   --nav-link-border-color: var(--accent-color);
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  --stars-opacity: 0.4;
-  --stars-tint: rgb(60, 167, 255);
+  --stars-opacity: 0.2;
+  --stars-tint: rgb(255, 255, 255);
 }
 
 .theme-yoneda {
@@ -33,7 +33,7 @@
   --nav-link-hover-shadow: var(--accent-color);
   --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
   --stars-opacity: 1;
-  --stars-tint: rgb(219, 219, 219);
+  --stars-tint: rgb(253, 145, 253);
 }
 
 
@@ -425,4 +425,50 @@ footer {
     -webkit-mask-position: -1000px -1000px;
     mask-position: -1000px -1000px;
   }
+}
+
+.comet {
+  position: fixed;
+  top: -50px;
+  left: -50px;
+  width: 10px;
+  height: 10px;
+  background: radial-gradient(circle, white 0%, var(--accent-color) 80%);
+  border-radius: 50%;
+  box-shadow: 0 0 15px 5px var(--accent-color);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 9998;
+  animation: cometAnimation 3s linear forwards;
+}
+
+@keyframes cometAnimation {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(1500px, 1500px) scale(0.5);
+    opacity: 0;
+  }
+}
+
+/* Webkit scrollbar styling */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--secondary-bg-color);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+  border: 3px solid var(--bg-color);
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color) var(--secondary-bg-color);
 }

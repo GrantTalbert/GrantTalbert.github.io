@@ -499,3 +499,77 @@ object-fit: cover;
   font-weight: bold;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
+
+.stationary-note.kira-final-note {
+  position: relative;
+  background: #fff; /* white paper look */
+  padding: 1.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: var(--sticky-text);
+  text-align: left;
+}
+
+.stationary-note.kira-final-note h3 {
+  font-size: 1.8em;
+  margin-bottom: 0.5rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.kira-todo {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.kira-todo li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.kira-todo li.checked {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.kira-todo li.checked::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+}
+
+.kira-todo li:not(.checked)::before {
+  content: "⬜";
+  position: absolute;
+  left: 0;
+}
+
+.margin-scribble {
+  font-style: italic;
+  color: #a94442;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.seal-of-approval {
+  text-align: center;
+  padding: 0.5rem;
+  border: 2px dashed var(--accent-color);
+  border-radius: 5px;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-top: 1rem;
+  transform: rotate(-2deg);
+}
+
+.seal-of-approval span {
+  display: block;
+  font-size: 0.9em;
+  margin-top: 0.3rem;
+}

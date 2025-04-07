@@ -3,9 +3,10 @@
  * 
  * Handles:
  *   - Boba-themed messages in terminal every 60s
- *   - Folder & file click logic in the file explorer
- *   - Fetching & displaying HTML snippets for folders/files
+ *   - Folder & file click logic (nested folders included)
+ *   - Fetching & displaying HTML snippets
  *   - Removing leading newlines in code blocks
+ *   - Animations for code blocks & PDF frames
  **************************************************************/
 
 // Array of random boba-themed messages
@@ -14,45 +15,45 @@ const bobaMessages = [
     "Slurping on that sweet milk tea of category theory~",
     "Synthesizing new boba beads in the arc reactor...",
     "Gotta keep my boba levels up or I'll collapse wavefunctions weirdly!"
-];
+  ];
   
-document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", () => {
     // Log a random boba message once per minute
     setInterval(() => {
       const msg = pickRandom(bobaMessages);
       logToTerminal(`> ${msg}`);
     }, 60_000);
   
-    // Attach click handlers to items in the file explorer
+    // Attach click handlers to the top-level file explorer items
     const explorerItems = document.querySelectorAll(".file-explorer li");
     explorerItems.forEach(item => {
       item.addEventListener("click", () => handleExplorerClick(item));
     });
-});
+  });
   
   /***************************************************************
    * Helper: Pick a random element from an array
    ***************************************************************/
-function pickRandom(arr) {
+  function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
-}
+  }
   
   /***************************************************************
    * Log a message in the terminal
    ***************************************************************/
-function logToTerminal(message) {
+  function logToTerminal(message) {
     const terminalLog = document.getElementById("terminal-log");
     const p = document.createElement("p");
     p.textContent = message;
     terminalLog.appendChild(p);
     // auto-scroll to bottom
     terminalLog.scrollTop = terminalLog.scrollHeight;
-}
+  }
   
   /***************************************************************
    * Handle user clicking a folder or file in the explorer
    ***************************************************************/
-function handleExplorerClick(item) {
+  function handleExplorerClick(item) {
     const filetype = item.dataset.filetype; 
     const filename = item.dataset.filename;
     const path = item.dataset.path;
@@ -66,12 +67,12 @@ function handleExplorerClick(item) {
       logToTerminal(`> open ${filename}`);
       displayFileContent(filetype, filename);
     }
-}
+  }
   
   /***************************************************************
    * Load & display snippet for a folder
    ***************************************************************/
-function displayFolderContents(folderPath) {
+  function displayFolderContents(folderPath) {
     const projectView = document.getElementById("project-view");
     // e.g. "minecraft-mods/" => snippet at "snippets/minecraft-mods.html"
     const snippetUrl = `./snippets/${folderPath.replace("/", "")}.html`;
@@ -85,15 +86,12 @@ function displayFolderContents(folderPath) {
       })
       .then(html => {
         projectView.innerHTML = html;
-        // removeLeadingNewlines (already included in your cleaned-up JS)
+  
         removeLeadingNewlines(projectView);
-
-        // Add fade-in animation to all <pre> blocks AND .pdf-frame containers
-        const fadeTargets = projectView.querySelectorAll("pre, .pdf-frame");
-        fadeTargets.forEach(el => {
-            el.classList.add("animate-in");
-        });
-
+        fadeInBlocks(projectView);
+  
+        // ⚠️ Attach click listeners to newly loaded <li> elements
+        attachLocalExplorerListeners(projectView);
       })
       .catch(err => {
         projectView.innerHTML = `
@@ -102,12 +100,12 @@ function displayFolderContents(folderPath) {
           <pre>${err}</pre>
         `;
       });
-}
+  }
   
   /***************************************************************
    * Load & display snippet for a file
    ***************************************************************/
-function displayFileContent(filetype, filename) {
+  function displayFileContent(filetype, filename) {
     const projectView = document.getElementById("project-view");
     // e.g. "category-zine.tex" => snippet at "snippets/category-zine.tex.html"
     const snippetUrl = `./snippets/${filename}.html`; 
@@ -121,15 +119,13 @@ function displayFileContent(filetype, filename) {
       })
       .then(html => {
         projectView.innerHTML = html;
-        // removeLeadingNewlines (already included in your cleaned-up JS)
+  
         removeLeadingNewlines(projectView);
-
-        // Add fade-in animation to all <pre> blocks AND .pdf-frame containers
-        const fadeTargets = projectView.querySelectorAll("pre, .pdf-frame");
-        fadeTargets.forEach(el => {
-            el.classList.add("animate-in");
-        });
-
+        fadeInBlocks(projectView);
+  
+        // ⚠️ Also attach local listeners in case the file snippet 
+        // itself includes nested folders or further references
+        attachLocalExplorerListeners(projectView);
       })
       .catch(err => {
         projectView.innerHTML = `
@@ -137,15 +133,35 @@ function displayFileContent(filetype, filename) {
           <p>Could not load snippet for this file: ${err}</p>
         `;
       });
-}
+  }
+  
+  /***************************************************************
+   * Attach explorer logic to newly loaded <li> items 
+   * (folders & files) inside .project-view
+   ***************************************************************/
+  function attachLocalExplorerListeners(container) {
+    const newItems = container.querySelectorAll("li.folder, li.file");
+    newItems.forEach(newItem => {
+      newItem.addEventListener("click", () => handleExplorerClick(newItem));
+    });
+  }
   
   /***************************************************************
    * Remove any leading newline in <pre> blocks for nicer code
    ***************************************************************/
-function removeLeadingNewlines(container) {
+  function removeLeadingNewlines(container) {
     const preBlocks = container.querySelectorAll("pre");
     preBlocks.forEach(pre => {
       // If the text starts with a newline, trim it
       pre.textContent = pre.textContent.replace(/^\n/, "");
     });
-}  
+  }
+  
+  /***************************************************************
+   * Fade-in animation for code blocks & .pdf-frame containers
+   ***************************************************************/
+  function fadeInBlocks(container) {
+    const fadeTargets = container.querySelectorAll("pre, .pdf-frame");
+    fadeTargets.forEach(el => el.classList.add("animate-in"));
+  }
+  

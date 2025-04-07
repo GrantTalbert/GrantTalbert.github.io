@@ -13,6 +13,11 @@
     --whiteboard-color: #fff;
     --whiteboard-text: #44385c;
     --sticky-text: #44385c; /* keep this same as regular text color except on dark themes */
+    --terminal-bg: #1E1E1E;
+    --terminal-text: #cccccc;
+    --explorer-bg: #f2effc;
+    --explorer-text: #44385c;
+    --project-bg: #ffffff;
 }
   
 .theme-quantum {
@@ -30,6 +35,11 @@
     --whiteboard-color: #264941;
     --whiteboard-text: #dddddd;
     --sticky-text: #1f2128;
+    --terminal-bg: #1E1E1E;
+    --terminal-text: #cccccc;
+    --explorer-bg: #f2effc;
+    --explorer-text: #44385c;
+    --project-bg: #ffffff;
 }
   
 .theme-yoneda {
@@ -45,4 +55,9 @@
     --stars-opacity: 1;
     --stars-tint: rgb(253, 145, 253);
     --sticky-text: #6b0057;
+    --terminal-bg: #1E1E1E;
+    --terminal-text: #cccccc;
+    --explorer-bg: #f2effc;
+    --explorer-text: #44385c;
+    --project-bg: #ffffff;
 }

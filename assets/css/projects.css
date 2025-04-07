@@ -1,0 +1,138 @@
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Comic Neue', sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Terminal Container (short) at top */
+  .terminal-container {
+    background: var(--terminal-bg);
+    color: var(--terminal-text);
+    font-family: 'Fira Code', monospace;
+    width: 100%;
+    height: 160px; /* Shorter terminal height */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  
+  .terminal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    background: rgba(255,255,255,0.05);
+  }
+  
+  .terminal-title {
+    font-weight: bold;
+  }
+  
+  .terminal-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .btn-close,
+  .btn-minimize,
+  .btn-maximize {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    border-radius: 50%;
+    background: #ff5f57; /* red for close */
+  }
+  
+  .btn-minimize {
+    background: #ffbd2e; /* yellow for minimize */
+  }
+  
+  .btn-maximize {
+    background: #28c940; /* green for maximize */
+  }
+  
+  .terminal-content {
+    flex-grow: 1;
+    padding: 0.5rem;
+    overflow-y: auto;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  /* Main area: file explorer + content */
+  .main-area {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+  }
+  
+  /* File Explorer sidebar */
+  .file-explorer {
+    background: var(--explorer-bg);
+    color: var(--explorer-text);
+    width: 200px;
+    padding: 1rem;
+    overflow-y: auto;
+    box-shadow: 3px 0 8px rgba(0,0,0,0.1);
+  }
+  
+  .file-explorer h2 {
+    margin-bottom: 1rem;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.2rem;
+  }
+  
+  .file-explorer ul {
+    list-style: none;
+  }
+  
+  .file-explorer li {
+    margin: 0.5rem 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    padding: 0.3rem;
+    border-radius: 4px;
+  }
+  
+  .file-explorer li:hover {
+    background: #e6e1ff;
+  }
+  
+  .file-explorer .icon {
+    margin-right: 0.5rem;
+  }
+  
+  /* Project View (main content) */
+  .project-view {
+    background: var(--project-bg);
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+  }
+  
+  .project-view h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .project-view p {
+    margin-bottom: 1rem;
+  }
+  
+  /* Minimal transitions / animations if you want them */
+  .file-explorer li {
+    transition: transform 0.1s ease;
+  }
+  .file-explorer li:active {
+    transform: scale(0.98);
+  }  

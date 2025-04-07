@@ -2,17 +2,70 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <title>Kira's Projects</title>
+  <!-- Basic, minimal styling (we'll do more in projects.css) -->
+  <link rel="stylesheet" href="../assets/css/theme.css" />
+  <link rel="stylesheet" href="../assets/css/pastel.css" />
+  <link rel="stylesheet" href="../assets/css/projects.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <a href="/" class="back-button">&larr;</a>
-  <div class="container">
-    <h1 class="animated-text">Projects</h1>
-    <p class="animated-text">
-      Personal vs Development vs Professional
-    </p>
+
+  <!-- Terminal (shorter) at the top -->
+  <div class="terminal-container">
+    <div class="terminal-header">
+      <div class="terminal-title">kira@math-machine:~/projects</div>
+      <div class="terminal-buttons">
+        <span class="btn-close"></span>
+        <span class="btn-minimize"></span>
+        <span class="btn-maximize"></span>
+      </div>
+    </div>
+    <div class="terminal-content" id="terminal-log">
+      <!-- We'll log stuff here via JS -->
+      <p>> hello from Kira's project space</p>
+    </div>
   </div>
+
+  <div class="main-area">
+    <!-- File Explorer Sidebar -->
+    <aside class="file-explorer">
+      <h2>~/projects</h2>
+      <ul>
+        <li class="folder" data-path="zines/">
+          <span class="icon">📂</span> zines
+        </li>
+        <li class="file" data-filetype="tex" data-filename="category-zine.tex">
+          <span class="icon">📄</span> category-zine.tex
+        </li>
+        <li class="file" data-filetype="pdf" data-filename="fancy-notes.pdf">
+          <span class="icon">📄</span> fancy-notes.pdf
+        </li>
+        <li class="file" data-filetype="md" data-filename="about-this-project.md">
+          <span class="icon">📄</span> about-this-project.md
+        </li>
+        <li class="folder" data-path="minecraft-mods/">
+          <span class="icon">📂</span> minecraft-mods
+        </li>
+        <li class="file" data-filetype="sh" data-filename="compile.sh">
+          <span class="icon">💻</span> compile.sh
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Project View (main content) -->
+    <main class="project-view" id="project-view">
+      <h2>Welcome to Kira's Projects</h2>
+      <p>Click on a file or folder to explore!</p>
+      <p>This area will dynamically load file previews, descriptions, or expansions. 
+        For instance, a .tex file might show a snippet of LaTeX code, 
+        or a .md file might show some rendered markdown.
+      </p>
+    </main>
+  </div>
+
+  <!-- Basic JS -->
+  <script src="/assets/js/projects-terminal.js"></script>
 </body>
 </html>

@@ -18,7 +18,8 @@
   --terminal-text: #cccccc;
   --explorer-bg: rgba(242, 239, 252, 0.7); /* lavender pastel */
   --explorer-text: #44385c;
-  --explorer-bg-image: url('/assets/images/default-explorer-bg.png'); /* fallback image or none */
+  --page-bg-image: url('/assets/images/default-explorer-bg.png'); /* fallback image or none */
+  --page-bg-color: #f7f7ff;
   
   --project-bg: #ffffff; 
 }
@@ -43,7 +44,8 @@
   --terminal-text: #dddddd;
   --explorer-bg: rgba(42, 45, 54, 0.6);
   --explorer-text: #ffffff;
-  --explorer-bg-image: url('/assets/images/quantum-explorer-bg.png');
+  --page-bg-image: url('/assets/images/quantum-explorer-bg.png');
+  --page-bg-color: #1f2128;
   
   --project-bg: rgba(255, 255, 255, 0.1);
 
@@ -67,7 +69,8 @@
   --terminal-text: #ffd6f0;
   --explorer-bg: rgba(255, 251, 204, 0.6);
   --explorer-text: #6b0057;
-  --explorer-bg-image: url('/assets/images/yoneda-explorer-bg.png');
+  --page-bg-image: url('/assets/images/yoneda-explorer-bg.png');
+  --page-bg-color: #ffeef8;
   
   --project-bg: rgba(255, 255, 255, 0.8);
 }

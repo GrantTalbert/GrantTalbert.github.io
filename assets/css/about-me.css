@@ -550,13 +550,6 @@ object-fit: cover;
   left: 0;
 }
 
-.margin-scribble {
-  font-style: italic;
-  color: #a94442;
-  margin: 1rem 0;
-  text-align: center;
-}
-
 .seal-of-approval {
   text-align: center;
   padding: 0.5rem;

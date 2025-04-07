@@ -462,12 +462,12 @@ object-fit: cover;
 
 .project-card h3 {
   margin-top: 0.5rem;
-  color: var(--text-color);
+  color: var(--sticky-text);
 }
 
 .project-card p {
   font-size: 0.9rem;
-  color: var(--text-color);
+  color: var(--sticky-text);
   margin: 0.5rem 0 1rem;
 }
 

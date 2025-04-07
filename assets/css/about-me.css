@@ -346,20 +346,23 @@ object-fit: cover;
   min-height: 100vh;
   padding: 2rem;
   overflow: hidden;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
 }
 
-/* Header with Quote */
-.constellation-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-.constellation-header blockquote {
-  font-size: 1.5rem;
-  font-style: italic;
-  color: var(--accent-color);
+/* Optional starfield overlay for extra depth */
+.constellation::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('/assets/images/starfield.png') repeat;
+  opacity: 0.2;
+  z-index: -1;
 }
 
-/* Container for the Floating Idea Nodes */
+/* Container for Floating Idea Nodes */
 .constellation-container {
   position: relative;
   width: 100%;
@@ -369,12 +372,13 @@ object-fit: cover;
 /* Floating Idea Node Styling */
 .idea-node {
   position: absolute;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.2);
   border: 1px solid var(--accent-color);
   border-radius: 10px;
   padding: 1rem;
   max-width: 200px;
   transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 0 10px var(--accent-color);
 }
 .idea-node h3 {
   margin: 0 0 0.5rem;
@@ -390,12 +394,7 @@ object-fit: cover;
   box-shadow: 0 0 15px var(--accent-color);
 }
 
-/* SVG Overlay for Connecting Lines */
+/* (Optional) Remove or adjust the SVG overlay if it’s not working as desired */
 .constellation-lines {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+  display: none; /* Hide for now until you decide how to handle connecting lines */
 }

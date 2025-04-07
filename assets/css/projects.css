@@ -182,14 +182,15 @@
 
 .project-view pre {
     background: rgba(0, 0, 0, 0.2);
-    color: #fff;
-    padding: 0.5rem;
+    color: var(--terminal-text); /* or some readable color from your theme */
+    padding: 0.75rem;
     border-radius: 5px;
     overflow-x: auto;
     font-family: 'Fira Code', monospace;
-    max-height: 200px; 
-    margin-bottom: 1rem;
-}
+    font-size: 1rem;      /* bump this to 1rem or 1.1rem */
+    line-height: 1.5;     /* better spacing between lines */
+    margin-bottom: 1rem;  /* space after the code block */
+  }  
 
 /* Smooth transitions for terminal, file explorer, project view */
 .terminal-container,

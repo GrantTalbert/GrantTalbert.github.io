@@ -359,6 +359,11 @@ object-fit: cover;
   font-style: italic;
   color: #e0e0e0;
 }
+.constellation-header p {
+  font-size: 2rem;
+  font-style: bold;
+  color: #7289da;
+}
 
 /* Optional starfield overlay for extra depth */
 .constellation::after {

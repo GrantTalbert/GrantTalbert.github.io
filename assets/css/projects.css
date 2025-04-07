@@ -286,4 +286,32 @@
     p {
       font-size: 1em;
     }
-  }
+}
+
+/* Make nested folders/files inside .project-view look clickable */
+.project-view li.folder,
+.project-view li.file {
+  cursor: pointer;
+  color: var(--accent-color);
+  font-weight: bold;
+  margin: 0.5rem 0;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+  display: flex;
+  align-items: center;
+}
+
+.project-view li.folder:hover,
+.project-view li.file:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.15); /* a subtle hover highlight */
+}
+
+/* If you want the icons to stand out more, add spacing */
+.project-view li.folder .icon,
+.project-view li.file .icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;  /* bigger icon */
+}

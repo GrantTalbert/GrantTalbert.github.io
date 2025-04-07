@@ -16,6 +16,12 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 </head>
+
+<div id="mobile-warning" class="mobile-warning hidden">
+  <p>This page is best viewed on desktop! Some stuff may look weird on mobile 💔</p>
+  <button onclick="document.getElementById('mobile-warning').classList.add('hidden')">okie</button>
+</div>
+
 <body>
 
   <!-- TERMINAL LOADER -->
@@ -31,6 +37,13 @@
     <button data-theme="yoneda">Yoneda Pink</button>
   </div>
 
+    <!-- Directory nav goes here -->
+    <nav class="directory-nav">
+      <a href="/">🏠 home</a>
+      <a href="/projects/">📁 projects</a>
+      <a href="/contact/">📬 contact</a>
+    </nav>
+
   <!-- Main Content: The Creative Wall -->
   <section class="wall">
     <header class="wall-header">
@@ -42,7 +55,7 @@
 
       <div class="note">
         <h3>Studying:</h3>
-        <p>Math + Theoreical physics at Boston University (sophomore)</p>
+        <p>Math + Theoretical physics at Boston University (sophomore)</p>
       </div>
 
       <div class="note">
@@ -221,7 +234,7 @@
 
     <section class="constellation">
       <div class="constellation-header">
-        <h3>What I WANT to study</b3>
+        <h2>What I WANT to study</h2>
       </div>
       <div class="constellation-container">
         <!-- Floating Idea Nodes: adjust the inline styles as needed -->
@@ -302,8 +315,6 @@
       <div class="tape tape-bottom-right"></div>
     </div>
 
-    <h3>"oh shit im late to quantum again"</h3>
-
     <!-- Whiteboards and Papers and other stuffs put up on sides -->
 
       <div class="whiteboard" style="position: absolute; top: 150px; right: 50px;">
@@ -356,11 +367,13 @@
 
   <footer>
     <p>&copy; 2025 Grant Talbert. Made with love and commutative diagrams.</p>
+    <p>oh shit im late to quantum again</p>
   </footer>
 
   <script src="../assets/js/loader-about-me.js"></script>
   <script src="../assets/js/explosion.js"></script>
   <script src="../assets/js/theme-switcher.js"></script>
   <script src="../assets/js/schedule.js"></script>
+  <script src="../assets/js/mobile.js"></script>
 </body>
 </html>

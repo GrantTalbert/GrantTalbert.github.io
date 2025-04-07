@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             currentContainer.innerHTML = ""; // Clear current container.
             terminalLog.style.transition = "transform 0.8s ease";
             callback();
-          }, 800);
+          }, 150);
         }
       }
       typeChar();

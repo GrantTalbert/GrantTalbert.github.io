@@ -124,7 +124,6 @@
   margin: 0 auto;
   transform: rotate(-2deg);
   z-index: 1;
-  overflow: hidden;
 }
 .paper-piece .overlay {
   grid-area: 1 / 1 / -1 / -1;
@@ -134,18 +133,6 @@
   width: 100%;
   height: auto;
   object-fit: cover;
-}
-
-/* Simulated Tape on Paper Pieces (tape at the top) */
-.paper-piece::after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 10%;
-  width: 80%;
-  height: 4px;
-  background: rgba(128, 128, 128, 0.6);
-  z-index: 2;
 }
 
 /* Overlay container (if needed for other elements) */

@@ -357,7 +357,7 @@ object-fit: cover;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/assets/images/starfield.png') repeat;
+  background: url('/assets/images/starfield.jpg') repeat;
   opacity: 0.2;
   z-index: -1;
 }

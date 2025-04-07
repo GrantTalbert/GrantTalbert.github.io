@@ -71,10 +71,6 @@ const bobaMessages = [
       })
       .then(html => {
         projectView.innerHTML = html;
-        // If there's code to highlight
-        if (window.hljs) {
-          hljs.highlightAll();
-        }
       })
       .catch(err => {
         projectView.innerHTML = `
@@ -103,10 +99,6 @@ const bobaMessages = [
       })
       .then(html => {
         projectView.innerHTML = html;
-        // Syntax highlighting (highlight.js)
-        if (window.hljs) {
-          hljs.highlightAll();
-        }
         // If you'd like special handling for PDFs or .tex, do it here
       })
       .catch(err => {

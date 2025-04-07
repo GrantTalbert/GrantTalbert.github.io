@@ -328,6 +328,7 @@ object-fit: cover;
   max-width: 300px;
   margin: 0 auto;
   font-size: 0.9rem;
+  color: var(--sticky-text)
 }
 .studying-note:nth-child(odd) {
   transform: rotate(-2deg);
@@ -337,16 +338,4 @@ object-fit: cover;
 }
 .studying-note:hover {
   transform: scale(1.03);
-}
-
-/* Tape effect for studying notes (tape at the top) */
-.studying-note::after {
-  content: "";
-  position: absolute;
-  top: -6px;
-  left: 10%;
-  width: 80%;
-  height: 4px;
-  background: rgba(128, 128, 128, 0.6);
-  z-index: 2;
 }

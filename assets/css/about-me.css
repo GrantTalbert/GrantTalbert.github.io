@@ -347,6 +347,7 @@ object-fit: cover;
   padding: 2rem;
   overflow: hidden;
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  color: e0e0e0;
 }
 
 /* Optional starfield overlay for extra depth */
@@ -357,8 +358,8 @@ object-fit: cover;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/assets/images/starfield.jpg') repeat;
-  opacity: 0.2;
+  background: url('/assets/images/your-quantum-starfield.jpg') center/cover no-repeat;
+  opacity: 0.3; /* Adjust for desired intensity */
   z-index: -1;
 }
 
@@ -373,25 +374,26 @@ object-fit: cover;
 .idea-node {
   position: absolute;
   background: rgba(255, 255, 255, 0.2);
-  border: 1px solid var(--accent-color);
+  border: 1px solid #7289da;
   border-radius: 10px;
   padding: 1rem;
   max-width: 200px;
   transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 0 10px var(--accent-color);
+  box-shadow: 0 0 10px #7289da;
 }
 .idea-node h3 {
   margin: 0 0 0.5rem;
   font-size: 1.2rem;
-  color: var(--accent-color);
+  color: #7289da;
 }
 .idea-node p {
   margin: 0;
   font-size: 0.9rem;
+  color: #e0e0e0
 }
 .idea-node:hover {
   transform: scale(1.1) rotate(2deg);
-  box-shadow: 0 0 15px var(--accent-color);
+  box-shadow: 0 0 15px #7289da;
 }
 
 /* (Optional) Remove or adjust the SVG overlay if it’s not working as desired */

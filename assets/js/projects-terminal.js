@@ -4,7 +4,7 @@ const bobaMessages = [
     "Slurping on that sweet milk tea of category theory~",
     "Synthesizing new boba beads in the arc reactor...",
     "Gotta keep my boba levels up or I'll collapse wavefunctions weirdly!"
-  ];
+];
   
   // On DOM loaded
   document.addEventListener("DOMContentLoaded", () => {

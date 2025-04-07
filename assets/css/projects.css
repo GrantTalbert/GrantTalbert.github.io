@@ -5,8 +5,7 @@
 /* Overall page container with a background image. 
    We layer a fallback color + the actual image for coverage. */
    body {
-    background: var(--page-bg-color) no-repeat center center / cover,
-                var(--page-bg-image) no-repeat center center / cover;
+    background: var(--page-bg-image) no-repeat center center / cover, var(--page-bg-color) no-repeat center center / cover;
     color: var(--text-color);
     font-family: 'Comic Neue', sans-serif;
     height: 100vh;
@@ -190,4 +189,16 @@
     font-family: 'Fira Code', monospace;
     max-height: 200px; 
     margin-bottom: 1rem;
+}
+
+/* Smooth transitions for terminal, file explorer, project view */
+.terminal-container,
+.file-explorer,
+.project-view {
+  transition: 
+    background-color 0.5s ease, 
+    color 0.5s ease, 
+    backdrop-filter 0.5s ease, 
+    -webkit-backdrop-filter 0.5s ease,
+    border-color 0.5s ease;
 }

@@ -12,6 +12,8 @@
   text-align: center;
   color: var(--accent-color);
   margin-bottom: 2rem;
+  background-color: var(--bg-color);
+  border-radius: 10px;
 }
 
 /* Sticky Notes Grid */
@@ -45,17 +47,18 @@
   transform: scale(1.05);
 }
 
-/* Tape effect for sticky notes (placed at the top) */
+/* Tape effect for sticky notes (placed at the top)
 .note::after {
   content: "";
   position: absolute;
-  top: -8px;
+  top: -15px;
   left: 10%;
   width: 80%;
-  height: 5px;
+  height: 30px;
   background: rgba(128, 128, 128, 0.6);
-  z-index: 2;
+  z-index: 4;
 }
+*/
 
 /* Whiteboard Styling – Using CSS Grid for natural height scaling */
 .whiteboard {
@@ -114,7 +117,7 @@
     #add8e6 30px,
     #add8e6 31px
   );
-  padding: 0.8rem 1rem 0.8rem 1.5rem;
+  padding: 0.4rem 1rem 0.8rem 1.5rem;
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
   max-width: 250px;
@@ -159,4 +162,71 @@ display: block;
 width: 100%;
 height: auto;
 object-fit: cover;
+}
+
+/* Stationary Note Container */
+.stationary-note {
+  position: relative;
+  background: #fff;         /* White paper look */
+  padding: 1.5rem 1rem;      /* Adjust padding as needed */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  max-width: 500px;
+  margin: 2rem auto;
+  font-family: 'Comic Neue', cursive, sans-serif;
+  color: var(--text-color);
+}
+
+/* Heart in the top right */
+.stationary-note .heart {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 1.5rem;
+  z-index: 3;
+}
+
+/* Common Tape Styles */
+.tape {
+  position: absolute;
+  background: rgba(128, 128, 128, 0.6); /* Gray tape, partially transparent */
+  width: 40px;      /* Tape width */
+  height: 10px;     /* Tape height */
+  border-radius: 2px;
+  z-index: 4;
+}
+
+/* Tape on top-left */
+.tape-top-left {
+  top: -5px;
+  left: -5px;
+  transform: rotate(-10deg);
+}
+
+/* Tape on top-right */
+.tape-top-right {
+  top: -5px;
+  right: -5px;
+  transform: rotate(10deg);
+}
+
+/* Tape on bottom-left */
+.tape-bottom-left {
+  bottom: -5px;
+  left: -5px;
+  transform: rotate(10deg);
+}
+
+/* Tape on bottom-right */
+.tape-bottom-right {
+  bottom: -5px;
+  right: -5px;
+  transform: rotate(-10deg);
+}
+
+/* Paragraph styling */
+.stationary-note p {
+  margin: 1rem 0;
+  line-height: 1.5;
+  text-align: left;
 }

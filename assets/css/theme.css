@@ -53,7 +53,7 @@
   }
   
   .theme-yoneda {
-    /* Warmer, pink-lavender vibe */
+    /* Warmer, pastel pink-lavender vibe */
     --bg-color: #fff0f9; 
     --text-color: #5f0068; 
     --accent-color: #ff66b2;
@@ -67,13 +67,16 @@
     --stars-tint: rgb(253, 145, 253);
     --sticky-text: #6b0057;
   
-    /* Make it dreamy but more cohesive, less harsh purple */
-    --terminal-bg: rgba(95, 0, 104, 0.65);
-    --terminal-text: #ffd6f0;
-    --explorer-bg: rgba(255, 234, 255, 0.5);
-    --explorer-text: #5f0068;
+    /* Terminal a gentle pastel pink-lavender */
+    --terminal-bg: rgba(255, 153, 221, 0.3); 
+    --terminal-text: #6b0057;
+  
+    /* Explorer, slightly more opaque than the default */
+    --explorer-bg: rgba(255, 214, 242, 0.4);
+    --explorer-text: #6b0057;
     --page-bg-image: url('/assets/images/yoneda-explorer-bg.png');
     --page-bg-color: #ffeef8;
-    --project-bg: rgba(255, 255, 255, 0.8);
-  }
   
+    /* Project content area also pastel */
+    --project-bg: rgba(255, 255, 255, 0.6);
+  }    

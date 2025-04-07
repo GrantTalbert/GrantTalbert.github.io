@@ -12,6 +12,7 @@
     --stars-tint: rgb(247, 199, 243); /* a light white tint */
     --whiteboard-color: #fff;
     --whiteboard-text: #44385c;
+    --sticky-text: #44385c; /* keep this same as regular text color except on dark themes */
 }
   
 .theme-quantum {
@@ -19,7 +20,7 @@
     --text-color: #e0e0e0;            /* Light grey text for contrast */
     --accent-color: #7289da;          /* Muted blue accent */
     --secondary-bg-color: #2a2d36;     /* Deep secondary background */
-    --sticky-bg: #7289da; /* a softer note color for dark background */
+    --sticky-bg: #fffbcc; /* a softer note color for dark background */
     --wood-bg: url('/assets/images/wood-dark.jpeg');
     --nav-link-border-color: var(--accent-color);
     --nav-link-hover-shadow: var(--accent-color);
@@ -28,6 +29,7 @@
     --stars-tint: rgb(255, 255, 255);
     --whiteboard-color: #264941;
     --whiteboard-text: #dddddd;
+    --sticky-text: #1f2128;
 }
   
 .theme-yoneda {
@@ -42,4 +44,5 @@
     --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
     --stars-opacity: 1;
     --stars-tint: rgb(253, 145, 253);
+    --sticky-text: #6b0057;
 }

@@ -35,6 +35,7 @@
   transition: transform 0.3s;
   max-width: 300px;
   margin: 0 auto;
+  color: var(--sticky-text)
 }
 
 .note:nth-child(odd) {
@@ -124,6 +125,7 @@
   margin: 0 auto;
   transform: rotate(-2deg);
   z-index: 1;
+  color: var(--sticky-text)
 }
 .paper-piece .overlay {
   grid-area: 1 / 1 / -1 / -1;
@@ -161,7 +163,7 @@ object-fit: cover;
   max-width: 500px;
   margin: 2rem auto;
   font-family: 'Comic Neue', cursive, sans-serif;
-  color: var(--text-color);
+  color: var(--sticky-text);
 }
 
 /* Heart in the top right */

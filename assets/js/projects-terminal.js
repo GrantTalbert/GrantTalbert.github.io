@@ -85,7 +85,15 @@ function displayFolderContents(folderPath) {
       })
       .then(html => {
         projectView.innerHTML = html;
+        // removeLeadingNewlines (already included in your cleaned-up JS)
         removeLeadingNewlines(projectView);
+
+        // Add fade-in animation to all <pre> blocks AND .pdf-frame containers
+        const fadeTargets = projectView.querySelectorAll("pre, .pdf-frame");
+        fadeTargets.forEach(el => {
+            el.classList.add("animate-in");
+        });
+
       })
       .catch(err => {
         projectView.innerHTML = `
@@ -113,7 +121,15 @@ function displayFileContent(filetype, filename) {
       })
       .then(html => {
         projectView.innerHTML = html;
+        // removeLeadingNewlines (already included in your cleaned-up JS)
         removeLeadingNewlines(projectView);
+
+        // Add fade-in animation to all <pre> blocks AND .pdf-frame containers
+        const fadeTargets = projectView.querySelectorAll("pre, .pdf-frame");
+        fadeTargets.forEach(el => {
+            el.classList.add("animate-in");
+        });
+
       })
       .catch(err => {
         projectView.innerHTML = `

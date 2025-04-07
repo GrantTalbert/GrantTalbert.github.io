@@ -203,3 +203,31 @@
     -webkit-backdrop-filter 0.5s ease,
     border-color 0.5s ease;
 }
+
+.pdf-frame {
+    border: 3px dashed var(--accent-color); /* or solid, dotted, etc. */
+    border-radius: 8px;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1); /* mild see-through layer */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  .pdf-frame iframe {
+    display: block; /* ensures no extra gap below the iframe */
+  }
+
+  /* A nice fade/slide in from below */
+@keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-in {
+    animation: fadeInUp 0.6s ease forwards; /* half-second fade-up */
+  }
+  

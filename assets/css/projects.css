@@ -1,16 +1,22 @@
-/* Container for the entire page layout */
-body {
-    background: var(--bg-color);
+/* ========================================================================== */
+/*                       LAYOUT & BASE STYLES FOR PROJECTS                    */
+/* ========================================================================== */
+
+/* Overall page container with a background image. 
+   We layer a fallback color + the actual image for coverage. */
+   body {
+    background: var(--page-bg-color) no-repeat center center / cover,
+                var(--page-bg-image) no-repeat center center / cover;
     color: var(--text-color);
     font-family: 'Comic Neue', sans-serif;
     height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  /* —— Terminal Container (Transparent + Rounded) —— */
-  .terminal-container {
-    background: var(--terminal-bg); /* uses the RGBA variable */
+}
+
+/* Terminal Container (Transparent + Rounded, Short) */
+.terminal-container {
+    background: var(--terminal-bg);
     color: var(--terminal-text);
     font-family: 'Fira Code', monospace;
     width: 100%;
@@ -18,139 +24,147 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border-radius: 12px; /* Rounded corners! */
-    margin-bottom: 1rem; /* a bit of spacing from main area */
-    backdrop-filter: blur(6px); /* for that frosted glass look (if supported) */
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(255,255,255,0.2);
-    overflow: hidden; /* so corners stay round */
-  }
-  
-  /* Terminal Header with small window controls */
-  .terminal-header {
+    overflow: hidden; /* keep corners round */
+    /* If you want top margin from the very top, add: margin-top: 1rem; */
+}
+
+/* Terminal Header */
+.terminal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 0.6rem; 
-    background: rgba(255,255,255,0.1); /* slight overlay */
+    padding: 0.3rem 0.6rem;
+    background: rgba(255,255,255,0.1);
     border-bottom: 1px solid rgba(255,255,255,0.2);
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
-  }
-  
-  .terminal-title {
+}
+
+.terminal-title {
     font-weight: bold;
     font-size: 0.9rem;
-  }
-  
-  .terminal-buttons {
+}
+
+.terminal-buttons {
     display: flex;
     gap: 0.4rem;
-  }
-  
-  .btn-close,
-  .btn-minimize,
-  .btn-maximize {
+}
+
+.btn-close,
+.btn-minimize,
+.btn-maximize {
     width: 12px;
     height: 12px;
     display: inline-block;
     border-radius: 50%;
-    background: #ff5f57; /* close by default */
+    background: #ff5f57; /* red by default for close */
     cursor: pointer;
-  }
-  
-  .btn-minimize {
-    background: #ffbd2e;
-  }
-  
-  .btn-maximize {
-    background: #28c940;
-  }
-  
-  /* Terminal Content (scrollable) */
-  .terminal-content {
+}
+
+.btn-minimize {
+    background: #ffbd2e; /* yellow */
+}
+
+.btn-maximize {
+    background: #28c940; /* green */
+}
+
+/* Terminal Content (scrollable text area) */
+.terminal-content {
     flex-grow: 1;
     padding: 0.5rem;
     overflow-y: auto;
     font-size: 0.9rem;
     line-height: 1.4;
-  }
-  
-  /* —— Main Area: File Explorer + Content —— */
-  .main-area {
+}
+
+/* Main area: side file explorer + main project view */
+.main-area {
     display: flex;
     flex-grow: 1;
     overflow: hidden;
-    padding: 0 1rem; 
-  }
-  
-  /* —— File Explorer: Transparent background, custom BG image —— */
-  .file-explorer {
+    padding: 0 1rem;
+}
+
+/* File Explorer (Transparent + Frosted Glass) */
+.file-explorer {
     position: relative;
     width: 200px;
     margin-right: 1rem;
     border-radius: 10px;
-    overflow: hidden; /* to keep corners clean */
+    overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
-    background: var(--explorer-bg);
+
+    /* partial background color from theme variable */
+    background: var(--explorer-bg); 
     color: var(--explorer-text);
-    /* If you want a background image under the partial transparency: */
-    background-image: var(--explorer-bg-image);
-    background-size: cover;
-    background-position: center;
-    min-height: 400px; /* or auto, up to you */
-  }
-  
-  /* Optional overlay color for the file explorer image */
-  .file-explorer::before {
+
+    /* 
+      We removed any direct background image here, 
+      so you'll see the body BG behind it if alpha < 1
+    */
+    min-height: 400px; /* ensures a decent vertical size */
+}
+
+/* Optional overlay if you want to add more color 
+   or different alpha on top of the explorer. 
+   Right now, let's remove it or keep it as you wish. */
+.file-explorer::before {
     content: "";
     position: absolute;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: var(--explorer-bg); /* same color or something else */
-    opacity: 0.7; /* tweak to your liking */
+    background: var(--explorer-bg);
+    opacity: 0.7; 
     pointer-events: none;
     z-index: 1;
-  }
-  
-  .file-explorer h2 {
+    /* If you'd prefer no overlay, just remove or comment out. */
+}
+
+/* Explorer Title */
+.file-explorer h2 {
     position: relative;
     z-index: 2;
     margin: 1rem;
     font-size: 1.1rem;
-    font-family: 'Comic Neue', sans-serif;
-  }
-  
-  .file-explorer ul {
+}
+
+/* Explorer File/Folder List */
+.file-explorer ul {
     position: relative;
     z-index: 2;
     list-style: none;
     margin: 0 1rem 1rem;
     padding: 0;
-  }
-  
-  .file-explorer li {
+}
+
+.file-explorer li {
     margin: 0.5rem 0;
     padding: 0.3rem;
     border-radius: 4px;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
-  }
-  
-  .file-explorer li:hover {
+}
+
+.file-explorer li:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: scale(1.02);
-  }
-  
-  .file-explorer .icon {
+}
+
+.file-explorer .icon {
     margin-right: 0.5rem;
-  }
-  
-  /* —— Project View (main content) —— */
-  .project-view {
+}
+
+/* Project View (main content) */
+.project-view {
     flex-grow: 1;
     background: var(--project-bg);
     border-radius: 10px;
@@ -160,23 +174,20 @@ body {
     border: 1px solid rgba(255,255,255,0.2);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-  }
-  
-  .project-view h2 {
-    font-family: 'Comic Neue', sans-serif;
+}
+
+.project-view h2 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .project-view pre {
+}
+
+.project-view pre {
     background: rgba(0, 0, 0, 0.2);
     color: #fff;
     padding: 0.5rem;
     border-radius: 5px;
     overflow-x: auto;
     font-family: 'Fira Code', monospace;
-    max-height: 200px; /* so it doesn't get too tall */
+    max-height: 200px; 
     margin-bottom: 1rem;
-  }
-  
-  /* Adjust the code text color for clarity in each theme if needed */  
+}

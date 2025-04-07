@@ -339,3 +339,63 @@ object-fit: cover;
 .studying-note:hover {
   transform: scale(1.03);
 }
+
+/* Constellation Section */
+.constellation {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow: hidden;
+}
+
+/* Header with Quote */
+.constellation-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.constellation-header blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--accent-color);
+}
+
+/* Container for the Floating Idea Nodes */
+.constellation-container {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+}
+
+/* Floating Idea Node Styling */
+.idea-node {
+  position: absolute;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 200px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.idea-node h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+  color: var(--accent-color);
+}
+.idea-node p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+.idea-node:hover {
+  transform: scale(1.1) rotate(2deg);
+  box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* SVG Overlay for Connecting Lines */
+.constellation-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}

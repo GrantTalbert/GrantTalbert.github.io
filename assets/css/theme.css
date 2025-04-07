@@ -13,11 +13,14 @@
     --whiteboard-color: #fff;
     --whiteboard-text: #44385c;
     --sticky-text: #44385c; /* keep this same as regular text color except on dark themes */
-    --terminal-bg: #1E1E1E;
-    --terminal-text: #cccccc;
-    --explorer-bg: #f2effc;
-    --explorer-text: #44385c;
-    --project-bg: #ffffff;
+  /* Terminal & Explorer base for the default theme */
+  --terminal-bg: rgba(30, 30, 30, 0.8); /* black-ish with transparency */
+  --terminal-text: #cccccc;
+  --explorer-bg: rgba(242, 239, 252, 0.7); /* lavender pastel */
+  --explorer-text: #44385c;
+  --explorer-bg-image: url('/assets/images/default-explorer-bg.png'); /* fallback image or none */
+  
+  --project-bg: #ffffff; 
 }
   
 .theme-quantum {
@@ -35,11 +38,15 @@
     --whiteboard-color: #264941;
     --whiteboard-text: #dddddd;
     --sticky-text: #1f2128;
-    --terminal-bg: #1E1E1E;
-    --terminal-text: #cccccc;
-    --explorer-bg: #f2effc;
-    --explorer-text: #44385c;
-    --project-bg: #ffffff;
+  /* Maybe a darker semi-transparent for the terminal */
+  --terminal-bg: rgba(31, 33, 40, 0.8);
+  --terminal-text: #dddddd;
+  --explorer-bg: rgba(42, 45, 54, 0.6);
+  --explorer-text: #ffffff;
+  --explorer-bg-image: url('/assets/images/quantum-explorer-bg.png');
+  
+  --project-bg: rgba(255, 255, 255, 0.1);
+
 }
   
 .theme-yoneda {
@@ -55,9 +62,12 @@
     --stars-opacity: 1;
     --stars-tint: rgb(253, 145, 253);
     --sticky-text: #6b0057;
-    --terminal-bg: #1E1E1E;
-    --terminal-text: #cccccc;
-    --explorer-bg: #f2effc;
-    --explorer-text: #44385c;
-    --project-bg: #ffffff;
+  /* Pink-ish theme */
+  --terminal-bg: rgba(107, 0, 87, 0.7);
+  --terminal-text: #ffd6f0;
+  --explorer-bg: rgba(255, 251, 204, 0.6);
+  --explorer-text: #6b0057;
+  --explorer-bg-image: url('/assets/images/yoneda-explorer-bg.png');
+  
+  --project-bg: rgba(255, 255, 255, 0.8);
 }

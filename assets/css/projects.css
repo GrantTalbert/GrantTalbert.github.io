@@ -1,11 +1,5 @@
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
+/* Container for the entire page layout */
+body {
     background: var(--bg-color);
     color: var(--text-color);
     font-family: 'Comic Neue', sans-serif;
@@ -14,33 +8,44 @@
     flex-direction: column;
   }
   
-  /* Terminal Container (short) at top */
+  /* —— Terminal Container (Transparent + Rounded) —— */
   .terminal-container {
-    background: var(--terminal-bg);
+    background: var(--terminal-bg); /* uses the RGBA variable */
     color: var(--terminal-text);
     font-family: 'Fira Code', monospace;
     width: 100%;
-    height: 160px; /* Shorter terminal height */
+    height: 160px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 12px; /* Rounded corners! */
+    margin-bottom: 1rem; /* a bit of spacing from main area */
+    backdrop-filter: blur(6px); /* for that frosted glass look (if supported) */
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.2);
+    overflow: hidden; /* so corners stay round */
   }
   
+  /* Terminal Header with small window controls */
   .terminal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5rem;
-    background: rgba(255,255,255,0.05);
+    padding: 0.3rem 0.6rem; 
+    background: rgba(255,255,255,0.1); /* slight overlay */
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }
   
   .terminal-title {
     font-weight: bold;
+    font-size: 0.9rem;
   }
   
   .terminal-buttons {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
   
   .btn-close,
@@ -50,17 +55,19 @@
     height: 12px;
     display: inline-block;
     border-radius: 50%;
-    background: #ff5f57; /* red for close */
+    background: #ff5f57; /* close by default */
+    cursor: pointer;
   }
   
   .btn-minimize {
-    background: #ffbd2e; /* yellow for minimize */
+    background: #ffbd2e;
   }
   
   .btn-maximize {
-    background: #28c940; /* green for maximize */
+    background: #28c940;
   }
   
+  /* Terminal Content (scrollable) */
   .terminal-content {
     flex-grow: 1;
     padding: 0.5rem;
@@ -69,70 +76,107 @@
     line-height: 1.4;
   }
   
-  /* Main area: file explorer + content */
+  /* —— Main Area: File Explorer + Content —— */
   .main-area {
     display: flex;
     flex-grow: 1;
     overflow: hidden;
+    padding: 0 1rem; 
   }
   
-  /* File Explorer sidebar */
+  /* —— File Explorer: Transparent background, custom BG image —— */
   .file-explorer {
+    position: relative;
+    width: 200px;
+    margin-right: 1rem;
+    border-radius: 10px;
+    overflow: hidden; /* to keep corners clean */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
     background: var(--explorer-bg);
     color: var(--explorer-text);
-    width: 200px;
-    padding: 1rem;
-    overflow-y: auto;
-    box-shadow: 3px 0 8px rgba(0,0,0,0.1);
+    /* If you want a background image under the partial transparency: */
+    background-image: var(--explorer-bg-image);
+    background-size: cover;
+    background-position: center;
+    min-height: 400px; /* or auto, up to you */
+  }
+  
+  /* Optional overlay color for the file explorer image */
+  .file-explorer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: var(--explorer-bg); /* same color or something else */
+    opacity: 0.7; /* tweak to your liking */
+    pointer-events: none;
+    z-index: 1;
   }
   
   .file-explorer h2 {
-    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+    margin: 1rem;
+    font-size: 1.1rem;
     font-family: 'Comic Neue', sans-serif;
-    font-size: 1.2rem;
   }
   
   .file-explorer ul {
+    position: relative;
+    z-index: 2;
     list-style: none;
+    margin: 0 1rem 1rem;
+    padding: 0;
   }
   
   .file-explorer li {
     margin: 0.5rem 0;
-    cursor: pointer;
-    transition: background 0.2s;
     padding: 0.3rem;
     border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
   }
   
   .file-explorer li:hover {
-    background: #e6e1ff;
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
   }
   
   .file-explorer .icon {
     margin-right: 0.5rem;
   }
   
-  /* Project View (main content) */
+  /* —— Project View (main content) —— */
   .project-view {
-    background: var(--project-bg);
     flex-grow: 1;
-    padding: 2rem;
+    background: var(--project-bg);
+    border-radius: 10px;
+    padding: 1rem;
     overflow-y: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   
   .project-view h2 {
-    font-size: 1.5rem;
+    font-family: 'Comic Neue', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-view pre {
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Fira Code', monospace;
+    max-height: 200px; /* so it doesn't get too tall */
     margin-bottom: 1rem;
   }
   
-  .project-view p {
-    margin-bottom: 1rem;
-  }
-  
-  /* Minimal transitions / animations if you want them */
-  .file-explorer li {
-    transition: transform 0.1s ease;
-  }
-  .file-explorer li:active {
-    transform: scale(0.98);
-  }  
+  /* Adjust the code text color for clarity in each theme if needed */  

@@ -1,37 +1,44 @@
-/* LaTeX commands: \emph, \section, etc. */
+/* ============================== */
+/*  Syntax Highlighting Classes   */
+/* ============================== */
+
+/* LaTeX commands like \emph, \begin, etc. */
 .latex-cmd {
-    color: #c678dd;  /* a nice purple */
+    color: var(--syntax-keyword);
     font-weight: bold;
 }
   
-/* LaTeX braces {} */
+  /* LaTeX braces { and } */
 .latex-brace {
-    color: #d19a66;  /* a brownish/orange color */
+    color: var(--syntax-brace);
     font-weight: bold;
 }
   
-/* Markdown headings # */
+  /* General comments (if used) */
+.comment {
+    color: var(--syntax-comment);
+    font-style: italic;
+}
+  
+  /* String Literals */
+.string {
+    color: var(--syntax-string);
+}
+  
+  /* Markdown headings: the leading # */
 .md-hash {
-    color: #ff6fcf;  /* your accent pink, e.g. Kira pink */
+    color: var(--syntax-md-hash);
     font-weight: bold;
 }
+  
+  /* Markdown heading text */
 .md-heading {
-    color: #ffffff; /* or something that stands out */
+    color: var(--syntax-md-text);
     font-weight: bold;
 }
   
-/* Markdown dash at start of line */
+  /* Markdown dashes for list items */
 .md-dash {
-    color: #ff6fcf;  /* pink again? */
+    color: var(--syntax-md-hash);
     font-weight: bold;
 }
-
-
-pre code {
-    font-family: 'Fira Code', monospace;
-    background: rgba(0,0,0,0.1);
-    padding: 0.5rem;
-    display: block;
-    border-radius: 4px;
-}
-  

@@ -180,6 +180,7 @@
     margin-bottom: 0.5rem;
 }
 
+  
 .project-view pre {
     background: rgba(0, 0, 0, 0.2);
     color: var(--terminal-text); /* or some readable color from your theme */
@@ -190,7 +191,8 @@
     font-size: 1rem;      /* bump this to 1rem or 1.1rem */
     line-height: 1.5;     /* better spacing between lines */
     margin-bottom: 1rem;  /* space after the code block */
-  }  
+    transition: background 0.5s, color 0.5s;
+}
 
 /* Smooth transitions for terminal, file explorer, project view */
 .terminal-container,

@@ -10,10 +10,10 @@ body {
     background: #0b0e13; /* Fallback dark background */
     position: relative;
     overflow-x: hidden;
-  }
+}
   
-  /* Starfield background remains as before */
-  .starfield {
+/* Starfield background remains as before */
+.starfield {
     position: fixed;
     top: 0; 
     left: 0;
@@ -22,35 +22,35 @@ body {
     z-index: -2;
     background: radial-gradient(circle at 50% 50%, #212332 0%, #0b0e13 80%, #000000 100%);
     pointer-events: none;
-  }
+}
   
-  /* Hologram container settings */
-  .holo-container {
+/* Hologram container settings */
+.holo-container {
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem 1rem;
     text-align: center;
     position: relative;
     z-index: 1;
-  }
+}
   
   /* Main heading styling */
-  .holo-container h1 {
+.holo-container h1 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
     color: var(--contact-heading-color);
     text-shadow: 0 0 8px rgba(165,185,255,0.8);
-  }
+}
   
   /* Subheading / introductory text */
-  .holo-container p {
+.holo-container p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
     color: var(--contact-text-color);
-  }
+}
   
-  /* Hologram Card Base: Using theme variables for background & border */
-  .holo-card {
+/* Hologram Card Base: Using theme variables for background & border */
+.holo-card {
     background: var(--contact-panel-bg);
     border: 1px solid var(--contact-panel-border);
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.08), 
@@ -63,27 +63,27 @@ body {
     max-width: 500px;
     transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
-  }
+}
   
   /* Card Heading */
-  .holo-card h2 {
+.holo-card h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--contact-heading-color);
     text-shadow: 0 0 4px rgba(182,208,255,0.8);
-  }
+}
   
   /* Links inside cards */
-  .holo-card a {
+.holo-card a {
     color: var(--accent-color);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.2s;
-  }
-  .holo-card a:hover {
+}
+.holo-card a:hover {
     color: #fff;
     text-shadow: 0 0 4px var(--accent-color);
-  }
+}
   
   /* Hover effect on cards */
   .holo-card:hover {

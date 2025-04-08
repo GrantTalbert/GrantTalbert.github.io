@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact</title>
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <meta charset="UTF-8" />
+  <title>Contact Kira</title>
+  <!-- Link to the hologram-style CSS -->
+  <link rel="stylesheet" href="/assets/css/contact.css">
+  <!-- (Optional) If you want any interactive effects, include a JS file here -->
 </head>
 <body>
-  <a href="/" class="back-button">&larr;</a>
-  <div class="container">
-    <h1 class="animated-text">Contact Me</h1>
-    <p class="animated-text">
-      Contact me at:
-    </p>
-    <div class="nav-links">
-      <a href="mailto:83.talbert@gmail.com">Email: 83.talbert@gmail.com</a>
-      <a href="https://github.com/GrantTalbert">Github</a>
-    </div>
+
+    <!-- Theme Chooser -->
+  <div id="theme-chooser">
+      <button data-theme="default">Bubblegum KK</button>
+      <button data-theme="quantum">Quantum Glitter</button>
+      <button data-theme="yoneda">Yoneda Pink</button>
   </div>
+  
+  <!-- Starfield background (layered) -->
+  <div class="starfield"></div>
+
+  <section class="holo-container">
+    <h1>Kira’s Holographic Uplink</h1>
+    <p>Transmit your signals across the categorical aether!</p>
+
+    <!-- Each contact method as a "holo-card" -->
+    <div class="holo-card">
+      <h2>Discord</h2>
+      <p>KiraNoether#2025</p>
+    </div>
+
+    <div class="holo-card">
+      <h2>GitHub</h2>
+      <a href="https://github.com/granttalbert" target="_blank" rel="noopener">
+        github.com/granttalbert
+      </a>
+    </div>
+
+    <div class="holo-card">
+      <h2>Email</h2>
+      <p>kira@derivedgirls.xyz</p>
+    </div>
+
+    <div class="holo-card">
+      <h2>Twitter</h2>
+      <a href="https://twitter.com/yoneda_cutie" target="_blank" rel="noopener">
+        @yoneda_cutie
+      </a>
+    </div>
+
+  </section>
+  <script href="/assets/js/explosion.js"></script>
+  <script href="/assets/js/theme-switcher.js"></script>
 </body>
 </html>

@@ -31,10 +31,15 @@
     --syntax-brace:   #d19a66;   /* Orange-brown for braces */
     --syntax-md-hash: #ff6fcf;    /* Accent pink for '#' tokens */
     --syntax-md-text: #44385c;    /* Deep purple for rest of heading */
-    
+
+    /* contact page? */
+    --contact-panel-bg: rgba(255, 255, 255, 0.03);
+    --contact-panel-border: rgba(255, 255, 255, 0.15);
+    --contact-heading-color: #a5b9ff;
+    --contact-text-color: #d9e4ff;
   }
   
-  .theme-quantum {
+.theme-quantum {
     /* Strong cosmic vibes */
     --bg-color: #1f2128; 
     --text-color: #e0e0e0; 
@@ -67,9 +72,15 @@
     --syntax-brace:   #fab387;   /* Warm apricot for braces */
     --syntax-md-hash: #7289da;    /* Muted blue for '#' tokens */
     --syntax-md-text: #e0e0e0;    /* Light gray for heading text */
-  }
+
+    /* contact page? */
+    --contact-panel-bg: rgba(31, 33, 40, 0.85);  /* Darker, for a cosmic effect */
+    --contact-panel-border: rgba(255, 255, 255, 0.2);
+    --contact-heading-color: #89b4fa;  /* Light blue */
+    --contact-text-color: #a6adc8;     /* Muted gray-blue */
+}
   
-  .theme-yoneda {
+.theme-yoneda {
     /* Warmer, pastel pink-lavender vibe */
     --bg-color: #fff0f9; 
     --text-color: #5f0068; 
@@ -104,4 +115,10 @@
     --syntax-brace:   #ffc0cb;   /* A soft pink for braces */
     --syntax-md-hash: #ff66b2;    /* Bright pastel pink for '#' tokens */
     --syntax-md-text: #5f0068;    /* Deep, rich purple for headings */
-  }    
+
+    /* contact page? */
+    --contact-panel-bg: rgba(255, 234, 255, 0.45); /* Soft pastel pinkish */
+    --contact-panel-border: rgba(255, 255, 255, 0.15);
+    --contact-heading-color: #ff99cc;  /* Pastel pink */
+    --contact-text-color: #f9c5e5;     /* Light pinkish */
+}    

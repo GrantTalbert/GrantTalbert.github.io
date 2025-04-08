@@ -36,8 +36,8 @@
     --contact-panel-bg: rgba(255, 255, 255, 0.03);
     --contact-panel-border: rgba(255, 255, 255, 0.15);
     --contact-heading-color: #ff7ebe;
-    --contact-text-color: #d9e4ff;
-    --contact-page-bg: radial-gradient(circle at 50% 50%, #ff99cc 0%, #f9c5e5 60%, #ffffff 100%);
+    --contact-text-color: #6c6c6c;
+    --contact-page-bg: radial-gradient(circle at 50% 50%, #f9c5e5 0%, #ffe2f4 60%, #ffffff 100%); /* #ff99cc */
   }
   
 .theme-quantum {

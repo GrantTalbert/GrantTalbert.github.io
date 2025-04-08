@@ -37,6 +37,7 @@
     --contact-panel-border: rgba(255, 255, 255, 0.15);
     --contact-heading-color: #a5b9ff;
     --contact-text-color: #d9e4ff;
+    --contact-page-bg: radial-gradient(circle at 50% 50%, #ff6fcf 0%, #f9c5e5 80%, #ffffff 100%);
   }
   
 .theme-quantum {
@@ -78,6 +79,7 @@
     --contact-panel-border: rgba(255, 255, 255, 0.2);
     --contact-heading-color: #89b4fa;  /* Light blue */
     --contact-text-color: #a6adc8;     /* Muted gray-blue */
+    --contact-page-bg: radial-gradient(circle at 50% 50%, #212332 0%, #0b0e13 80%, #000000 100%);
 }
   
 .theme-yoneda {
@@ -121,4 +123,5 @@
     --contact-panel-border: rgba(255, 255, 255, 0.15);
     --contact-heading-color: #ff99cc;  /* Pastel pink */
     --contact-text-color: #f9c5e5;     /* Light pinkish */
+    --contact-page-bg: radial-gradient(circle at 50% 50%, #ff66b2 0%, #ff99cc 80%, #ffcdea 100%);
 }    

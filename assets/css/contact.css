@@ -25,9 +25,7 @@
     z-index: -2;
     background: 
       radial-gradient(circle at 50% 50%, #212332 0%, #0b0e13 80%, #000000 100%);
-    /* If you have a star image tile or want an extra layer, you can add that here: 
-       background-image: url('/assets/images/stars.png'); repeat, etc.
-    */
+       background-image: url('/assets/images/stars3.png');
     pointer-events: none; /* Let clicks pass through */
   }
   

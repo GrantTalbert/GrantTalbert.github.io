@@ -3,13 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Grant's Projects</title>
+
   <!-- Preload background images for all themes -->
   <link rel="preload" href="/assets/images/default-explorer-bg.png" as="image">
   <link rel="preload" href="/assets/images/quantum-explorer-bg.png" as="image">
   <link rel="preload" href="/assets/images/yoneda-explorer-bg.png" as="image">
+
+  <!-- importing css -->
   <link rel="stylesheet" href="../assets/css/theme.css" />
   <link rel="stylesheet" href="../assets/css/projects.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
@@ -22,7 +26,7 @@
       <button data-theme="yoneda">Yoneda Pink</button>
   </div>
 
-  <!-- Terminal (shorter) at the top -->
+  <!-- Terminal at the top -->
   <div class="terminal-container">
     <div class="terminal-header">
       <div class="terminal-title">hyperion@math-machine:~/projects</div>
@@ -33,34 +37,40 @@
       </div>
     </div>
     <div class="terminal-content" id="terminal-log">
-      <!-- We'll log stuff here via JS -->
       <p>> hello from Grant's project space</p>
     </div>
   </div>
 
+<!-- FILE EXPLORER -->
   <div class="main-area">
-    <!-- File Explorer Sidebar -->
     <aside class="file-explorer">
       <h2>~/projects</h2>
       <ul>
-        <li class="folder" data-path="zines/">
-          <span class="icon">📂</span> zines
+
+        <li class="file" data-filename="tex" data-path="uni-notes">
+          <span class="icon">📄</span> uni-notes
         </li>
+
         <li class="file" data-filetype="tex" data-filename="category-zine.tex">
           <span class="icon">📄</span> category-zine.tex
         </li>
+
         <li class="file" data-filetype="pdf" data-filename="fancy-notes.pdf">
           <span class="icon">📄</span> fancy-notes.pdf
         </li>
+
         <li class="file" data-filetype="md" data-filename="about-this-project.md">
           <span class="icon">📄</span> about-this-project.md
         </li>
+
         <li class="folder" data-path="minecraft-mods/">
           <span class="icon">📂</span> minecraft-mods
         </li>
+
         <li class="file" data-filetype="sh" data-filename="compile.sh">
           <span class="icon">💻</span> compile.sh
         </li>
+
       </ul>
     </aside>
 

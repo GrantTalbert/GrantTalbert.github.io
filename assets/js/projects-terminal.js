@@ -92,7 +92,7 @@ const bobaMessages = [
         attachLocalExplorerListeners(projectView); // ensures in-folder links register
 
         // syntax highlighting for code blocks
-        const codeBlocks = projectView.querySelectorAll("pre code");
+        const codeBlocks = projectView.querySelectorAll("pre");
         codeBlocks.forEach(block => {
             const original = block.innerText;
             const highlighted = basicHighlight(original);
@@ -131,7 +131,7 @@ const bobaMessages = [
         attachLocalExplorerListeners(projectView); // ensures in-file links process
 
         // syntax highlighting for code blocks
-        const codeBlocks = projectView.querySelectorAll("pre code");
+        const codeBlocks = projectView.querySelectorAll("pre");
         codeBlocks.forEach(block => {
             const original = block.innerText;
             const highlighted = basicHighlight(original);

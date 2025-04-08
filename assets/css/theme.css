@@ -35,9 +35,9 @@
     /* contact page? */
     --contact-panel-bg: rgba(255, 255, 255, 0.03);
     --contact-panel-border: rgba(255, 255, 255, 0.15);
-    --contact-heading-color: #a5b9ff;
+    --contact-heading-color: #ff7ebe;
     --contact-text-color: #d9e4ff;
-    --contact-page-bg: radial-gradient(circle at 50% 50%, #ff6fcf 0%, #f9c5e5 80%, #ffffff 100%);
+    --contact-page-bg: radial-gradient(circle at 50% 50%, #ff99cc 0%, #f9c5e5 60%, #ffffff 100%);
   }
   
 .theme-quantum {

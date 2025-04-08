@@ -42,7 +42,7 @@ body {
   font-size: 2.5rem;
   margin-bottom: 0.5rem;
   color: var(--contact-heading-color);
-  text-shadow: 0 0 8px rgba(165,185,255,0.8);
+  text-shadow: 0 0 8px var(--contact-heading-color);
 }
   
 /* hologram text */
@@ -73,7 +73,7 @@ body {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   color: var(--contact-heading-color);
-  text-shadow: 0 0 4px rgba(182,208,255,0.8);
+  text-shadow: 0 0 4px var(--contact-heading-color);
 }
   
 /* links inside cards */

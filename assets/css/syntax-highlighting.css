@@ -1,0 +1,37 @@
+/* LaTeX commands: \emph, \section, etc. */
+.latex-cmd {
+    color: #c678dd;  /* a nice purple */
+    font-weight: bold;
+}
+  
+/* LaTeX braces {} */
+.latex-brace {
+    color: #d19a66;  /* a brownish/orange color */
+    font-weight: bold;
+}
+  
+/* Markdown headings # */
+.md-hash {
+    color: #ff6fcf;  /* your accent pink, e.g. Kira pink */
+    font-weight: bold;
+}
+.md-heading {
+    color: #ffffff; /* or something that stands out */
+    font-weight: bold;
+}
+  
+/* Markdown dash at start of line */
+.md-dash {
+    color: #ff6fcf;  /* pink again? */
+    font-weight: bold;
+}
+
+
+pre code {
+    font-family: 'Fira Code', monospace;
+    background: rgba(0,0,0,0.1);
+    padding: 0.5rem;
+    display: block;
+    border-radius: 4px;
+}
+  

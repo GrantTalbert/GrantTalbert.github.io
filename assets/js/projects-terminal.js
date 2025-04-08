@@ -87,11 +87,17 @@ const bobaMessages = [
       .then(html => {
         projectView.innerHTML = html;
   
-        removeLeadingNewlines(projectView);
-        fadeInBlocks(projectView);
-  
-        // ⚠️ Attach click listeners to newly loaded <li> elements
-        attachLocalExplorerListeners(projectView);
+        removeLeadingNewlines(projectView); // removes the leading/trailing newlins
+        fadeInBlocks(projectView); // adds an animation
+        attachLocalExplorerListeners(projectView); // ensures in-folder links register
+
+        // syntax highlighting for code blocks
+        const codeBlocks = projectView.querySelectorAll("pre code");
+        codeBlocks.forEach(block => {
+            const original = block.innerText;
+            const highlighted = basicHighlight(original);
+            block.innerHTML = highlighted;
+        })
       })
       .catch(err => {
         projectView.innerHTML = `

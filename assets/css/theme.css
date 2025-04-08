@@ -156,8 +156,8 @@
     /* contact page */
     --contact-panel-bg:         rgba(255, 234, 255, 0.45); /* Soft pastel pinkish */
     --contact-panel-border:     rgba(255, 255, 255, 0.15);
-    --contact-heading-color:    #ff99cc;  /* Pastel pink */
-    --contact-text-color:       #f9c5e5;     /* Light pinkish */
-    --contact-page-bg:          radial-gradient(circle at 50% 50%, #ff66b2 0%, #ff99cc 80%, #ffcdea 100%);
+    --contact-heading-color:    #ffffff;  /* Pastel pink */
+    --contact-text-color:       #ff66b2;     /* Light pinkish */
+    --contact-page-bg:          radial-gradient(circle at 50% 50%, #ff99cc 0%, #ffcdea 80%, #fff0f9 100%);
 
 }    

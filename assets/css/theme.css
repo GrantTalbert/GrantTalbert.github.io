@@ -31,6 +31,7 @@
     --wood-bg:          url('/assets/images/wood-default.jpeg');
   
     /* projects page */
+    --code-color:       #cc488a;
     --terminal-bg:      rgba(30, 30, 30, 0.7); 
     --terminal-text:    #f9c5e5;
     --explorer-bg:      rgba(255, 240, 255, 0.5); 
@@ -84,6 +85,7 @@
     --wood-bg:          url('/assets/images/wood-dark.jpeg');
   
     /* project page */
+    --code-color:       #dddddd;
     --terminal-bg:      rgba(31, 33, 45, 0.85); /* 31, 33, 40, 0.85 */
     --terminal-text:    #dddddd;
     --explorer-bg:      rgba(42, 45, 60, 0.6); /* 42, 45, 54, 0.6 */
@@ -137,6 +139,7 @@
     --wood-bg:          url('/assets/images/wood-yoneda.jpeg');
 
     /* projects page */
+    --code-color:       #6b0057;
     --terminal-bg:      rgba(255, 153, 221, 0.3); 
     --terminal-text:    #6b0057;
     --explorer-bg:      rgba(255, 214, 242, 0.4);

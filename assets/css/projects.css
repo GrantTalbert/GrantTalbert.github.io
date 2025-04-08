@@ -183,7 +183,7 @@
   
 .project-view pre {
     background: rgba(0, 0, 0, 0.2);
-    color: var(--terminal-text); /* or some readable color from your theme */
+    color: var(--code-color);
     padding: 0.75rem;
     border-radius: 5px;
     overflow-x: auto;

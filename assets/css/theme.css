@@ -1,127 +1,163 @@
+/* ============================================================== */
+/*                           css themes                           */
+/* three themes - Bubblegum KK, Quantum Sparkles, and Yoneda Pink */
+/* ============================================================== */
+
+
+/* =============================================================== */
+/*                   default theme: Bubblegum KK                   */
+/* light pastel colors: mostly light pink, some light blue accents */
+/* =============================================================== */
 :root {
-    /* Bubblegum KK (Default) */
-    --bg-color: #fef2fa; /* Slightly pinkish pastel */
-    --text-color: #44385c;
-    --accent-color: #ff6fcf;
-    --secondary-bg-color: #fff3fc;
-    --sticky-bg: #fffbcc;
-    --wood-bg: url('/assets/images/wood-default.jpeg');
-    --nav-link-border-color: var(--accent-color);
-    --nav-link-hover-shadow: var(--accent-color);
-    --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.2);
-    --stars-opacity: 0.8;
-    --stars-tint: rgb(247, 199, 243);
+
+    /* basic declarations */
+    --bg-color:                 #fef2fa;
+    --text-color:               #44385c;
+    --accent-color:             #ff6fcf;
+    --secondary-bg-color:       #fff3fc;
+    --nav-link-border-color:    var(--accent-color);
+    --nav-link-hover-shadow:    var(--accent-color);
+
+    /* home page */
+    --section-shadow:   0 4px 12px rgba(255, 180, 230, 0.2); /* does this actually go here? usages in pastel & about-me */
+    --stars-opacity:    0.8;
+    --stars-tint:       rgb(247, 199, 243);
+
+    /* about page */
+    --sticky-bg:        #fffbcc;
+    --sticky-text:      #44385c;
     --whiteboard-color: #fff;
-    --whiteboard-text: #44385c;
-    --sticky-text: #44385c;
+    --whiteboard-text:  #44385c;
+    --wood-bg:          url('/assets/images/wood-default.jpeg');
   
-    /* Projects Page: more playful & less transparent than quantum */
-    --terminal-bg: rgba(30, 30, 30, 0.7); 
-    --terminal-text: #f9c5e5; /* pinkish terminal text for fun */
-    --explorer-bg: rgba(255, 240, 255, 0.5); 
-    --explorer-text: #44385c;
-    --page-bg-image: url('/assets/images/default-explorer-bg.png');
-    --page-bg-color: #fff7fa;
-    --project-bg: rgba(255, 255, 255, 0.8);
+    /* projects page */
+    --terminal-bg:      rgba(30, 30, 30, 0.7); 
+    --terminal-text:    #f9c5e5;
+    --explorer-bg:      rgba(255, 240, 255, 0.5); 
+    --explorer-text:    #44385c;
+    --page-bg-image:    url('/assets/images/default-explorer-bg.png');
+    --page-bg-color:    #fff7fa;
+    --project-bg:       rgba(255, 255, 255, 0.8);
 
-    /* syntax highlighting*/
-    --syntax-keyword: #c678dd;   /* Purple for commands */
-    --syntax-comment: #7f848e;   /* Soft gray for comments */
-    --syntax-string:  #98c379;   /* Greenish for string literals */
-    --syntax-brace:   #d19a66;   /* Orange-brown for braces */
-    --syntax-md-hash: #ff6fcf;    /* Accent pink for '#' tokens */
-    --syntax-md-text: #44385c;    /* Deep purple for rest of heading */
+    /* syntax highlighting (subset of project page) */
+    --syntax-keyword:   #c678dd;   /* Purple for commands */
+    --syntax-comment:   #7f848e;   /* Soft gray for comments */
+    --syntax-string:    #98c379;   /* Greenish for string literals */
+    --syntax-brace:     #d19a66;   /* Orange-brown for braces */
+    --syntax-md-hash:   #ff6fcf;    /* Accent pink for '#' tokens */
+    --syntax-md-text:   #44385c;    /* Deep purple for rest of heading */
 
-    /* contact page? */
-    --contact-panel-bg: rgba(255, 255, 255, 0.03);
-    --contact-panel-border: rgba(255, 255, 255, 0.15);
-    --contact-heading-color: #ff7ebe;
-    --contact-text-color: #6c6c6c;
-    --contact-page-bg: radial-gradient(circle at 50% 50%, #f9c5e5 0%, #ffe2f4 60%, #ffffff 100%); /* #ff99cc */
-  }
-  
-.theme-quantum {
-    /* Strong cosmic vibes */
-    --bg-color: #1f2128; 
-    --text-color: #e0e0e0; 
-    --accent-color: #7289da;
-    --secondary-bg-color: #2a2d36;
-    --sticky-bg: #fffbcc;
-    --wood-bg: url('/assets/images/wood-dark.jpeg');
-    --nav-link-border-color: var(--accent-color);
-    --nav-link-hover-shadow: var(--accent-color);
-    --section-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-    --stars-opacity: 0.2;
-    --stars-tint: rgb(255, 255, 255);
-    --whiteboard-color: #264941;
-    --whiteboard-text: #dddddd;
-    --sticky-text: #1f2128;
-  
-    /* Terminal & Explorer cosmic gradient & transparency */
-    --terminal-bg: rgba(31, 33, 40, 0.85);
-    --terminal-text: #dddddd;
-    --explorer-bg: rgba(42, 45, 54, 0.6);
-    --explorer-text: #ffffff;
-    --page-bg-image: url('/assets/images/quantum-explorer-bg.png');
-    --page-bg-color: #1f2128;
-    --project-bg: rgba(255, 255, 255, 0.1);
+    /* contact page */
+    --contact-panel-bg:         rgba(255, 255, 255, 0.03);
+    --contact-panel-border:     rgba(255, 255, 255, 0.15);
+    --contact-heading-color:    #ff7ebe;
+    --contact-text-color:       #6c6c6c;
+    --contact-page-bg:          radial-gradient(circle at 50% 50%, #f9c5e5 0%, #ffe2f4 60%, #ffffff 100%); /* #ff99cc */
 
-    /* syntax highlighting */
-    --syntax-keyword: #89b4fa;   /* Light blue for commands */
-    --syntax-comment: #a6adc8;   /* Muted gray-blue for comments */
-    --syntax-string:  #a6e3a1;   /* Soft green for strings */
-    --syntax-brace:   #fab387;   /* Warm apricot for braces */
-    --syntax-md-hash: #7289da;    /* Muted blue for '#' tokens */
-    --syntax-md-text: #e0e0e0;    /* Light gray for heading text */
-
-    /* contact page? */
-    --contact-panel-bg: rgba(31, 33, 40, 0.85);  /* Darker, for a cosmic effect */
-    --contact-panel-border: rgba(255, 255, 255, 0.2);
-    --contact-heading-color: #89b4fa;  /* Light blue */
-    --contact-text-color: #a6adc8;     /* Muted gray-blue */
-    --contact-page-bg: radial-gradient(circle at 50% 50%, #212332 0%, #0b0e13 80%, #000000 100%);
 }
+
+
+/* ===================================================== */
+/*                    Quantum Glitter                    */
+/* deep blue colors with medium and lighter blue accents */
+/* ===================================================== */
+.theme-quantum {
+
+    /* basic declarations */
+    --bg-color:                 #1f2128; 
+    --text-color:               #e0e0e0; 
+    --accent-color:             #7289da;
+    --secondary-bg-color:       #2a2d36;
+    --nav-link-border-color:    var(--accent-color);
+    --nav-link-hover-shadow:    var(--accent-color);
+
+    /* home page */
+    --section-shadow:   0 4px 12px rgba(0, 0, 0, 0.6);
+    --stars-opacity:    0.2;
+    --stars-tint:       rgb(255, 255, 255);
+
+    /* about page */
+    --sticky-bg:        #fffbcc;
+    --sticky-text:      #1f2128;
+    --whiteboard-color: #264941;
+    --whiteboard-text:  #dddddd;
+    --wood-bg:          url('/assets/images/wood-dark.jpeg');
   
+    /* project page */
+    --terminal-bg:      rgba(31, 33, 40, 0.85);
+    --terminal-text:    #dddddd;
+    --explorer-bg:      rgba(42, 45, 54, 0.6);
+    --explorer-text:    #ffffff;
+    --page-bg-image:    url('/assets/images/quantum-explorer-bg.png');
+    --page-bg-color:    #1f2128;
+    --project-bg:       rgba(255, 255, 255, 0.1);
+
+    /* syntax highlighting (subset of project page) */
+    --syntax-keyword:   #89b4fa;   /* Light blue for commands */
+    --syntax-comment:   #a6adc8;   /* Muted gray-blue for comments */
+    --syntax-string:    #a6e3a1;   /* Soft green for strings */
+    --syntax-brace:     #fab387;   /* Warm apricot for braces */
+    --syntax-md-hash:   #7289da;    /* Muted blue for '#' tokens */
+    --syntax-md-text:   #e0e0e0;    /* Light gray for heading text */
+
+    /* contact page */
+    --contact-panel-bg:         rgba(31, 33, 40, 0.85);
+    --contact-panel-border:     rgba(255, 255, 255, 0.2);
+    --contact-heading-color:    #89b4fa;
+    --contact-text-color:       #a6adc8;
+    --contact-page-bg:          radial-gradient(circle at 50% 50%, #212332 0%, #0b0e13 80%, #000000 100%);
+
+}
+
+
+/* =================================== */
+/*             Yoneda Pink             */
+/* medium pink with light pink accents */
+/* =================================== */
 .theme-yoneda {
-    /* Warmer, pastel pink-lavender vibe */
-    --bg-color: #fff0f9; 
-    --text-color: #5f0068; 
-    --accent-color: #ff66b2;
-    --secondary-bg-color: #ffcdea;
-    --sticky-bg: #fffbcc;
-    --wood-bg: url('/assets/images/wood-yoneda.jpeg');
-    --nav-link-border-color: var(--accent-color);
-    --nav-link-hover-shadow: var(--accent-color);
-    --section-shadow: 0 4px 12px rgba(255, 180, 230, 0.3);
-    --stars-opacity: 1;
-    --stars-tint: rgb(253, 145, 253);
-    --sticky-text: #6b0057;
-  
-    /* Terminal a gentle pastel pink-lavender */
-    --terminal-bg: rgba(255, 153, 221, 0.3); 
-    --terminal-text: #6b0057;
-  
-    /* Explorer, slightly more opaque than the default */
-    --explorer-bg: rgba(255, 214, 242, 0.4);
-    --explorer-text: #6b0057;
-    --page-bg-image: url('/assets/images/yoneda-explorer-bg.png');
-    --page-bg-color: #ffeef8;
-  
-    /* Project content area also pastel */
-    --project-bg: rgba(255, 255, 255, 0.6);
 
-    /* syntax highlighting */
-    --syntax-keyword: #ff99cc;   /* A lighter, pastel pink for commands */
-    --syntax-comment: #f9c5e5;   /* Soft pinkish for comments */
-    --syntax-string:  #98c379;   /* You can reuse the green if it contrasts well */
-    --syntax-brace:   #ffc0cb;   /* A soft pink for braces */
-    --syntax-md-hash: #ff66b2;    /* Bright pastel pink for '#' tokens */
-    --syntax-md-text: #5f0068;    /* Deep, rich purple for headings */
+    /* basic declarations */
+    --bg-color:                 #fff0f9; 
+    --text-color:               #5f0068; 
+    --accent-color:             #ff66b2;
+    --secondary-bg-color:       #ffcdea;
+    --nav-link-border-color:    var(--accent-color);
+    --nav-link-hover-shadow:    var(--accent-color);
+  
+    /* home page */
+    --section-shadow:   0 4px 12px rgba(255, 180, 230, 0.3);
+    --stars-opacity:    1;
+    --stars-tint:       rgb(253, 145, 253);
 
-    /* contact page? */
-    --contact-panel-bg: rgba(255, 234, 255, 0.45); /* Soft pastel pinkish */
-    --contact-panel-border: rgba(255, 255, 255, 0.15);
-    --contact-heading-color: #ff99cc;  /* Pastel pink */
-    --contact-text-color: #f9c5e5;     /* Light pinkish */
-    --contact-page-bg: radial-gradient(circle at 50% 50%, #ff66b2 0%, #ff99cc 80%, #ffcdea 100%);
+    /* about page */
+    --sticky-bg:        #fffbcc;
+    --sticky-text:      #6b0057;
+    --whiteboard-color: #fff;
+    --whiteboard-text:  #44385c;
+    --wood-bg:          url('/assets/images/wood-yoneda.jpeg');
+
+    /* projects page */
+    --terminal-bg:      rgba(255, 153, 221, 0.3); 
+    --terminal-text:    #6b0057;
+    --explorer-bg:      rgba(255, 214, 242, 0.4);
+    --explorer-text:    #6b0057;
+    --page-bg-image:    url('/assets/images/yoneda-explorer-bg.png');
+    --page-bg-color:    #ffeef8;
+    --project-bg:       rgba(255, 255, 255, 0.6);
+
+    /* syntax highlighting (subset of project page) */
+    --syntax-keyword:   #ff99cc;   /* A lighter, pastel pink for commands */
+    --syntax-comment:   #f9c5e5;   /* Soft pinkish for comments */
+    --syntax-string:    #98c379;   /* You can reuse the green if it contrasts well */
+    --syntax-brace:     #ffc0cb;   /* A soft pink for braces */
+    --syntax-md-hash:   #ff66b2;    /* Bright pastel pink for '#' tokens */
+    --syntax-md-text:   #5f0068;    /* Deep, rich purple for headings */
+
+    /* contact page */
+    --contact-panel-bg:         rgba(255, 234, 255, 0.45); /* Soft pastel pinkish */
+    --contact-panel-border:     rgba(255, 255, 255, 0.15);
+    --contact-heading-color:    #ff99cc;  /* Pastel pink */
+    --contact-text-color:       #f9c5e5;     /* Light pinkish */
+    --contact-page-bg:          radial-gradient(circle at 50% 50%, #ff66b2 0%, #ff99cc 80%, #ffcdea 100%);
+
 }    

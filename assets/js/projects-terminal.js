@@ -126,12 +126,17 @@ const bobaMessages = [
       .then(html => {
         projectView.innerHTML = html;
   
-        removeLeadingNewlines(projectView);
-        fadeInBlocks(projectView);
-  
-        // ⚠️ Also attach local listeners in case the file snippet 
-        // itself includes nested folders or further references
-        attachLocalExplorerListeners(projectView);
+        removeLeadingNewlines(projectView); // removes trailing/leading newline
+        fadeInBlocks(projectView); // add an animation
+        attachLocalExplorerListeners(projectView); // ensures in-file links process
+
+        // syntax highlighting for code blocks
+        const codeBlocks = projectView.querySelectorAll("pre code");
+        codeBlocks.forEach(block => {
+            const original = block.innerText;
+            const highlighted = basicHighlight(original);
+            block.innerHTML = highlighted;
+        })
       })
       .catch(err => {
         projectView.innerHTML = `

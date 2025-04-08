@@ -84,13 +84,13 @@
     --wood-bg:          url('/assets/images/wood-dark.jpeg');
   
     /* project page */
-    --terminal-bg:      rgba(31, 33, 40, 0.85);
+    --terminal-bg:      rgba(31, 33, 45, 0.85); /* 31, 33, 40, 0.85 */
     --terminal-text:    #dddddd;
-    --explorer-bg:      rgba(42, 45, 54, 0.6);
+    --explorer-bg:      rgba(42, 45, 60, 0.6); /* 42, 45, 54, 0.6 */
     --explorer-text:    #ffffff;
     --page-bg-image:    url('/assets/images/quantum-explorer-bg.png');
     --page-bg-color:    #1f2128;
-    --project-bg:       rgba(255, 255, 255, 0.1);
+    --project-bg:       rgba(40, 40, 50, 0.6); /* 255, 255, 255, 0.1 */
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #89b4fa;   /* Light blue for commands */

@@ -331,3 +331,21 @@
 .heart-icon:hover {
     transform: scale(1.2) rotate(15deg); /* playful hover wiggle */
 }
+
+/* Styles for links to GitHub or any external resource */
+.github-link {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    background: var(--accent-color);
+    color: var(--bg-color); 
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+  
+.github-link:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px var(--accent-color);
+}  

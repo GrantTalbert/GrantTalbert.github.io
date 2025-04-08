@@ -36,9 +36,9 @@
     --terminal-text:    #f9c5e5;
     --explorer-bg:      rgba(255, 240, 255, 0.5); 
     --explorer-text:    #44385c;
-    --page-bg-image:    url('/assets/images/default-explorer-bg.png');
+    --page-bg-image:    url('/assets/images/default-explorer-bg.jpg');
     --page-bg-color:    #fff7fa;
-    --project-bg:       rgba(255, 255, 255, 0.8);
+    --project-bg:       rgba(255, 255, 255, 0.6);
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #c678dd;   /* Purple for commands */

@@ -164,6 +164,7 @@
 
 /* Project View (main content) */
 .project-view {
+    position: relative;
     flex-grow: 1;
     background: var(--project-bg);
     border-radius: 10px;
@@ -314,4 +315,19 @@
 .project-view li.file .icon {
   margin-right: 0.5rem;
   font-size: 1.2rem;  /* bigger icon */
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
+    user-select: none;       /* so you can't accidentally highlight the heart */
+    pointer-events: none;    /* so clicks pass through if you want to click behind it */
+    opacity: 0.8;           /* optional subtle effect */
+    transition: transform 0.2s;
+}
+  
+.heart-icon:hover {
+    transform: scale(1.2) rotate(15deg); /* playful hover wiggle */
 }

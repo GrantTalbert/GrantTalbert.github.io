@@ -60,7 +60,7 @@ const bobaMessages = [
   
     if (path) {
       // It's a folder
-      logToTerminal(`> cd ${path}`);
+      logToTerminal(`> cd ~/projects/${path}`);
       displayFolderContents(path);
     } else if (filetype) {
       // It's a file

@@ -31,15 +31,16 @@
     --wood-bg:          url('/assets/images/wood-default.jpeg');
   
     /* projects page */
-    --code-color:       #6b0057; /* cc488a */
+    --code-color:       #564799;
     --terminal-bg:      rgba(30, 30, 30, 0.7); 
     --terminal-text:    #f9c5e5;
     --explorer-bg:      rgba(255, 240, 255, 0.5); 
     --explorer-text:    #44385c;
     --page-bg-image:    url('/assets/images/default-explorer-bg.jpg');
     --page-bg-color:    #fff7fa;
-    --project-text:     var(--text-color);
+    --project-text:     var(--accent-color);
     --project-bg:       rgba(255, 240, 255, 0.5);
+    --subfile-link:     var(--code-color);
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #c678dd;   /* Purple for commands */
@@ -95,6 +96,7 @@
     --page-bg-color:    #1f2128;
     --project-text:     --text-color;
     --project-bg:       rgba(40, 40, 50, 0.6); /* 255, 255, 255, 0.1 */
+    --subfile-color:    var(--accent-color);
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #89b4fa;   /* Light blue for commands */
@@ -150,6 +152,7 @@
     --page-bg-color:    #ffccff;
     --project-text:     #ffccff;
     --project-bg:       rgba(255, 153, 221, 0.6); /* 255 255 255 0.6*/
+    --subfile-color:    var(--accent-color);
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #ff99cc;   /* A lighter, pastel pink for commands */

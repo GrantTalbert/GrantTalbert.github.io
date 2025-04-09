@@ -243,7 +243,7 @@ body {
 .project-view li.folder,
 .project-view li.file {
   cursor: pointer;
-  color: var(--code-color);
+  color: var(--subfile-color);
   font-weight: bold;
   margin: 0.5rem 0;
   padding: 0.3rem 0.5rem;

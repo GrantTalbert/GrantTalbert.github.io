@@ -94,7 +94,7 @@
     --explorer-text:    #ffffff;
     --page-bg-image:    url('/assets/images/quantum-explorer-bg.png');
     --page-bg-color:    #1f2128;
-    --project-text:     --text-color;
+    --project-text:     var(--text-color);
     --project-bg:       rgba(40, 40, 50, 0.6); /* 255, 255, 255, 0.1 */
     --subfile-color:    var(--accent-color);
 

@@ -142,11 +142,11 @@
     --code-color:       #6b0057;
     --terminal-bg:      rgba(255, 153, 221, 0.3); 
     --terminal-text:    #6b0057;
-    --explorer-bg:      rgba(255, 214, 242, 0.4);
+    --explorer-bg:      rgba(255, 153, 221, 0.4); /* 255 214 242 0.4 */
     --explorer-text:    #6b0057;
     --page-bg-image:    url('/assets/images/yoneda-explorer-bg.png');
     --page-bg-color:    #ffeef8;
-    --project-bg:       rgba(255, 255, 255, 0.6);
+    --project-bg:       rgba(255, 153, 221, 0.6); /* 255 255 255 0.6*/
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #ff99cc;   /* A lighter, pastel pink for commands */

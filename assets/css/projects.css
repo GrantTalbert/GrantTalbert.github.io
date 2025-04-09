@@ -1,78 +1,90 @@
 /* ========================================================================== */
-/*                       LAYOUT & BASE STYLES FOR PROJECTS                    */
+/*                           styling for projects page                        */
 /* ========================================================================== */
 
-/* Overall page container with a background image. 
-   We layer a fallback color + the actual image for coverage. */
-   body {
-    background: var(--page-bg-image) no-repeat center center / cover, var(--page-bg-color) no-repeat center center / cover;
-    color: var(--text-color);
-    font-family: 'Comic Neue', sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+/*
+IMPORTANT VARIABLES
+
+--code-color      <<-     color of text in code blocks
+--terminal-bg     <<-     terminal bg color
+--terminal-text   <<-     terminal text color
+--explorer-bg     <<-     file explorer bg color
+--explorer-text   <<-     file explorer text color
+--page-bg-image   <<-     bg image for entire page
+--page-bg-color   <<-     bg color for entire page, fallback for bg image
+--project-bg      <<-     bg color for main block in the middle
+*/
+
+/* basic styling */
+body {
+  background: var(--page-bg-image) no-repeat center center / cover, var(--page-bg-color) no-repeat center center / cover;
+  color: var(--text-color);
+  font-family: 'Comic Neue', sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Terminal Container (Transparent + Rounded, Short) */
+/* terminal container */
 .terminal-container {
-    background: var(--terminal-bg);
-    color: var(--terminal-text);
-    font-family: 'Fira Code', monospace;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    border-radius: 12px;
-    margin: 0rem 1rem 1rem 1rem;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid rgba(255,255,255,0.2);
-    overflow: hidden; /* keep corners round */
-    /* If you want top margin from the very top, add: margin-top: 1rem; */
+  background: var(--terminal-bg);
+  color: var(--terminal-text);
+  font-family: 'Fira Code', monospace;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border-radius: 12px;
+  margin: 0rem 1rem 1rem 1rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.2);
+  overflow: hidden; /* keeps corners round */
 }
 
-/* Terminal Header */
+/* terminal header bg */
 .terminal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.3rem 0.6rem;
-    background: rgba(255,255,255,0.1);
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 0.6rem;
+  background: rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
+/* terminal title */
 .terminal-title {
-    font-weight: bold;
-    font-size: 0.9rem;
+  font-weight: bold;
+  font-size: 0.9rem;
 }
 
+/* the buttons on the right u get with a mac */
 .terminal-buttons {
-    display: flex;
-    gap: 0.4rem;
+  display: flex;
+  gap: 0.4rem;
 }
 
+/* more styling for the buttons */
 .btn-close,
 .btn-minimize,
 .btn-maximize {
-    width: 12px;
-    height: 12px;
-    display: inline-block;
-    border-radius: 50%;
-    background: #ff5f57; /* red by default for close */
-    cursor: pointer;
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  border-radius: 50%;
+  background: #ff5f57; /* red by default for close */
+  cursor: pointer;
 }
-
 .btn-minimize {
-    background: #ffbd2e; /* yellow */
+  background: #ffbd2e; /* yellow */
 }
-
 .btn-maximize {
-    background: #28c940; /* green */
+  background: #28c940; /* green */
 }
 
-/* Terminal Content (scrollable text area) */
+/* the actual text inside the terminal */
 .terminal-content {
     flex-grow: 1;
     padding: 0.5rem;
@@ -217,7 +229,7 @@
     display: block; /* ensures no extra gap below the iframe */
   }
 
-  /* A nice fade/slide in from below */
+/* A nice fade/slide in from below */
 @keyframes fadeInUp {
     0% {
       opacity: 0;
@@ -229,65 +241,8 @@
     }
   }
   
-  .animate-in {
+.animate-in {
     animation: fadeInUp 0.6s ease forwards; /* half-second fade-up */
-  }
-
-  /* Theme Toggler Button */
-#theme-toggler {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--accent-color);
-    color: var(--bg-color);
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 10001;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  #theme-toggler:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px var(--accent-color);
-  }
-  
-  #theme-chooser {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: var(--bg-color);
-    border: 2px solid var(--accent-color);
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    gap: 10px;
-    z-index: 10002;
-  }
-  
-  #theme-chooser button {
-    background: var(--accent-color);
-    color: var(--bg-color);
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: transform 0.2s;
-  }
-  
-  #theme-chooser button:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Responsive styling */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 2.5em;
-    }
-    .tagline,
-    p {
-      font-size: 1em;
-    }
 }
 
 /* Make nested folders/files inside .project-view look clickable */

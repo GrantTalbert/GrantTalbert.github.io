@@ -48,7 +48,7 @@
     --syntax-string:    #98c379;   /* Greenish for string literals */
     --syntax-brace:     #d19a66;   /* Orange-brown for braces */
     --syntax-md-hash:   #ff6fcf;    /* Accent pink for '#' tokens */
-    --syntax-md-text:   #44385c;    /* Deep purple for rest of heading */
+    --syntax-md-text:   #564799;    /* Deep purple for rest of heading */
 
     /* contact page */
     --contact-panel-bg:         rgba(255, 255, 255, 0.03);
@@ -104,7 +104,7 @@
     --syntax-string:    #a6e3a1;   /* Soft green for strings */
     --syntax-brace:     #fab387;   /* Warm apricot for braces */
     --syntax-md-hash:   #7289da;    /* Muted blue for '#' tokens */
-    --syntax-md-text:   #e0e0e0;    /* Light gray for heading text */
+    --syntax-md-text:   #7289da;    /* Light gray for heading text */
 
     /* contact page */
     --contact-panel-bg:         rgba(31, 33, 40, 0.85);
@@ -152,7 +152,7 @@
     --page-bg-color:    #ffccff;
     --project-text:     #ffccff;
     --project-bg:       rgba(255, 153, 221, 0.6); /* 255 255 255 0.6*/
-    --subfile-color:    var(--accent-color);
+    --subfile-color:    #ffaaff;
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #ff99cc;   /* A lighter, pastel pink for commands */
@@ -160,7 +160,7 @@
     --syntax-string:    #98c379;   /* You can reuse the green if it contrasts well */
     --syntax-brace:     #ffc0cb;   /* A soft pink for braces */
     --syntax-md-hash:   #ff66b2;    /* Bright pastel pink for '#' tokens */
-    --syntax-md-text:   #5f0068;    /* Deep, rich purple for headings */
+    --syntax-md-text:   #ffccff;    /* Deep, rich purple for headings */
 
     /* contact page */
     --contact-panel-bg:         rgba(255, 234, 255, 0.45); /* Soft pastel pinkish */

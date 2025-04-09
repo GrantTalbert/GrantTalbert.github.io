@@ -12,13 +12,14 @@ IMPORTANT VARIABLES
 --explorer-text   <<-     file explorer text color
 --page-bg-image   <<-     bg image for entire page
 --page-bg-color   <<-     bg color for entire page, fallback for bg image
+--project-color   <<-     fallback text color
 --project-bg      <<-     bg color for main block in the middle
 */
 
 /* basic styling */
 body {
   background: var(--page-bg-image) no-repeat center center / cover, var(--page-bg-color) no-repeat center center / cover;
-  color: var(--text-color);
+  color: var(--project-color);
   font-family: 'Comic Neue', sans-serif;
   height: 100vh;
   display: flex;

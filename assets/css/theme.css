@@ -38,6 +38,7 @@
     --explorer-text:    #44385c;
     --page-bg-image:    url('/assets/images/default-explorer-bg.jpg');
     --page-bg-color:    #fff7fa;
+    --project-text:     var(--text-color);
     --project-bg:       rgba(255, 240, 255, 0.5);
 
     /* syntax highlighting (subset of project page) */
@@ -92,6 +93,7 @@
     --explorer-text:    #ffffff;
     --page-bg-image:    url('/assets/images/quantum-explorer-bg.png');
     --page-bg-color:    #1f2128;
+    --project-text:     --text-color;
     --project-bg:       rgba(40, 40, 50, 0.6); /* 255, 255, 255, 0.1 */
 
     /* syntax highlighting (subset of project page) */
@@ -146,6 +148,7 @@
     --explorer-text:    #ffccff;
     --page-bg-image:    url('/assets/images/mountains.png'); /* usure if i wanna use this but hey */
     --page-bg-color:    #ffccff;
+    --project-text:     #ffccff;
     --project-bg:       rgba(255, 153, 221, 0.6); /* 255 255 255 0.6*/
 
     /* syntax highlighting (subset of project page) */
@@ -163,4 +166,4 @@
     --contact-text-color:       #ff66b2;     /* Light pinkish */
     --contact-page-bg:          radial-gradient(circle at 50% 50%, #ff99cc 0%, #ffcdea 80%, #fff0f9 100%);
 
-}    
+}

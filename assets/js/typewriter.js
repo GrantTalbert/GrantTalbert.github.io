@@ -20,7 +20,7 @@ function typeText(element, text, delay = 50, callback) {
     const taglineEl = document.getElementById("typed-tagline");
     typeText(titleEl, "Hi, I'm Grant Talbert!", 50, () => {
       setTimeout(() => {
-        typeText(taglineEl, "math, physics, and a friendly introduction to abstract nonsense", 35);
+        typeText(taglineEl, "math, physics, and abstract nonsense", 35);
       }, 300);
     });
 }

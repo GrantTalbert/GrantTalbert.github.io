@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Grant's Projects</title>
 
-  <!-- Preload background images for all themes -->
+  <!-- preload background images for all themes so they can be speed -->
   <link rel="preload" href="/assets/images/default-explorer-bg.png" as="image">
   <link rel="preload" href="/assets/images/quantum-explorer-bg.png" as="image">
   <link rel="preload" href="/assets/images/yoneda-explorer-bg.png" as="image">
@@ -13,21 +13,21 @@
   <link rel="stylesheet" href="../assets/css/theme.css" />
   <link rel="stylesheet" href="../assets/css/projects.css" />
   <link rel="stylesheet" href="/assets/css/syntax-highlighting.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- no idea what this is lol -->
   <!-- font -->
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
 
-  <!-- Theme Chooser -->
+  <!-- theme chooser -->
   <div id="theme-chooser">
       <button data-theme="default">Bubblegum KK</button>
       <button data-theme="quantum">Quantum Glitter</button>
       <button data-theme="yoneda">Yoneda Pink</button>
   </div>
 
-  <!-- Terminal at the top -->
+  <!-- the cool terminal at the top -->
   <div class="terminal-container">
     <div class="terminal-header">
       <div class="terminal-title">hyperion@math-machine:~/projects</div>
@@ -42,36 +42,45 @@
     </div>
   </div>
 
-<!-- FILE EXPLORER -->
+<!-- file explorer -->
   <div class="main-area">
     <aside class="file-explorer">
       <h2>~/projects</h2>
       <ul>
 
+        <!-- put the files in this section -->
+
+        <!-- uni notes -->
         <li class="file" data-filetype="tex" data-filename="uni-notes.tex">
           <span class="icon">📄</span> uni-notes.tex
         </li>
 
+        <!-- bragging area (independent readings) -->
         <li class="folder" data-path="independent-readings/">
             <span class="icon">📂</span> independent-readings
         </li>
-        
+        <
+        <!-- latex templates -->
         <li class="file" data-filetype="tex" data-filename="latex-templates.tex">
             <span class="icon">📄</span> latex-templates.tex
         </li>
 
+        <!-- chatgpt nonsense keeping as an example of inserting pdfs just incase -->
         <li class="file" data-filetype="pdf" data-filename="fancy-notes.pdf">
           <span class="icon">📄</span> fancy-notes.pdf
         </li>
 
+        <!-- DOWNLOAD GOOD MOD -->
         <li class="file" data-filetype="md" data-filename="minecraft-mod.md">
             <span class="icon">📄</span> minecraft-mod.md
         </li>
 
+        <!-- a summary of this website -->
         <li class="file" data-filetype="md" data-filename="about-this-project.md">
           <span class="icon">📄</span> about-this-project.md
         </li>
 
+        <!-- boba. -->
         <li class="file" data-filetype="md" data-filename="boba.md">
             <span class="icon">🧋</span> boba
         </li>
@@ -79,26 +88,27 @@
       </ul>
     </aside>
 
-    <!-- Project View (main content) -->
+     <!-- default msg for the big square where stuff actually shows up -->
     <main class="project-view" id="project-view">
     <div class="heart-icon">💖</div>
       <h2>Welcome to Grant's Projects</h2>
       <p>Click on a file or folder to explore!</p>
-      <p>The contents of the file will be loaded here.
-      </p>
+      <p>The contents of the file will be loaded here.</p>
     </main>
   </div>
 
+  <!-- navbar but in the bottom left this time -->
   <nav class="project-navbar">
     <a href="/" class="nav-link">🏠 Home</a>
     <a href="/about/" class="nav-link">💫 About</a>
     <a href="/contact/" class="nav-link">📬 Contact</a>
   </nav>
 
-  <!-- JS -->
-    <script src="/assets/js/highlight-code.js"></script>
-    <script src="/assets/js/projects-terminal.js"></script>
-    <script src="/assets/js/theme-switcher.js"></script>
-    <script src="/assets/js/explosion.js"></script>
+  <!-- js -->
+  <script src="/assets/js/highlight-code.js"></script>
+  <script src="/assets/js/projects-terminal.js"></script>
+  <script src="/assets/js/theme-switcher.js"></script>
+  <script src="/assets/js/explosion.js"></script>
+
 </body>
 </html>

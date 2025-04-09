@@ -38,7 +38,7 @@
     --explorer-text:    #44385c;
     --page-bg-image:    url('/assets/images/default-explorer-bg.jpg');
     --page-bg-color:    #fff7fa;
-    --project-bg:       rgba(255, 255, 255, 0.6);
+    --project-bg:       rgba(255, 240, 255, 0.5);
 
     /* syntax highlighting (subset of project page) */
     --syntax-keyword:   #c678dd;   /* Purple for commands */
@@ -142,10 +142,10 @@
     --code-color:       #ffccff;
     --terminal-bg:      rgba(255, 153, 221, 0.3); 
     --terminal-text:    #ffccff;
-    --explorer-bg:      rgba(255, 153, 221, 0.4); /* 255 214 242 0.4 */
-    --explorer-text:    #6b0057;
+    --explorer-bg:      rgba(255, 153, 221, 0.6); /* 255 214 242 0.4 */
+    --explorer-text:    #ffccff;
     --page-bg-image:    url('/assets/images/mountains.png'); /* usure if i wanna use this but hey */
-    --page-bg-color:    #ffeef8;
+    --page-bg-color:    #ffccff;
     --project-bg:       rgba(255, 153, 221, 0.6); /* 255 255 255 0.6*/
 
     /* syntax highlighting (subset of project page) */

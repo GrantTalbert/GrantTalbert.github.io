@@ -86,47 +86,40 @@ body {
 
 /* the actual text inside the terminal */
 .terminal-content {
-    flex-grow: 1;
-    padding: 0.5rem;
-    overflow-y: auto;
-    font-size: 0.9rem;
-    line-height: 1.4;
+  flex-grow: 1;
+  padding: 0.5rem;
+  overflow-y: auto;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
-/* Main area: side file explorer + main project view */
+/* file explorer + main block thingy */
 .main-area {
-    display: flex;
-    flex-grow: 1;
-    overflow: hidden;
-    padding: 0 1rem;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  padding: 0 1rem;
 }
 
-/* File Explorer (Transparent + Frosted Glass) */
+/* file explorer */
 .file-explorer {
-    position: relative;
-    width: 200px;
-    margin-right: 1rem;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,255,255,0.2);
-
-    /* partial background color from theme variable */
-    background: var(--explorer-bg); 
-    color: var(--explorer-text);
-
-    /* 
-      We removed any direct background image here, 
-      so you'll see the body BG behind it if alpha < 1
-    */
-    min-height: 400px; /* ensures a decent vertical size */
+  position: relative;
+  width: 200px;
+  margin-right: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  min-height: 400px;
+  background: var(--explorer-bg); 
+  color: var(--explorer-text);
 }
 
 /* Optional overlay if you want to add more color 
    or different alpha on top of the explorer. 
-   Right now, let's remove it or keep it as you wish. */
+   Right now, let's remove it or keep it as you wish.
 .file-explorer::before {
     content: "";
     position: absolute;
@@ -136,32 +129,32 @@ body {
     opacity: 0.7; 
     pointer-events: none;
     z-index: 1;
-    /* If you'd prefer no overlay, just remove or comment out. */
 }
+*/
 
-/* Explorer Title */
+/* file explorer title */
 .file-explorer h2 {
-    position: relative;
-    z-index: 2;
-    margin: 1rem;
-    font-size: 1.1rem;
+  position: relative;
+  z-index: 2;
+  margin: 1rem;
+  font-size: 1.1rem;
 }
 
-/* Explorer File/Folder List */
+/* the actual list of things in the file explorer */
 .file-explorer ul {
-    position: relative;
-    z-index: 2;
-    list-style: none;
-    margin: 0 1rem 1rem;
-    padding: 0;
+  position: relative;
+  z-index: 2;
+  list-style: none;
+  margin: 0 1rem 1rem;
+  padding: 0;
 }
 
 .file-explorer li {
-    margin: 0.5rem 0;
-    padding: 0.3rem;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.2s;
+  margin: 0.5rem 0;
+  padding: 0.3rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
 }
 
 .file-explorer li:hover {
@@ -249,7 +242,7 @@ body {
 .project-view li.folder,
 .project-view li.file {
   cursor: pointer;
-  color: var(--accent-color);
+  color: var(--code-color);
   font-weight: bold;
   margin: 0.5rem 0;
   padding: 0.3rem 0.5rem;
@@ -289,6 +282,7 @@ body {
 }
 
 /* Styles for links to GitHub or any external resource */
+/* gunna keep this one wit accent color prolly */
 .github-link {
     display: inline-block;
     padding: 0.4rem 0.8rem;
@@ -354,4 +348,3 @@ body {
     transform: scale(1.1);
     color: #fff;
   }
-  

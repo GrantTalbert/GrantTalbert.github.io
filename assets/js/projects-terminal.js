@@ -11,10 +11,10 @@
 
 // Array of random boba-themed messages
 const bobaMessages = [
-    "Refilling quantum tapioca reserves...",
-    "Slurping on that sweet milk tea of category theory~",
-    "Synthesizing new boba beads in the arc reactor...",
-    "Gotta keep my boba levels up or I'll collapse wavefunctions weirdly!"
+    "Does there exist an ∞-category of boba?",
+    "Currently in a superposition of drinking boba and drinking 2 bobas~",
+    "All proofs start with coffee and boba...",
+    "Current boba level: 100%"
   ];
   
   document.addEventListener("DOMContentLoaded", () => {
@@ -67,7 +67,7 @@ const bobaMessages = [
       logToTerminal(`> open ${filename}`);
       displayFileContent(filetype, filename);
     }
-    
+
     // deselect previously active items
     document.querySelectorAll(".file-explorer > ul > li.active").forEach(activeItem => {
       activeItem.classList.remove("active");

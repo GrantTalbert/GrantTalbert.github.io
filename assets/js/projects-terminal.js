@@ -67,6 +67,17 @@ const bobaMessages = [
       logToTerminal(`> open ${filename}`);
       displayFileContent(filetype, filename);
     }
+    
+    // deselect previously active items
+    document.querySelectorAll(".file-explorer > ul > li.active").forEach(activeItem => {
+      activeItem.classList.remove("active");
+    });
+    document.querySelectorAll(".project-view li.active").forEach(activeItem => {
+      activeItem.classList.remove("active");
+    });
+    
+    // Select the new item
+    item.classList.add("active");
   }
   
   /***************************************************************

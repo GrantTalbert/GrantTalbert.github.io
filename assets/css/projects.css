@@ -312,3 +312,9 @@ body {
     transform: scale(1.1);
     color: #fff;
   }
+
+.file-explorer li.active,
+.project-view li.active { /* Style for active items in both panes */
+  background-color: var(--explorer-active-bg, rgba(255, 255, 255, 0.25)); /* Define --explorer-active-bg in theme.css */
+  font-weight: bold; /* Or other visual cue */
+}

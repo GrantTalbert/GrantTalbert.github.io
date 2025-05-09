@@ -179,17 +179,26 @@ body.books-page { /* Added .books-page class for specificity */
   color: var(--books-footer-text-color, #f0c4f0);
 }
 
-/* --- Floating Book Icons/Sparkles --- */
-.floating-element { /* Renamed for broader use: icons, sparkles, etc. */
-  position: fixed;
-  font-size: 1.8em; /* Can be adjusted */
-  color: var(--accent-color);
-  opacity: 0; /* Start invisible, JS will make it appear */
-  pointer-events: none;
-  z-index: 0; /* Behind main content but above background layers */
-  animation: floatUpAndAway 5s linear forwards;
-  /* content will be set by JS */
-}
+/* Floating Math Symbols */
+.floating-symbol {
+    position: fixed;
+    color: var(--accent-color);
+    font-size: 1.5em;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 1;
+    animation: floatUp 4s linear forwards;
+  }
+  @keyframes floatUp {
+    0% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100vh) scale(0.5);
+    }
+  }
 
 @keyframes floatUpAndAway {
   0% {
@@ -254,8 +263,5 @@ body.books-page { /* Added .books-page class for specificity */
   .book-list li a::before {
     margin-right: 8px;
     font-size: 1em;
-  }
-  .floating-element {
-    font-size: 1.5em;
   }
 }

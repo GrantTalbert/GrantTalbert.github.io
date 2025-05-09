@@ -22,9 +22,6 @@ body.books-page { /* Added .books-page class for specificity */
   box-sizing: border-box;
   overflow-x: hidden; /* To prevent scrollbars from floating elements */
   position: relative; /* For z-indexing of parallax stars */
-
-  /* Custom Star Cursor - Using theme variable for fill */
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill_color="%23" fill_param_color="books-cursor-fill" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z"/></svg>') 12 12, auto;
 }
 
 /* Keyframes for the animated background */
@@ -140,8 +137,6 @@ body.books-page { /* Added .books-page class for specificity */
   font-size: 1.1em;
   font-weight: 400;
   transition: color 0.3s ease;
-  /* Hollow Star Cursor on Hover */
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="%23ff6fcf" stroke-width="2" viewBox="0 0 24 24"><path d="M12 .587l3.668 7.431L24 9.748l-6 5.845 1.416 8.265L12 18.896l-7.416 4.962L6 15.593 0 9.748l8.332-1.73z"/></svg>') 12 12, auto;
 }
 
 .book-list li a:hover {

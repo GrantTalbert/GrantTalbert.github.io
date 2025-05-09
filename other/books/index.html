@@ -42,42 +42,6 @@
 
   <script src="/assets/js/explosion.js"></script>
   <script src="/assets/js/theme-switcher.js"></script>
-
-  <script id="floating-symbols-script">
-    // Function to create floating elements (book icons/sparkles)
-    function createFloatingSymbol() {
-      const element = document.createElement('div');
-      element.classList.add('floating-element'); // Uses styles from books.css
-      
-      const symbols = ['📚', '✨', '⭐', '💭', '💡', '⚛️', '∮', '💖', '笑']; // Added more fun options!
-      element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-      
-      document.body.appendChild(element);
-
-      // Random horizontal start position and animation properties
-      element.style.left = `${Math.random() * 100}vw`;
-      // Ensure CSS animation 'floatUpAndAway' in books.css uses these variables or has defaults
-      element.style.animationDuration = `${4 + Math.random() * 5}s`; // Random duration: 4s to 9s
-      element.style.setProperty('--random-drift', `${(Math.random() - 0.5) * 150}px`); // Wider drift
-      element.style.setProperty('--random-rotate', `${(Math.random() - 0.5) * 70}deg`); // More rotation
-      
-      element.addEventListener('animationend', () => {
-        element.remove();
-      });
-    }
-
-    // Periodically create floating elements
-    // Adjust interval for more/less frequency. 1500ms = 1.5 seconds
-    const floatingInterval = setInterval(createFloatingSymbol, 1500);
-
-    // Optional: Clear interval if page becomes hidden to save resources
-    document.addEventListener("visibilitychange", function() {
-      if (document.hidden) {
-        // clearInterval(floatingInterval); // Uncomment if you want to pause when tab is not visible
-      } else {
-        // floatingInterval = setInterval(createFloatingSymbol, 1500); // Resume if paused
-      }
-    });
-  </script>
+  <script src="/assets/js/floating-math.js"></script>
   </body>
 </html>

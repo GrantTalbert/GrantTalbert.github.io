@@ -68,6 +68,8 @@
     --books-page-stars-tint:    rgba(247, 199, 243, 0.5); /* Lighter tint for books page */
     --books-cursor-fill:        var(--accent-color);
     --books-cursor-stroke:      var(--accent-color);
+    --accent-shadow-light:      rgba(255, 105, 180, 0.3); /* Pinkish glow */
+    --accent-shadow-deep:       rgba(229, 90, 160, 0.4);  /* Deeper pinkish glow */
     /* Gradient for Books Page Background */
     --books-gradient-color-1:   #f9c5e5;
     --books-gradient-color-2:   #a8e6cf;
@@ -143,6 +145,8 @@
     --books-page-stars-tint:    rgba(200, 200, 220, 0.4);
     --books-cursor-fill:        var(--accent-color);
     --books-cursor-stroke:      var(--accent-color);
+    --accent-shadow-light:      rgba(114, 137, 218, 0.4); /* Translucent blue glow from accent */
+    --accent-shadow-deep:       rgba(80, 100, 180, 0.5);  /* Deeper, slightly purplish-blue glow */
     /* Gradient for Books Page Background */
     --books-gradient-color-1:   #23074d;
     --books-gradient-color-2:   #3a506b;
@@ -217,6 +221,8 @@
     --books-page-stars-tint:    rgba(253, 145, 253, 0.6);
     --books-cursor-fill:        var(--accent-color);
     --books-cursor-stroke:      var(--accent-color);
+    --accent-shadow-light:      rgba(255, 102, 178, 0.35); /* Yoneda's accent pink glow */
+    --accent-shadow-deep:       rgba(230, 80, 150, 0.45);  /* Deeper Yoneda pink glow */
     /* Gradient for Books Page Background */
     --books-gradient-color-1:   #ff7eb9;
     --books-gradient-color-2:   #ffb3d9;

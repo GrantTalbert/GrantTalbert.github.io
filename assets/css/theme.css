@@ -57,6 +57,25 @@
     --contact-text-color:       #6c6c6c;
     --contact-page-bg:          radial-gradient(circle at 50% 50%, #f9c5e5 0%, #ffe2f4 60%, #ffffff 100%); /* #ff99cc */
 
+    /* books page */
+    --books-container-bg:       rgba(255, 240, 255, 0.85); /* Light pink, semi-transparent */
+    --books-header-border:      rgba(255, 182, 193, 0.7);
+    --book-item-bg:             rgba(255, 255, 255, 0.15);
+    --book-item-hover-bg:       rgba(255, 255, 255, 0.25);
+    --book-title-color:         #b384b2; /* Soft purplish pink */
+    --book-title-hover-color:   var(--accent-color);
+    --books-footer-text-color:  #c8a2c8; /* Soft lavender */
+    --books-page-stars-tint:    rgba(247, 199, 243, 0.5); /* Lighter tint for books page */
+    --books-cursor-fill:        var(--accent-color);
+    --books-cursor-stroke:      var(--accent-color);
+    /* Gradient for Books Page Background */
+    --books-gradient-color-1:   #f9c5e5;
+    --books-gradient-color-2:   #a8e6cf;
+    --books-gradient-color-3:   #d3b1d3;
+    --books-gradient-color-4:   #ffcdea;
+    --books-gradient-color-5:   var(--accent-color);
+    --books-gradient-color-6:   #b7e7f7;
+
 }
 
 
@@ -113,6 +132,25 @@
     --contact-text-color:       #a6adc8;
     --contact-page-bg:          radial-gradient(circle at 50% 50%, #212332 0%, #0b0e13 80%, #000000 100%);
 
+    /* books page */
+    --books-container-bg:       rgba(42, 45, 60, 0.88); /* Dark blue/grey, semi-transparent */
+    --books-header-border:      rgba(114, 137, 218, 0.6);
+    --book-item-bg:             rgba(255, 255, 255, 0.08);
+    --book-item-hover-bg:       rgba(255, 255, 255, 0.15);
+    --book-title-color:         #c0c8e7; /* Light blue-gray */
+    --book-title-hover-color:   #a3b5f7; /* Lighter accent */
+    --books-footer-text-color:  #a6adc8;
+    --books-page-stars-tint:    rgba(200, 200, 220, 0.4);
+    --books-cursor-fill:        var(--accent-color);
+    --books-cursor-stroke:      var(--accent-color);
+    /* Gradient for Books Page Background */
+    --books-gradient-color-1:   #23074d;
+    --books-gradient-color-2:   #3a506b;
+    --books-gradient-color-3:   #2a2d36;
+    --books-gradient-color-4:   #5c85d6;
+    --books-gradient-color-5:   var(--accent-color);
+    --books-gradient-color-6:   #1f2128;
+
 }
 
 
@@ -168,5 +206,23 @@
     --contact-heading-color:    #ffffff;  /* Pastel pink */
     --contact-text-color:       #ff66b2;     /* Light pinkish */
     --contact-page-bg:          radial-gradient(circle at 50% 50%, #ff99cc 0%, #ffcdea 80%, #fff0f9 100%);
+    /* books page */
+    --books-container-bg:       rgba(255, 204, 238, 0.85); /* Medium pink, semi-transparent */
+    --books-header-border:      rgba(255, 153, 204, 0.7);
+    --book-item-bg:             rgba(255, 255, 255, 0.18);
+    --book-item-hover-bg:       rgba(255, 255, 255, 0.28);
+    --book-title-color:         #e685b3; /* Brighter pink for titles */
+    --book-title-hover-color:   var(--text-color); /* Contrast with accent, or use a light pink */
+    --books-footer-text-color:  #f0c4f0;
+    --books-page-stars-tint:    rgba(253, 145, 253, 0.6);
+    --books-cursor-fill:        var(--accent-color);
+    --books-cursor-stroke:      var(--accent-color);
+    /* Gradient for Books Page Background */
+    --books-gradient-color-1:   #ff7eb9;
+    --books-gradient-color-2:   #ffb3d9;
+    --books-gradient-color-3:   #d986e7;
+    --books-gradient-color-4:   var(--secondary-bg-color);
+    --books-gradient-color-5:   var(--accent-color);
+    --books-gradient-color-6:   #ffccf9;
 
 }

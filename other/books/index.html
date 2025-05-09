@@ -7,26 +7,69 @@
   <link rel="stylesheet" href="/assets/css/books.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="books-page">
+
+  <div id="parallax-stars-books"></div>
+
   <main class="bookshelf-container">
     <header class="bookshelf-header">
-      <h1>📚 Bookies 🌌</h1>
+      <h1>📚 Bookies ❤️</h1>
       <p class="subtitle">ive even read some of them</p>
     </header>
     <ul class="book-list">
-      <li><a href="/assets/books/Cisinski-Higher-Categories-and-Homotopical-Algebra.pdf" target="_blank"><i>Higher Categories and Homotopical Algebra</i> (Cisinski)</a></li>
-      <li><a href="/assets/books/Goerss-Jardine-Simplical-Homotopy-Theory.pdf" target="_blank"><i>Simplical Homotopy Theory</i> (Goerss & Jardine)</a></li>
-      <li><a href="/assets/books/Hartshorne-Algebraic-Geometry.pdf" target="_blank"><i>Algebraic Geometry</i> (Hartshorne)</a></li>
-      <li><a href="/assets/books/Hatcher-Algebraic-Topology.pdf" target="_blank"><i>Algebraic Topology</i> (Hatcher)</a></li>
-      <li><a href="/assets/books/Hovey-Model-Categories.pdf" target="_blank"><i>Model Categories</i> (Hovey)</a></li>
-      <li><a href="/assets/books/Lurie-Higher-Topos-Theory.pdf" target="_blank"><i>Higher Topos Theory</i> (Lurie)</a></li>
-      <li><a href="/assets/books/Riehl-Categorical-Homotopy-Theory.pdf" target="_blank"><i>Categorical Homotopy Theory</i> (Riehl)</a></li>
-      <li><a href="/assets/books/Riehl-Elements-of-Infinity-Category-Theory.pdf" target="_blank"><i>Elements of ∞-Category Theory</i> (Riehl & Verity)</a></li>
-      <li><a href="/assets/pdfs/lecture-notes.pdf" target="_blank"><i>Intro to Category Theory Lecture Notes</i> (Your Awesome Notes!)</a></li>
+      <li><a href="/assets/books/Cisinski-Higher-Categories-and-Homotopical-Algebra.pdf" target="_blank" class="clickable-effect"><i>Higher Categories and Homotopical Algebra</i> (Cisinski)</a></li>
+      <li><a href="/assets/books/Goerss-Jardine-Simplical-Homotopy-Theory.pdf" target="_blank" class="clickable-effect"><i>Simplical Homotopy Theory</i> (Goerss & Jardine)</a></li>
+      <li><a href="/assets/books/Hartshorne-Algebraic-Geometry.pdf" target="_blank" class="clickable-effect"><i>Algebraic Geometry</i> (Hartshorne)</a></li>
+      <li><a href="/assets/books/Hatcher-Algebraic-Topology.pdf" target="_blank" class="clickable-effect"><i>Algebraic Topology</i> (Hatcher)</a></li>
+      <li><a href="/assets/books/Hovey-Model-Categories.pdf" target="_blank" class="clickable-effect"><i>Model Categories</i> (Hovey)</a></li>
+      <li><a href="/assets/books/Lurie-Higher-Topos-Theory.pdf" target="_blank" class="clickable-effect"><i>Higher Topos Theory</i> (Lurie)</a></li>
+      <li><a href="/assets/books/Riehl-Categorical-Homotopy-Theory.pdf" target="_blank" class="clickable-effect"><i>Categorical Homotopy Theory</i> (Riehl)</a></li>
+      <li><a href="/assets/books/Riehl-Elements-of-Infinity-Category-Theory.pdf" target="_blank" class="clickable-effect"><i>Elements of ∞-Category Theory</i> (Riehl & Verity)</a></li>
+      <li><a href="/assets/pdfs/lecture-notes.pdf" target="_blank" class="clickable-effect"><i>Intro to Category Theory Lecture Notes</i> (Your Awesome Notes!)</a></li>
     </ul>
     <footer class="bookshelf-footer">
       <p>Made with Boba ✨</p>
     </footer>
   </main>
-</body>
+
+  <script src="/assets/js/explosion.js"></script>
+  <script src="/assets/js/theme-switcher.js"></script>
+
+  <script id="floating-symbols-script">
+    // Function to create floating elements (book icons/sparkles)
+    function createFloatingSymbol() {
+      const element = document.createElement('div');
+      element.classList.add('floating-element'); // Uses styles from books.css
+      
+      const symbols = ['📚', '✨', '⭐', '💭', '💡', '⚛️', '∮', '💖', '笑']; // Added more fun options!
+      element.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+      
+      document.body.appendChild(element);
+
+      // Random horizontal start position and animation properties
+      element.style.left = `${Math.random() * 100}vw`;
+      // Ensure CSS animation 'floatUpAndAway' in books.css uses these variables or has defaults
+      element.style.animationDuration = `${4 + Math.random() * 5}s`; // Random duration: 4s to 9s
+      element.style.setProperty('--random-drift', `${(Math.random() - 0.5) * 150}px`); // Wider drift
+      element.style.setProperty('--random-rotate', `${(Math.random() - 0.5) * 70}deg`); // More rotation
+      
+      element.addEventListener('animationend', () => {
+        element.remove();
+      });
+    }
+
+    // Periodically create floating elements
+    // Adjust interval for more/less frequency. 1500ms = 1.5 seconds
+    const floatingInterval = setInterval(createFloatingSymbol, 1500);
+
+    // Optional: Clear interval if page becomes hidden to save resources
+    document.addEventListener("visibilitychange", function() {
+      if (document.hidden) {
+        // clearInterval(floatingInterval); // Uncomment if you want to pause when tab is not visible
+      } else {
+        // floatingInterval = setInterval(createFloatingSymbol, 1500); // Resume if paused
+      }
+    });
+  </script>
+  </body>
 </html>

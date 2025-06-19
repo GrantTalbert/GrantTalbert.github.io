@@ -78,6 +78,15 @@
     --books-gradient-color-5:   var(--accent-color);
     --books-gradient-color-6:   #b7e7f7;
 
+    /* extra shit */
+    --bookshelf-bg: linear-gradient(to bottom, #d2b48c, #c1a37c); /* Light wood */
+    --shelf-bg: #a08468;
+    --book-color-1: #ffb3ba; /* Pastel Red */
+    --book-color-2: #ffdfba; /* Pastel Orange */
+    --book-color-3: #ffffba; /* Pastel Yellow */
+    --book-color-4: #baffc9; /* Pastel Green */
+    --book-color-5: #bae1ff; /* Pastel Blue */
+
 }
 
 
@@ -155,6 +164,15 @@
     --books-gradient-color-5:   var(--accent-color);
     --books-gradient-color-6:   #1f2128;
 
+    /* NEW BOOKSHELF THEME VARIABLES */
+    --bookshelf-bg: linear-gradient(to bottom, #2a2d36, #1f2128); /* Dark wood/space */
+    --shelf-bg: #111;
+    --book-color-1: #6a0dad; /* Deep Purple */
+    --book-color-2: #000080; /* Navy Blue */
+    --book-color-3: #4b0082; /* Indigo */
+    --book-color-4: #004d40; /* Dark Teal */
+    --book-color-5: #3a243b; /* Dark Slate Blue */
+
 }
 
 
@@ -230,5 +248,14 @@
     --books-gradient-color-4:   var(--secondary-bg-color);
     --books-gradient-color-5:   var(--accent-color);
     --books-gradient-color-6:   #ffccf9;
+
+    /* NEW BOOKSHELF THEME VARIABLES */
+    --bookshelf-bg: linear-gradient(to bottom, #ffcdea, #ffb3d9); /* Pink wood */
+    --shelf-bg: #ff85c8;
+    --book-color-1: #ff007f; /* Bright Pink (Rose) */
+    --book-color-2: #e75480; /* Wild Strawberry */
+    --book-color-3: #d9027d; /* Fuchsia */
+    --book-color-4: #c2185b; /* Magenta */
+    --book-color-5: #ff8ad8; /* Light Pink */
 
 }

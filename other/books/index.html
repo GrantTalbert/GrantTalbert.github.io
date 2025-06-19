@@ -1,48 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Books ✨</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/assets/css/books.css">
-  <link rel="stylesheet" href="/assets/css/effects/theme-toggler.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <title>Books ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/books.css">
+    <link rel="stylesheet" href="/assets/css/effects/theme-toggler.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body class="books-page">
 
-  <div id="parallax-stars-books"></div>
+<div id="parallax-stars-books"></div>
 
-    <!-- Theme Chooser -->
-    <div id="theme-chooser">
-        <button data-theme="default">Bubblegum KK</button>
-        <button data-theme="quantum">Quantum Glitter</button>
-        <button data-theme="yoneda">Yoneda Pink</button>
+<div id="theme-chooser">
+    <button data-theme="default">Bubblegum KK</button>
+    <button data-theme="quantum">Quantum Glitter</button>
+    <button data-theme="yoneda">Yoneda Pink</button>
+</div>
+
+<main class="bookshelf-container">
+    <header class="bookshelf-header">
+        <h1>📚 Bookies ❤️</h1>
+        <p class="subtitle">ive even read some of them</p>
+    </header>
+
+    <div class="shelf">
+        <ul class="book-list">
+            <li class="book-color-1"><a href="/assets/books/Lurie-Higher-Topos-Theory.pdf" target="_blank" class="clickable-effect"><span><i>Higher Topos Theory</i> (Lurie)</span></a></li>
+            <li class="book-color-2"><a href="/assets/books/Riehl-Elements-of-Infinity-Category-Theory.pdf" target="_blank" class="clickable-effect"><span><i>Elements of ∞-Category Theory</i> (Riehl & Verity)</span></a></li>
+            <li class="book-color-3"><a href="/assets/books/Cisinski-Higher-Categories-and-Homotopical-Algebra.pdf" target="_blank" class="clickable-effect"><span><i>Higher Categories and Homotopical Algebra</i> (Cisinski)</span></a></li>
+            <li class="book-color-4"><a href="/assets/books/Riehl-Categorical-Homotopy-Theory.pdf" target="_blank" class="clickable-effect"><span><i>Categorical Homotopy Theory</i> (Riehl)</span></a></li>
+            <li class="book-color-5"><a href="/assets/books/Hovey-Model-Categories.pdf" target="_blank" class="clickable-effect"><span><i>Model Categories</i> (Hovey)</span></a></li>
+            <li class="book-color-1"><a href="/assets/books/Goerss-Jardine-Simplical-Homotopy-Theory.pdf" target="_blank" class="clickable-effect"><span><i>Simplicial Homotopy Theory</i> (Goerss & Jardine)</span></a></li>
+            <li class="book-color-2"><a href="/assets/books/Hartshorne-Algebraic-Geometry.pdf" target="_blank" class="clickable-effect"><span><i>Algebraic Geometry</i> (Hartshorne)</span></a></li>
+            <li class="book-color-3"><a href="/assets/books/Hatcher-Algebraic-Topology.pdf" target="_blank" class="clickable-effect"><span><i>Algebraic Topology</i> (Hatcher)</span></a></li>
+            <li class="book-color-4"><a href="/assets/books/aluffi-algebra-chapter-0.pdf" target="_blank" class="clickable-effect"><span><i>Algebra: Chapter 0</i> (Aluffi)</span></a></li>
+        </ul>
     </div>
 
-  <main class="bookshelf-container">
-    <header class="bookshelf-header">
-      <h1>📚 Bookies ❤️</h1>
-      <p class="subtitle">ive even read some of them</p>
-    </header>
-    <ul class="book-list">
-        <li><a href="/assets/books/Lurie-Higher-Topos-Theory.pdf" target="_blank" class="clickable-effect"><i>Higher Topos Theory</i> (Lurie)</a></li>
-        <li><a href="/assets/books/Riehl-Elements-of-Infinity-Category-Theory.pdf" target="_blank" class="clickable-effect"><i>Elements of ∞-Category Theory</i> (Riehl & Verity)</a></li>
-        <li><a href="/assets/books/Cisinski-Higher-Categories-and-Homotopical-Algebra.pdf" target="_blank" class="clickable-effect"><i>Higher Categories and Homotopical Algebra</i> (Cisinski)</a></li>
-        <li><a href="/assets/books/Riehl-Categorical-Homotopy-Theory.pdf" target="_blank" class="clickable-effect"><i>Categorical Homotopy Theory</i> (Riehl)</a></li>
-        <li><a href="/assets/books/Hovey-Model-Categories.pdf" target="_blank" class="clickable-effect"><i>Model Categories</i> (Hovey)</a></li>
-        <li><a href="/assets/books/Goerss-Jardine-Simplical-Homotopy-Theory.pdf" target="_blank" class="clickable-effect"><i>Simplical Homotopy Theory</i> (Goerss & Jardine)</a></li>
-        <li><a href="/assets/books/Hartshorne-Algebraic-Geometry.pdf" target="_blank" class="clickable-effect"><i>Algebraic Geometry</i> (Hartshorne)</a></li>
-        <li><a href="/assets/books/Hatcher-Algebraic-Topology.pdf" target="_blank" class="clickable-effect"><i>Algebraic Topology</i> (Hatcher)</a></li>
-        <li><a href="/assets/books/aluffi-algebra-chapter-0.pdf" target="_blank" class="clickable-effect"><i>Algebra: Chapter 0</i> (Aluffi)</a></li>
-      <!--<li><a href="/assets/pdfs/lecture-notes.pdf" target="_blank" class="clickable-effect"><i>Intro to Category Theory Lecture Notes</i> (ME!)</a></li>-->
-    </ul>
     <footer class="bookshelf-footer">
-      <p>Made with Boba ✨</p>
+        <p>Made with Boba ✨</p>
     </footer>
-  </main>
+</main>
 
-  <script src="/assets/js/explosion.js"></script>
-  <script src="/assets/js/theme-switcher.js"></script>
-  <script src="/assets/js/floating-math.js"></script>
-  </body>
+<script src="/assets/js/explosion.js"></script>
+<script src="/assets/js/theme-switcher.js"></script>
+<script src="/assets/js/floating-math.js"></script>
+</body>
 </html>

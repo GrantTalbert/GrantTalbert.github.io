@@ -11,5 +11,5 @@ TODO
 - modify the home page look
 - possibly change up the explosions per-theme
     - tensors and math symbols exploding sound awesome
-    - maybe we can have a rainbow trail on the about page too???
 - MAKE THE FUCKING CHALKBOARDS HAVE WHITE TEXT HELLOOOOOOO
+- also add a skip button for the animations (the long one does indeed get annoying)
